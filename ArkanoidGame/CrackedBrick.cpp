@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 #include <iostream>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     CrackedBrick::CrackedBrick(float x, float y, float width, float height, int typeIndex)
         : Brick(x, y, width, height, typeIndex)

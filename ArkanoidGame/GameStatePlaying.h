@@ -11,7 +11,7 @@
 #include "BonusEffectManager.h"
 #include "LifeSystem.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class GameStatePlaying : public GameState
     {

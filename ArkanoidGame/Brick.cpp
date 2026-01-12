@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 #include <iostream>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     std::vector<sf::Texture> Brick::textures;
 

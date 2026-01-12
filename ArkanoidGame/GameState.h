@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	// Абстрактный интерфейс игрового состояния
 	class GameState

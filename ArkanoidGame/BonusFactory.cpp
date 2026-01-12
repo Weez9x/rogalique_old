@@ -6,7 +6,7 @@
 #include "GameSettings.h"
 #include <cstdlib>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     std::unique_ptr<Bonus> BonusFactory::createBonus(BonusType type, float x, float y)
     {

@@ -1,7 +1,7 @@
 #include "Ball.h"
 #include "GameSettings.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     Ball::Ball(float x, float y)
     {

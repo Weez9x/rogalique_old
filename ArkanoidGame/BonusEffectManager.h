@@ -4,7 +4,7 @@
 #include <functional>
 #include <SFML/System/Clock.hpp>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class Ball;
     class Platform;

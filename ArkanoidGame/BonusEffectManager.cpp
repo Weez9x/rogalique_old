@@ -1,6 +1,6 @@
 #include "BonusEffectManager.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     void BonusEffectManager::addEffect(const std::string& name, float durationSec, std::function<void()> revert)
     {

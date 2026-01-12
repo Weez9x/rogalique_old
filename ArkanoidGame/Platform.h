@@ -3,7 +3,7 @@
 #include "GameSettings.h"
 #include <SFML/Window/Keyboard.hpp>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class Platform : public GameObject
     {

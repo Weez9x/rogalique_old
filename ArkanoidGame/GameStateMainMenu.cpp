@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 #include <cassert>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	GameStateMainMenu::GameStateMainMenu()
 	{

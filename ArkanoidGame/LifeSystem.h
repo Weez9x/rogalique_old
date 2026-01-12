@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class LifeSystem
     {

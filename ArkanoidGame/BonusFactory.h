@@ -2,7 +2,7 @@
 #include <memory>
 #include "Bonus.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     enum class BonusType
     {

@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	class GameStateGameOver : public GameState
 	{

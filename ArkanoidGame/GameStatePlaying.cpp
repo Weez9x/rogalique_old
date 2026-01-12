@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <cmath>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     GameStatePlaying::GameStatePlaying()
         : platform(SCREEN_WIDTH / 2.f, SCREEN_HEIGHT - 50.f),

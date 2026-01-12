@@ -2,7 +2,7 @@
 #include "GameStatePlaying.h"
 #include "LifeSystem.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     void LifeBonus::applyEffect(BonusEffectManager&, Ball&, Platform&, GameStatePlaying& state)
     {

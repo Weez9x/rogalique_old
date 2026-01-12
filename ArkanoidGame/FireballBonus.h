@@ -2,7 +2,7 @@
 #include "Bonus.h"
 #include "GameSettings.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class FireballBonus : public Bonus
     {

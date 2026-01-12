@@ -3,7 +3,7 @@
 #include "GameSettings.h"
 #include <cmath>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class Ball : public GameObject
     {

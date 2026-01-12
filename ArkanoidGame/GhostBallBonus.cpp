@@ -4,7 +4,7 @@
 #include "Platform.h"
 #include "GameStatePlaying.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     void GhostBallBonus::applyEffect(BonusEffectManager& mgr, Ball& ball, Platform&, GameStatePlaying&)
     {

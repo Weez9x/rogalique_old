@@ -4,7 +4,7 @@
 #include "Ball.h"
 #include "GameStatePlaying.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     void PlatformSizeBonus::applyEffect(BonusEffectManager& mgr, Ball&, Platform& platform, GameStatePlaying&)
     {

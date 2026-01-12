@@ -3,7 +3,7 @@
 #include <string>
 #include <cstdlib>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class BonusEffectManager;
     class Ball;

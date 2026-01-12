@@ -2,7 +2,7 @@
 #include "GameObject.h"
 #include <vector>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	class Brick : public GameObject
 	{

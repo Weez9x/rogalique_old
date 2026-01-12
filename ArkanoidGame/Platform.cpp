@@ -1,6 +1,6 @@
 #include "Platform.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     Platform::Platform(float x, float y)
         : speed(PLATFORM_SPEED)

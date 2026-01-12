@@ -1,7 +1,7 @@
 #pragma once
 #include "Brick.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
     class CrackedBrick : public Brick
     {
