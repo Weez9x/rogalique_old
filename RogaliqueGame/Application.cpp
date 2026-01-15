@@ -1,6 +1,5 @@
 #include "Application.h"
 #include "GameSettings.h"
-#include "Brick.h"
 
 namespace RogaliqueGame
 {
@@ -12,7 +11,7 @@ namespace RogaliqueGame
 	}
 	Application::~Application()
 	{
-		RogaliqueGame::Brick::unloadTextures();
+	
 	}
 
 	void Application::run()
