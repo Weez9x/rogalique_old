@@ -6,6 +6,7 @@ namespace Arkanoid
 {
 	GameStateMainMenu::GameStateMainMenu()
 	{
+
 	}
 
 	void GameStateMainMenu::onEnter()
