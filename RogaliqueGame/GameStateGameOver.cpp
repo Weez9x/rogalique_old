@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 #include <cassert>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	GameStateGameOver::GameStateGameOver() {}
 

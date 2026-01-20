@@ -2,7 +2,7 @@
 #include "GameSettings.h"
 #include <cassert>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	GameStateMainMenu::GameStateMainMenu()
 	{
@@ -17,14 +17,14 @@ namespace Arkanoid
 		}
 
 		title.setFont(font);
-		title.setString("ARKANOID");
+		title.setString("TO BE DONE...");
 		title.setCharacterSize(64);
 		title.setFillColor(sf::Color::Red);
 		title.setPosition(SCREEN_WIDTH / 2.f, 150.f);
 		title.setOrigin(title.getLocalBounds().width / 2.f, title.getLocalBounds().height / 2.f);
 
 		hint.setFont(font);
-		hint.setString("Press Enter to start\nEsc to exit");
+		hint.setString("Press Esc to exit to menu");
 		hint.setCharacterSize(20);
 		hint.setFillColor(sf::Color::White);
 		hint.setPosition(SCREEN_WIDTH / 2.f, 300.f);
@@ -37,7 +37,7 @@ namespace Arkanoid
 		{
 			if (event.key.code == sf::Keyboard::Enter)
 			{
-				requestStart = true;
+			//	requestStart = true;
 			}
 			else if (event.key.code == sf::Keyboard::Escape)
 			{

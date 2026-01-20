@@ -4,7 +4,7 @@
 #include "GameStateGameOver.h"
 #include "GameStateWin.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	Game::Game()
 	{

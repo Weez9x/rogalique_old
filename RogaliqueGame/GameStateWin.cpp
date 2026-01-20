@@ -1,7 +1,7 @@
 #include "GameStateWin.h"
 #include "GameSettings.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	GameStateWin::GameStateWin() {}
 

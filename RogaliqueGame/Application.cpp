@@ -1,18 +1,17 @@
 #include "Application.h"
 #include "GameSettings.h"
-#include "Brick.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	Application::Application()
-		: window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Arkanoid")
+		: window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "RogaliqueGame")
 	{
 		window.setFramerateLimit(60);
 		game.init();
 	}
 	Application::~Application()
 	{
-		Arkanoid::Brick::unloadTextures();
+	
 	}
 
 	void Application::run()
