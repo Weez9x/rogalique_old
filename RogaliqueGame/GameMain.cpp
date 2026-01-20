@@ -2,7 +2,7 @@
 
 int main()
 {
-	Arkanoid::Application app;
+	RogaliqueGame::Application app;
 	app.run();
 	return 0;
 }

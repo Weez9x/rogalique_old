@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	const std::string RESOURCES_PATH = "Resources/";
 	const std::string TEXTURES_PATH = RESOURCES_PATH + "Textures/";

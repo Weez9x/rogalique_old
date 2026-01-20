@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	class Application
 	{

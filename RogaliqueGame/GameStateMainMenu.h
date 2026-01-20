@@ -2,27 +2,25 @@
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
-	class GameStateGameOver : public GameState
+	class GameStateMainMenu : public GameState
 	{
 	private:
 		sf::Font font;
 		sf::Text title;
 		sf::Text hint;
-		bool requestRestart = false;
-		bool requestMenu = false;
+		bool requestStart = false;
 
 	public:
-		GameStateGameOver();
-		~GameStateGameOver() override = default;
+		GameStateMainMenu();
+		~GameStateMainMenu() override = default;
 
 		void onEnter() override;
 		void handleEvent(const sf::Event& event) override;
 		void update(float dt) override;
 		void draw(sf::RenderWindow& window) override;
 
-		bool shouldRestart() const { return requestRestart; }
-		bool shouldGoMenu() const { return requestMenu; }
+		bool shouldStart() const { return requestStart; }
 	};
 }

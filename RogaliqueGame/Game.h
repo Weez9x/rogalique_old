@@ -3,7 +3,7 @@
 #include <memory>
 #include "GameState.h"
 
-namespace Arkanoid
+namespace RogaliqueGame
 {
 	enum class StateType
 	{
