@@ -6,7 +6,7 @@
 #include "Engine.h"
 #include <Windows.h>
 #include <iostream>
-
+using namespace EngineGame;
 const std::string RESOURCES_PATH = "Resources/";
 
 int main()

@@ -5,12 +5,14 @@
 #else
 #define ENGINE_API __declspec(dllimport)
 #endif
-
-class ENGINE_API Engine
+namespace EngineGame
 {
-public:
-	Engine();
-	void Initialize();
-	void Run();
-};
+	class ENGINE_API Engine
+	{
+	public:
+		Engine();
+		void Initialize();
+		void Run();
+	};
+}
 #endif

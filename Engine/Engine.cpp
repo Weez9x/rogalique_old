@@ -1,12 +1,15 @@
 #include "pch.h"
 #include "Engine.h"
 #include <iostream>
-Engine::Engine() {}
-void Engine::Initialize()
+namespace EngineGame
 {
-	std::cout << "Engine initialize" << std::endl;	
-}
-void Engine::Run()
-{
-	std::cout << "Engine run" << std::endl;
+	Engine::Engine() {}
+	void Engine::Initialize()
+	{
+		std::cout << "Engine initialize" << std::endl;
+	}
+	void Engine::Run()
+	{
+		std::cout << "Engine run" << std::endl;
+	}
 }
