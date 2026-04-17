@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <list>
+
 namespace EngineGame
 {
 	void InitSprite(sf::Sprite& sprite, float desiredWidth, float desiredHeight, const sf::Texture& texture);

@@ -1,19 +1,20 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "Game.h"
+#include <memory>
+#include "Engine.h"
+#include "RenderSystem.h"
+#include "GameScene.h"
 
 namespace RogaliqueGame
 {
 	class Application
 	{
 	private:
-		sf::RenderWindow window;
-		Game game;
-		bool running = true;
+		std::unique_ptr<GameScene> scene;
+
+		void CreateScene();
 
 	public:
-		Application();
-		~Application();
 		void run();
 	};
 }

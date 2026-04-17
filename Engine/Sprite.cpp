@@ -40,7 +40,7 @@ namespace EngineGame
 
 	void SetSpriteRandomPosition(sf::Sprite& sprite, const sf::FloatRect& rect, const std::list<sf::Sprite>& collection)
 	{
-
+		
 	}
 
 	bool CheckSpriteIntersection(const sf::Sprite& sprite1, const sf::Sprite& sprite2) {

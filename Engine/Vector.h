@@ -1,3 +1,5 @@
+#pragma once
+
 namespace EngineGame
 {
 	template<typename T>
@@ -54,7 +56,7 @@ namespace EngineGame
 	template<typename T>
 	Vector2D<T> operator*(const Vector2D<T>& left, const Vector2D<T>& right)
 	{
-		return { left.x * right.x, left.y * right.y };
+		return { left.x * right.x, left.y * right.y }; 
 	}
 
 	template<typename T>

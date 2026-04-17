@@ -3,12 +3,12 @@
     "Name": "Новый профиль",
     "Projects": [
       {
-        "Path": "SFMLTemplate\\SFMLTemplate.vcxproj",
+        "Path": "Engine\\Engine.vcxproj",
         "Action": "Start",
         "DebugTarget": "Локальный отладчик Windows"
       },
       {
-        "Path": "Engine\\Engine.vcxproj",
+        "Path": "RogaliqueGame\\RogaliqueGame.vcxproj",
         "Action": "Start",
         "DebugTarget": "Локальный отладчик Windows"
       }

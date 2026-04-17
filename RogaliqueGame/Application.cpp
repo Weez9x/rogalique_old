@@ -3,49 +3,22 @@
 
 namespace RogaliqueGame
 {
-	Application::Application()
-		: window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "RogaliqueGame")
+	void Application::CreateScene()
 	{
-		window.setFramerateLimit(60);
-		game.init();
+		scene = std::make_unique<GameScene>();
+		scene->Start();
 	}
-	Application::~Application()
-	{
-	
-	}
-
 	void Application::run()
 	{
-		sf::Clock clock;
-		while (window.isOpen() && running)
-		{
-			sf::Event event;
-			while (window.pollEvent(event))
-			{
-				if (event.type == sf::Event::Closed)
-				{
-					window.close();
-					running = false;
-				}
+		sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "RogaliqueGame");
+        window.setFramerateLimit(60);
 
-				// Event to Game
-				game.handleEvent(event);
-			}
-			//EndGame
-			if (game.isQuitRequested())
-			{
-				window.close();
-				break;
-			}
+        EngineGame::RenderSystem::Instance()->SetMainWindow(&window);
 
-			float dt = clock.restart().asSeconds();
+        Application::CreateScene();
 
-			game.update(dt);
-
-			window.clear(sf::Color::Black);
-			game.draw(window);
-			window.display();
-		}
+        EngineGame::Engine::Instance()->Run();
+	
 	}
 }
 
