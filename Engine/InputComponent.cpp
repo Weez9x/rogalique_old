@@ -12,11 +12,11 @@ namespace EngineGame
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 		{
-			verticalAxis += 1.0f;
+			verticalAxis -= 1.0f;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
-			verticalAxis -= 1.0f;
+			verticalAxis += 1.0f;
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))

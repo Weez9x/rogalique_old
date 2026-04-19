@@ -1,28 +1,31 @@
-#include "GameScene.h"
-#include "GameWorld.h"
-#include "GameObject.h"
-#include "TransformComponent.h"
-#include "SpriteRendererComponent.h"
-#include "ResourceSystem.h"
 #include "GameSettings.h"
+#include "GameScene.h"
+#include "ResourceSystem.h"
+//#include "Player.h"
 
 namespace RogaliqueGame
 {
 	void GameScene::Start()
 	{
-		//Load texture, name "test"
-		EngineGame::ResourceSystem::Instance()->LoadTexture("test", TEXTURES_PATH + "/test.png");
-		//Create new object
-		EngineGame::GameObject* obj = EngineGame::GameWorld::Instance()->CreateGameObject("TestObject");
-		//Create start position TestObject
-		auto transform = obj->GetComponent<EngineGame::TransformComponent>();
-		transform->SetWorldPosition(SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
-		//Add SpriteRenderComponent
-		auto spriteRender = obj->AddComponent<EngineGame::SpriteRendererComponent>();
-		//Set texture
-		spriteRender->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureShared("test"));
-		//Set size sprite
-		spriteRender->SetPixelSize(100, 100);
+		EngineGame::ResourceSystem::Instance()->LoadTexture("test", "Resources/Textures/test.png");
+		auto resources = EngineGame::ResourceSystem::Instance();
+
+		// пол
+		resources->LoadTextureMap("floor",TEXTURES_PATH + "Floor.png",{ 16, 16 }, 49, false);
+
+		// стены
+		resources->LoadTextureMap("walls", TEXTURES_PATH + "Wall.png", { 16, 16 }, 48, false);
+
+		// игрок
+		resources->LoadTextureMap("player", TEXTURES_PATH + "Player.png", { 48, 63 }, 4, false);
+
+		player = std::make_unique<Player>();
+		enemy = std::make_unique<Enemy>(player->GetGameObject());
+
+		walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df(400.f, 50.f), 700, 40));   // верх
+		walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df(400.f, 550.f), 700, 40));  // низ
+		walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df(50.f, 300.f), 40, 500));   // лево
+		walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df(750.f, 300.f), 40, 500));  // право
 
 	}
 	void GameScene::Restart()

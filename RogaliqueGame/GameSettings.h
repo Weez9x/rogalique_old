@@ -8,8 +8,8 @@ namespace RogaliqueGame
 	const std::string FONTS_PATH = RESOURCES_PATH + "Fonts/";
 	const std::string SOUNDS_PATH = RESOURCES_PATH + "Sounds/";
 
-	const unsigned int SCREEN_WIDTH = 800;
-	const unsigned int SCREEN_HEIGHT = 600;
+	const unsigned int SCREEN_WIDTH = 1280;
+	const unsigned int SCREEN_HEIGHT = 720;
 	const float TIME_PER_FRAME = 1.f / 60.f; // 60 FPS
 
 	const float PLATFORM_WIDTH = 100.f;
