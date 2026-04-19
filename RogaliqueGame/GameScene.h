@@ -5,6 +5,9 @@
 #include <vector>
 #include "Wall.h"
 #include "Enemy.h"
+#include "LevelBuilder.h"
+#include "AudioComponent.h"
+#include "GameWorld.h"
 
 namespace RogaliqueGame
 {
@@ -16,8 +19,8 @@ namespace RogaliqueGame
 		void Stop() override;
 
 	private:
+		std::unique_ptr<LevelBuilder> levelBuilder;
 		std::unique_ptr<Player> player;
-		std::vector<std::unique_ptr<Wall>> walls;
 		std::unique_ptr<Enemy> enemy;
 	};
 }

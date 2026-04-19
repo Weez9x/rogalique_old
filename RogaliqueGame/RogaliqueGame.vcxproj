@@ -162,8 +162,10 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyFollowComponent.cpp" />
+    <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="LevelBuilder.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerMovementComponent.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -172,8 +174,10 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyFollowComponent.h" />
+    <ClInclude Include="FloorTile.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="LevelBuilder.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerMovementComponent.h" />
     <ClInclude Include="Wall.h" />

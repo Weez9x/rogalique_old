@@ -9,6 +9,38 @@ namespace EngineGame
 		return &resourceSystem;
 	}
 
+	void ResourceSystem::LoadMusic(const std::string& name, std::string sourcePath)
+	{
+		if (musics.find(name) != musics.end())
+		{
+			return;
+		}
+
+		sf::Music* newMusic = new sf::Music();
+		if (newMusic->openFromFile(sourcePath))
+		{
+			musics.emplace(name, newMusic);
+		}
+		else
+		{
+			delete newMusic;
+		}
+	}
+
+	sf::Music* ResourceSystem::GetMusicShared(const std::string& name) const
+	{
+		return musics.find(name)->second;
+	}
+
+	void ResourceSystem::DeleteSharedMusic(const std::string& name)
+	{
+		auto musicPair = musics.find(name);
+
+		sf::Music* deletingMusic = musicPair->second;
+		musics.erase(musicPair);
+		delete deletingMusic;
+	}
+
 	void ResourceSystem::LoadTexture(const std::string& name, std::string sourcePath, bool isSmooth)
 	{
 		if (textures.find(name) != textures.end())
@@ -115,8 +147,24 @@ namespace EngineGame
 
 	void ResourceSystem::Clear()
 	{
+		DeleteAllMusics();
 		DeleteAllTextures();
 		DeleteAllTextureMaps();
+	}
+
+	void ResourceSystem::DeleteAllMusics()
+	{
+		std::vector<std::string> keysToDelete;
+
+		for (const auto& musicPair : musics)
+		{
+			keysToDelete.push_back(musicPair.first);
+		}
+
+		for (const auto& key : keysToDelete)
+		{
+			DeleteSharedMusic(key);
+		}
 	}
 
 	void ResourceSystem::DeleteAllTextures()

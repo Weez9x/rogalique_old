@@ -8,7 +8,7 @@
 
 namespace RogaliqueGame
 {
-	Wall::Wall(const EngineGame::Vector2Df& position, int width, int height)
+	Wall::Wall(const EngineGame::Vector2Df& position, int width, int height, int tileIndex)
 	{
 		gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Wall");
 
@@ -16,8 +16,8 @@ namespace RogaliqueGame
 		transform->SetWorldPosition(position.x, position.y);
 
 		auto spriteRenderer = gameObject->AddComponent<EngineGame::SpriteRendererComponent>();
-		spriteRenderer->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureMapElementShared("walls", 0));
-		spriteRenderer->SetPixelSize(128, 128);
+		spriteRenderer->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureMapElementShared("walls", tileIndex));
+		spriteRenderer->SetPixelSize(width, height);
 
 		auto rigidbody = gameObject->AddComponent<EngineGame::RigidbodyComponent>();
 		rigidbody->SetKinematic(true);
