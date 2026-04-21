@@ -20,7 +20,7 @@ namespace RogaliqueGame
 		EngineGame::TransformComponent* transform = nullptr;
 		EngineGame::GameObject* targetObject = nullptr;
 
-		float moveSpeed = 2.5f;
-		float detectionRadius = 500.0f;
+		float moveSpeed = 1.5f;
+		float detectionRadius = 250.0f;
 	};
 }

@@ -50,7 +50,7 @@ namespace RogaliqueGame
 			direction.y /= distance;
 		}
 
-		rigidbody->SetLinearVelocity(direction * (moveSpeed - 1));
+		rigidbody->SetLinearVelocity(direction * moveSpeed);
 	}
 
 	void EnemyFollowComponent::Render()

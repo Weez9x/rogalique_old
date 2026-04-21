@@ -16,7 +16,7 @@ namespace RogaliqueGame
 		// игрок
 		resources->LoadTextureMap("player", TEXTURES_PATH + "Player.png", { 48, 63 }, 4, false);
 		// музыка
-		resources->LoadMusic("main_theme",MUSIC_PATH + "Music_test.ogg");
+		resources->LoadMusic("main_theme",MUSIC_PATH + "Music_test_1.ogg");
 		levelBuilder = std::make_unique<LevelBuilder>();
 		levelBuilder->BuildLevel();
 
