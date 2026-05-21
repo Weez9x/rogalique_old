@@ -22,6 +22,9 @@ namespace EngineGame
 
 		void FlipX(bool flip);
 		void FlipY(bool flip);
+
+		void SetVisible(bool visible);
+		bool IsVisible() const;
 	private:
 		Vector2Df scale;
 		sf::Sprite* sprite;
@@ -29,5 +32,7 @@ namespace EngineGame
 
 		bool isFlipX = false;
 		bool isFlipY = false;
+
+		bool isVisible = true;
 	};
 }

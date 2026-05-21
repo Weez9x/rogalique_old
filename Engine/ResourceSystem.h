@@ -35,6 +35,8 @@ namespace EngineGame
 		std::map<std::string, sf::Texture*> textures;
 		std::map<std::string, std::vector<sf::Texture*>> textureMaps;
 
+		sf::Texture* CreateFallbackTexture(sf::Vector2u size, bool isSmooth);
+
 		ResourceSystem() {}
 		~ResourceSystem() {}
 

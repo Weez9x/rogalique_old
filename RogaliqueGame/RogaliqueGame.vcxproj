@@ -127,7 +127,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\SFML\SFML-2.5.1\lib;%(AdditionalIncludeDirectories);$(SolutionDir)\Engine\$(Platform)\$(Configuration)\</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-main-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;sfml-network-s-d.lib;ws2_32.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;%(AdditionalDependencies);%(AdditionalDependencies)Engine.lib</AdditionalDependencies>
@@ -165,9 +165,14 @@
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="HealthBarComponent.cpp" />
     <ClCompile Include="LevelBuilder.cpp" />
+    <ClCompile Include="MeleeAttackComponent.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerAttackComponent.cpp" />
     <ClCompile Include="PlayerMovementComponent.cpp" />
+    <ClCompile Include="PlayerStatsUIComponent.cpp" />
+    <ClCompile Include="RespawnComponent.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,9 +182,14 @@
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="HealthBarComponent.h" />
     <ClInclude Include="LevelBuilder.h" />
+    <ClInclude Include="MeleeAttackComponent.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerAttackComponent.h" />
     <ClInclude Include="PlayerMovementComponent.h" />
+    <ClInclude Include="PlayerStatsUIComponent.h" />
+    <ClInclude Include="RespawnComponent.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>

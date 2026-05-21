@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "ResourceSystem.h"
+#include "Logger.h" 
 
 namespace EngineGame
 {
@@ -29,7 +30,14 @@ namespace EngineGame
 
 	sf::Music* ResourceSystem::GetMusicShared(const std::string& name) const
 	{
-		return musics.find(name)->second;
+		auto it = musics.find(name);
+
+		if (it == musics.end())
+		{
+			throw std::runtime_error("Music not found: " + name);
+		}
+
+		return it->second;
 	}
 
 	void ResourceSystem::DeleteSharedMusic(const std::string& name)
@@ -49,15 +57,34 @@ namespace EngineGame
 		}
 
 		sf::Texture* newTexture = new sf::Texture();
+
 		if (newTexture->loadFromFile(sourcePath))
 		{
 			newTexture->setSmooth(isSmooth);
 			textures.emplace(name, newTexture);
+			Logger::Instance()->Info("Texture loaded: " + name);
+		}
+		else
+		{
+			delete newTexture;
+
+			Logger::Instance()->Error(
+				"Failed to load texture: " + sourcePath + ". Fallback texture created."
+			);
+
+			textures.emplace(name, CreateFallbackTexture({ 16, 16 }, isSmooth));
 		}
 	}
 	const sf::Texture* ResourceSystem::GetTextureShared(const std::string& name) const
 	{
-		return textures.find(name)->second;
+		auto it = textures.find(name);
+
+		if (it == textures.end())
+		{
+			throw std::runtime_error("Texture not found: " + name);
+		}
+
+		return it->second;
 	}
 	sf::Texture* ResourceSystem::GetTextureCopy(const std::string& name) const
 	{
@@ -72,18 +99,25 @@ namespace EngineGame
 		delete deletingTexure;
 	}
 
-	void ResourceSystem::LoadTextureMap(const std::string& name, std::string sourcePath, sf::Vector2u elementPixelSize, int totalElements, bool isSmooth)
+	void ResourceSystem::LoadTextureMap(
+		const std::string& name,
+		std::string sourcePath,
+		sf::Vector2u elementPixelSize,
+		int totalElements,
+		bool isSmooth
+	)
 	{
 		if (textureMaps.find(name) != textureMaps.end())
 		{
 			return;
 		}
 
+		auto textureMapElements = new std::vector<sf::Texture*>();
+
 		sf::Texture textureMap;
+
 		if (textureMap.loadFromFile(sourcePath))
 		{
-			auto textureMapElements = new std::vector<sf::Texture*>();
-
 			auto textureSize = textureMap.getSize();
 			int loadedElements = 0;
 
@@ -102,23 +136,66 @@ namespace EngineGame
 					}
 
 					sf::Texture* newTextureMapElement = new sf::Texture();
-					if (newTextureMapElement->loadFromFile(sourcePath, sf::IntRect(x, y, elementPixelSize.x, elementPixelSize.y)))
+
+					if (newTextureMapElement->loadFromFile(
+						sourcePath,
+						sf::IntRect(x, y, elementPixelSize.x, elementPixelSize.y)
+					))
 					{
 						newTextureMapElement->setSmooth(isSmooth);
 						textureMapElements->push_back(newTextureMapElement);
 					}
+					else
+					{
+						delete newTextureMapElement;
+					}
+
 					loadedElements++;
 				}
 			}
 
-			textureMaps.emplace(name, *textureMapElements);
+			EngineGame::Logger::Instance()->Info("Texture map loaded: " + name);
 		}
+		else
+		{
+			EngineGame::Logger::Instance()->Error(
+				"Failed to load texture map: " + sourcePath + ". Fallback texture map created."
+			);
+
+			for (int i = 0; i < totalElements; ++i)
+			{
+				sf::Image fallbackImage;
+				fallbackImage.create(
+					elementPixelSize.x,
+					elementPixelSize.y,
+					sf::Color::Magenta
+				);
+
+				sf::Texture* fallbackTexture = new sf::Texture();
+				fallbackTexture->loadFromImage(fallbackImage);
+				fallbackTexture->setSmooth(isSmooth);
+
+				textureMapElements->push_back(fallbackTexture);
+			}
+		}
+
+		textureMaps.emplace(name, *textureMapElements);
 	}
 	const sf::Texture* ResourceSystem::GetTextureMapElementShared(const std::string& name, int elementIndex) const
 	{
-		auto textureMap = textureMaps.find(name);
-		auto textures = textureMap->second;
-		return textures[elementIndex];
+		auto it = textureMaps.find(name);
+
+		if (it == textureMaps.end())
+		{
+			throw std::runtime_error("Texture map not found: " + name);
+		}
+
+		if (elementIndex < 0 || elementIndex >= it->second.size())
+		{
+			throw std::runtime_error("Texture map index out of range");
+		}
+
+		return it->second[elementIndex];
 	}
 	sf::Texture* ResourceSystem::GetTextureMapElementCopy(const std::string& name, int elementIndex) const
 	{
@@ -150,6 +227,23 @@ namespace EngineGame
 		DeleteAllMusics();
 		DeleteAllTextures();
 		DeleteAllTextureMaps();
+	}
+
+	sf::Texture* ResourceSystem::CreateFallbackTexture(sf::Vector2u size, bool isSmooth)
+	{
+		if (size.x == 0 || size.y == 0)
+		{
+			size = { 16, 16 };
+		}
+
+		sf::Image image;
+		image.create(size.x, size.y, sf::Color::Magenta);
+
+		sf::Texture* texture = new sf::Texture();
+		texture->loadFromImage(image);
+		texture->setSmooth(isSmooth);
+
+		return texture;
 	}
 
 	void ResourceSystem::DeleteAllMusics()

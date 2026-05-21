@@ -2,12 +2,8 @@
 #include <memory>
 #include "Scene.h"
 #include "Player.h"
-#include <vector>
-#include "Wall.h"
 #include "Enemy.h"
 #include "LevelBuilder.h"
-#include "AudioComponent.h"
-#include "GameWorld.h"
 
 namespace RogaliqueGame
 {

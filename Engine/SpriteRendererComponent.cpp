@@ -26,6 +26,11 @@ namespace EngineGame
 	}
 	void SpriteRendererComponent::Render()
 	{
+		if (!isVisible)
+		{
+			return;
+		}
+
 		if (sprite != nullptr)
 		{
 			sprite->setPosition(Convert<sf::Vector2f, Vector2Df>(transform->GetWorldPosition()));
@@ -68,5 +73,15 @@ namespace EngineGame
 			scale = { scale.x, -scale.y };
 			isFlipY = flip;
 		}
+	}
+
+	void SpriteRendererComponent::SetVisible(bool visible)
+	{
+		isVisible = visible;
+	}
+
+	bool SpriteRendererComponent::IsVisible() const
+	{
+		return isVisible;
 	}
 }

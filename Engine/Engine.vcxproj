@@ -156,7 +156,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationComponent.h" />
     <ClInclude Include="AudioComponent.h" />
+    <ClInclude Include="BoxColliderComponent.h" />
     <ClInclude Include="CameraComponent.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
@@ -181,6 +183,7 @@
     <ClInclude Include="GameWorld.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="HealthComponent.h" />
     <ClInclude Include="IDelayedAction.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
@@ -190,6 +193,7 @@
     <ClInclude Include="IObserver.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Matrix2D.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClInclude>
@@ -234,7 +238,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AnimationComponent.cpp" />
     <ClCompile Include="AudioComponent.cpp" />
+    <ClCompile Include="BoxColliderComponent.cpp" />
     <ClCompile Include="CameraComponent.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
@@ -256,9 +262,11 @@
     <ClCompile Include="GameWorld.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="HealthComponent.cpp" />
     <ClCompile Include="InputComponent.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Matrix2D.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
