@@ -68,13 +68,6 @@ namespace EngineGame
 			return;
 		}
 
-
-		if (IsDead() && !isDeadLogged)
-		{
-			Logger::Instance()->Info(gameObject->GetName() + " died.");
-			isDeadLogged = true;
-		}
-
 		float finalDamage = damage - armor;
 
 		if (finalDamage < 0.0f)

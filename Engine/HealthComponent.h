@@ -22,8 +22,6 @@ namespace EngineGame
 
 		bool IsDead() const;
 
-		bool isDeadLogged = false;
-
 		void SetInvulnerable(bool value);
 		bool IsInvulnerable() const;
 
@@ -31,5 +29,6 @@ namespace EngineGame
 		float health = 100.0f;
 		float armor = 0.0f;
 		bool isInvulnerable = false;
+		bool isDeadLogged = false;
 	};
 }

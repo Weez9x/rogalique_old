@@ -99,17 +99,16 @@ namespace EngineGame
 		delete deletingTexure;
 	}
 
-	void ResourceSystem::LoadTextureMap(
-		const std::string& name,
-		std::string sourcePath,
-		sf::Vector2u elementPixelSize,
-		int totalElements,
-		bool isSmooth
-	)
+	void ResourceSystem::LoadTextureMap(const std::string& name,std::string sourcePath,sf::Vector2u elementPixelSize,int totalElements,bool isSmooth)
 	{
 		if (textureMaps.find(name) != textureMaps.end())
 		{
 			return;
+		}
+		if (totalElements <= 0)
+		{
+			Logger::Instance()->Warning("Texture map totalElements <= 0. Fallback to 1 element.");
+			totalElements = 1;
 		}
 
 		auto textureMapElements = new std::vector<sf::Texture*>();

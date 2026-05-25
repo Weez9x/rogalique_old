@@ -2,6 +2,7 @@
 #include "BoxColliderComponent.h"
 #include "GameObject.h"
 #include "PhysicsSystem.h"
+#include "Logger.h"
 
 namespace EngineGame
 {
@@ -12,8 +13,8 @@ namespace EngineGame
 
 		if (transform == nullptr)
 		{
-			std::cout << "BoxColliderComponent requires TransformComponent." << std::endl;
 			gameObject->RemoveComponent(this);
+			Logger::Instance()->Error("BoxColliderComponent requires TransformComponent");
 			return;
 		}
 
