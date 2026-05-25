@@ -7,16 +7,16 @@
 
 namespace EngineGame
 {
-	class SpriteColliderComponent : public ColliderComponent
-	{
-	public:
-		SpriteColliderComponent(GameObject* gameObject);
-		~SpriteColliderComponent();
+class SpriteColliderComponent : public ColliderComponent
+{
+public:
+    SpriteColliderComponent(GameObject* gameObject);
+    ~SpriteColliderComponent();
 
-		void Update(float deltaTime) override;
-		void Render() override;
-	private:
-		const sf::Sprite* sprite;
-	};
-}
+    void Update(float deltaTime) override;
+    void Render() override;
 
+private:
+    const sf::Sprite* sprite;
+};
+} // namespace EngineGame

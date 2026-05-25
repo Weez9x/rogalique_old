@@ -6,18 +6,18 @@
 
 namespace RogaliqueGame
 {
-	class PlayerStatsUIComponent : public EngineGame::Component
-	{
-	public:
-		PlayerStatsUIComponent(EngineGame::GameObject* gameObject);
+class PlayerStatsUIComponent : public EngineGame::Component
+{
+public:
+    PlayerStatsUIComponent(EngineGame::GameObject* gameObject);
 
-		void Update(float deltaTime) override;
-		void Render() override;
+    void Update(float deltaTime) override;
+    void Render() override;
 
-	private:
-		EngineGame::HealthComponent* health = nullptr;
+private:
+    EngineGame::HealthComponent* health = nullptr;
 
-		sf::Font font;
-		sf::Text text;
-	};
-}
+    sf::Font font;
+    sf::Text text;
+};
+} // namespace RogaliqueGame

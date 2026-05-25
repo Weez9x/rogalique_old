@@ -5,19 +5,19 @@
 
 namespace EngineGame
 {
-	class AudioComponent : public Component
-	{
-	public:
-		AudioComponent(GameObject* gameObject);
+class AudioComponent : public Component
+{
+public:
+    AudioComponent(GameObject* gameObject);
 
-		void Update(float deltaTime) override;
-		void Render() override;
+    void Update(float deltaTime) override;
+    void Render() override;
 
-		void SetMusic(sf::Music* newMusic);
-		void PlayMusic(bool loop = false);
-		void StopMusic();
+    void SetMusic(sf::Music* newMusic);
+    void PlayMusic(bool loop = false);
+    void StopMusic();
 
-	private:
-		sf::Music* music = nullptr;
-	};
-}
+private:
+    sf::Music* music = nullptr;
+};
+} // namespace EngineGame

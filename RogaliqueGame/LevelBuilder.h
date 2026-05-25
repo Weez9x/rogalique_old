@@ -6,13 +6,13 @@
 
 namespace RogaliqueGame
 {
-	class LevelBuilder
-	{
-	public:
-		void BuildLevel();
+class LevelBuilder
+{
+public:
+    void BuildLevel();
 
-	private:
-		std::vector<std::unique_ptr<FloorTile>> floorTiles;
-		std::vector<std::unique_ptr<Wall>> walls;
-	};
-}
+private:
+    std::vector<std::unique_ptr<FloorTile>> floorTiles;
+    std::vector<std::unique_ptr<Wall>> walls;
+};
+} // namespace RogaliqueGame

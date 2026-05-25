@@ -9,14 +9,14 @@
 
 namespace RogaliqueGame
 {
-	class Application
-	{
-	public:
-		void run();
+class Application
+{
+public:
+    void run();
 
-	private:
-		void CreateScene();
+private:
+    void CreateScene();
 
-		std::unique_ptr<GameScene> scene;
-	};
-}
+    std::unique_ptr<GameScene> scene;
+};
+} // namespace RogaliqueGame

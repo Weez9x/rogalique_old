@@ -8,10 +8,8 @@
 #include <iostream>
 #include <iterator>
 
-
-const sf::Uint8 audioData   = 1;
+const sf::Uint8 audioData = 1;
 const sf::Uint8 endOfStream = 2;
-
 
 ////////////////////////////////////////////////////////////
 /// Customized sound stream for acquiring audio data
@@ -20,14 +18,11 @@ const sf::Uint8 endOfStream = 2;
 class NetworkAudioStream : public sf::SoundStream
 {
 public:
-
     ////////////////////////////////////////////////////////////
     /// Default constructor
     ///
     ////////////////////////////////////////////////////////////
-    NetworkAudioStream() :
-    m_offset     (0),
-    m_hasFinished(false)
+    NetworkAudioStream() : m_offset(0), m_hasFinished(false)
     {
         // Set the sound parameters
         initialize(1, 44100);
@@ -65,7 +60,6 @@ public:
     }
 
 private:
-
     ////////////////////////////////////////////////////////////
     /// /see SoundStream::OnGetData
     ///
@@ -88,7 +82,7 @@ private:
         }
 
         // Fill audio data to pass to the stream
-        data.samples     = &m_tempBuffer[0];
+        data.samples = &m_tempBuffer[0];
         data.sampleCount = m_tempBuffer.size();
 
         // Update the playing offset
@@ -126,8 +120,9 @@ private:
             if (id == audioData)
             {
                 // Extract audio samples from the packet, and append it to our samples buffer
-                const sf::Int16* samples     = reinterpret_cast<const sf::Int16*>(static_cast<const char*>(packet.getData()) + 1);
-                std::size_t      sampleCount = (packet.getDataSize() - 1) / sizeof(sf::Int16);
+                const sf::Int16* samples =
+                    reinterpret_cast<const sf::Int16*>(static_cast<const char*>(packet.getData()) + 1);
+                std::size_t sampleCount = (packet.getDataSize() - 1) / sizeof(sf::Int16);
 
                 // Don't forget that the other thread can access the sample array at any time
                 // (so we protect any operation on it with the mutex)
@@ -154,15 +149,14 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    sf::TcpListener        m_listener;
-    sf::TcpSocket          m_client;
-    sf::Mutex              m_mutex;
+    sf::TcpListener m_listener;
+    sf::TcpSocket m_client;
+    sf::Mutex m_mutex;
     std::vector<sf::Int16> m_samples;
     std::vector<sf::Int16> m_tempBuffer;
-    std::size_t            m_offset;
-    bool                   m_hasFinished;
+    std::size_t m_offset;
+    bool m_hasFinished;
 };
-
 
 ////////////////////////////////////////////////////////////
 /// Launch a server and wait for incoming audio data from

@@ -8,36 +8,36 @@
 
 namespace RogaliqueGame
 {
-	class EnemyFollowComponent : public EngineGame::Component
-	{
-	public:
-		EnemyFollowComponent(EngineGame::GameObject* gameObject);
+class EnemyFollowComponent : public EngineGame::Component
+{
+public:
+    EnemyFollowComponent(EngineGame::GameObject* gameObject);
 
-		void Update(float deltaTime) override;
-		void Render() override;
+    void Update(float deltaTime) override;
+    void Render() override;
 
-		void SetTarget(EngineGame::GameObject* newTarget);
+    void SetTarget(EngineGame::GameObject* newTarget);
 
-	private:
-		EngineGame::RigidbodyComponent* rigidbody = nullptr;
-		EngineGame::TransformComponent* transform = nullptr;
-		EngineGame::GameObject* targetObject = nullptr;
+private:
+    EngineGame::RigidbodyComponent* rigidbody = nullptr;
+    EngineGame::TransformComponent* transform = nullptr;
+    EngineGame::GameObject* targetObject = nullptr;
 
-		float moveSpeed = 1.5f;
-		float detectionRadius = 250.0f;
-		float attackCooldown = 1.0f;
-		float currentCooldown = 0.0f;
-		float attackRange = 95.0f;
+    float moveSpeed = 1.5f;
+    float detectionRadius = 250.0f;
+    float attackCooldown = 1.0f;
+    float currentCooldown = 0.0f;
+    float attackRange = 95.0f;
 
-		EngineGame::AnimationComponent* animation = nullptr;
-		EngineGame::HealthComponent* health = nullptr;
-		EngineGame::SpriteRendererComponent* spriteRenderer = nullptr;
+    EngineGame::AnimationComponent* animation = nullptr;
+    EngineGame::HealthComponent* health = nullptr;
+    EngineGame::SpriteRendererComponent* spriteRenderer = nullptr;
 
-		bool isAttackActive = false;
-		bool damageApplied = false;
+    bool isAttackActive = false;
+    bool damageApplied = false;
 
-		float attackDuration = 0.45f;
-		float attackTimer = 0.0f;
-		float damageMoment = 0.22f;
-	};
-}
+    float attackDuration = 0.45f;
+    float attackTimer = 0.0f;
+    float damageMoment = 0.22f;
+};
+} // namespace RogaliqueGame

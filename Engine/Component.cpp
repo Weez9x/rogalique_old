@@ -4,13 +4,13 @@
 
 namespace EngineGame
 {
-	Component::Component(GameObject* gameObject) : gameObject(gameObject) {}
-	Component::~Component()
-	{
-		std::cout << "Deleted component: " << this << std::endl;
-	}
-	GameObject* Component::GetGameObject()
-	{
-		return gameObject;
-	}
+Component::Component(GameObject* gameObject) : gameObject(gameObject) {}
+Component::~Component()
+{
+    std::cout << "Deleted component: " << this << std::endl;
 }
+GameObject* Component::GetGameObject()
+{
+    return gameObject;
+}
+} // namespace EngineGame

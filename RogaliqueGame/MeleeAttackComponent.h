@@ -4,24 +4,23 @@
 
 namespace EngineGame
 {
-	class HealthComponent;
+class HealthComponent;
 }
 
 namespace RogaliqueGame
 {
-	class MeleeAttackComponent : public EngineGame::Component
-	{
-	public:
-		MeleeAttackComponent(EngineGame::GameObject* gameObject);
+class MeleeAttackComponent : public EngineGame::Component
+{
+public:
+    MeleeAttackComponent(EngineGame::GameObject* gameObject);
 
-		void Update(float deltaTime) override;
-		void Render() override;
+    void Update(float deltaTime) override;
+    void Render() override;
 
-		void SetDamage(float newDamage);
-		void Attack(EngineGame::GameObject* target);
+    void SetDamage(float newDamage);
+    void Attack(EngineGame::GameObject* target);
 
-	private:
-		float damage = 10.0f;
-
-	};
-}
+private:
+    float damage = 10.0f;
+};
+} // namespace RogaliqueGame

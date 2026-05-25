@@ -2,7 +2,7 @@
 
 int main()
 {
-	RogaliqueGame::Application app;
-	app.run();
-	return 0;
+    RogaliqueGame::Application app;
+    app.run();
+    return 0;
 }
