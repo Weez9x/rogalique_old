@@ -1,9 +1,10 @@
-#include "PlayerStatsUIComponent.h"
+﻿#include "PlayerStatsUIComponent.h"
 
 #include "GameObject.h"
 #include "RenderSystem.h"
 #include "Logger.h"
 #include "GameSettings.h"
+#include "GameProgress.h"
 
 #include <sstream>
 
@@ -12,6 +13,7 @@ namespace RogaliqueGame
 PlayerStatsUIComponent::PlayerStatsUIComponent(EngineGame::GameObject* gameObject) : Component(gameObject)
 {
     health = gameObject->GetComponent<EngineGame::HealthComponent>();
+    lives = gameObject->GetComponent<PlayerLivesComponent>();
 
     if (health == nullptr)
     {
@@ -24,9 +26,9 @@ PlayerStatsUIComponent::PlayerStatsUIComponent(EngineGame::GameObject* gameObjec
     }
 
     text.setFont(font);
-    text.setCharacterSize(22);
+    text.setCharacterSize(PLAYER_UI_FONT_SIZE);
     text.setFillColor(sf::Color::Red);
-    text.setPosition(20.f, 20.f);
+    text.setPosition(PLAYER_UI_X, PLAYER_UI_Y);
 }
 
 void PlayerStatsUIComponent::Update(float deltaTime)
@@ -37,12 +39,35 @@ void PlayerStatsUIComponent::Update(float deltaTime)
     }
 
     std::ostringstream stream;
-    stream << "HP: " << health->GetHealth() << " | Armor: " << health->GetArmor();
+
+    stream << "Lives: ";
+
+    if (lives != nullptr)
+    {
+        stream << lives->GetLives();
+    }
+    else
+    {
+        stream << "N/A";
+    }
+
+    stream << "\nHP: " << health->GetHealth() << "\nArmor: " << health->GetArmor();
+    stream << "\nLevel: " << GameProgress::CurrentLevel;
+    stream << "\nKills: " << GameProgress::CurrentKills << "/" << GameProgress::RequiredKills;
+
     text.setString(stream.str());
 }
 
 void PlayerStatsUIComponent::Render()
 {
-    EngineGame::RenderSystem::Instance()->Render(text);
+    auto& window = EngineGame::RenderSystem::Instance()->GetMainWindow();
+
+    sf::View currentView = window.getView();
+
+    window.setView(window.getDefaultView());
+
+    window.draw(text);
+
+    window.setView(currentView);
 }
 } // namespace RogaliqueGame

@@ -2,11 +2,20 @@
 
 #include "GameObject.h"
 #include "Logger.h"
+#include "PlayerLivesComponent.h"
+#include "GameProgress.h"
 
 #include <cassert>
+#include <string>
 
 namespace RogaliqueGame
 {
+bool RespawnComponent::IsEnemyObject() const
+{
+    const std::string name = gameObject->GetName();
+
+    return name == "Slime" || name == "Orc";
+}
 RespawnComponent::RespawnComponent(EngineGame::GameObject* gameObject) : Component(gameObject)
 {
     transform = gameObject->GetComponent<EngineGame::TransformComponent>();
@@ -14,6 +23,7 @@ RespawnComponent::RespawnComponent(EngineGame::GameObject* gameObject) : Compone
     health = gameObject->GetComponent<EngineGame::HealthComponent>();
     animation = gameObject->GetComponent<EngineGame::AnimationComponent>();
     spriteRenderer = gameObject->GetComponent<EngineGame::SpriteRendererComponent>();
+    collider = gameObject->GetComponent<EngineGame::ColliderComponent>();
 
     if (transform == nullptr)
     {
@@ -48,6 +58,23 @@ void RespawnComponent::Update(float deltaTime)
 
     if (health->IsDead() && !isWaitingRespawn)
     {
+        if (!killCounted && IsEnemyObject())
+        {
+            GameProgress::CurrentKills++;
+
+            EngineGame::Logger::Instance()->Info("Enemy killed. Kills: " + std::to_string(GameProgress::CurrentKills) + "/" + std::to_string(GameProgress::RequiredKills));
+
+            killCounted = true;
+        }
+
+        auto lives = gameObject->GetComponent<PlayerLivesComponent>();
+
+        if (lives != nullptr && !lives->HasLives())
+        {
+            EngineGame::Logger::Instance()->Error(gameObject->GetName() + " cannot respawn. Game over.");
+            return;
+        }
+
         StartRespawnWaiting();
         return;
     }
@@ -85,6 +112,21 @@ void RespawnComponent::SetMaxHealth(float value)
 
 void RespawnComponent::StartRespawnWaiting()
 {
+    if (collider == nullptr)
+    {
+        collider = gameObject->GetComponent<EngineGame::ColliderComponent>();
+    }
+
+    if (collider != nullptr)
+    {
+        collider->SetEnabled(false);
+        EngineGame::Logger::Instance()->Info(gameObject->GetName() + " collider disabled.");
+    }
+    else
+    {
+        EngineGame::Logger::Instance()->Warning(gameObject->GetName() + " has no collider in RespawnComponent.");
+    }
+
     isWaitingRespawn = true;
     respawnTimer = 0.0f;
 
@@ -103,11 +145,28 @@ void RespawnComponent::StartRespawnWaiting()
 
 void RespawnComponent::Respawn()
 {
+    if (collider == nullptr)
+    {
+        collider = gameObject->GetComponent<EngineGame::ColliderComponent>();
+    }
+
+    if (collider != nullptr)
+    {
+        collider->SetEnabled(true);
+        EngineGame::Logger::Instance()->Info(gameObject->GetName() + " collider enabled.");
+    }
+
     isWaitingRespawn = false;
+
+    if (respawnPositionProvider)
+    {
+        spawnPosition = respawnPositionProvider();
+    }
 
     transform->SetWorldPosition(spawnPosition);
     health->SetHealth(maxHealth);
     health->SetInvulnerable(true);
+    killCounted = false;
 
     isInvulnerable = true;
     invulnerabilityTimer = 0.0f;
@@ -147,5 +206,9 @@ void RespawnComponent::UpdateInvulnerability(float deltaTime)
             spriteRenderer->SetVisible(true);
         }
     }
+}
+void RespawnComponent::SetRespawnPositionProvider(std::function<EngineGame::Vector2Df()> provider)
+{
+    respawnPositionProvider = provider;
 }
 } // namespace RogaliqueGame

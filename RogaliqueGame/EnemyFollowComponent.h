@@ -5,6 +5,7 @@
 #include "AnimationComponent.h"
 #include "HealthComponent.h"
 #include "SpriteRendererComponent.h"
+#include "GameSettings.h"
 
 namespace RogaliqueGame
 {
@@ -23,11 +24,11 @@ private:
     EngineGame::TransformComponent* transform = nullptr;
     EngineGame::GameObject* targetObject = nullptr;
 
-    float moveSpeed = 1.5f;
-    float detectionRadius = 250.0f;
-    float attackCooldown = 1.0f;
+    float moveSpeed = ENEMY_MOVE_SPEED;
+    float detectionRadius = ENEMY_DETECTION_RADIUS;
+    float attackCooldown = ENEMY_ATTACK_COOLDOWN;
     float currentCooldown = 0.0f;
-    float attackRange = 95.0f;
+    float attackRange = ENEMY_ATTACK_RANGE;
 
     EngineGame::AnimationComponent* animation = nullptr;
     EngineGame::HealthComponent* health = nullptr;
@@ -36,8 +37,8 @@ private:
     bool isAttackActive = false;
     bool damageApplied = false;
 
-    float attackDuration = 0.45f;
+    float attackDuration = ENEMY_ATTACK_DURATION;
     float attackTimer = 0.0f;
-    float damageMoment = 0.22f;
+    float damageMoment = ENEMY_DAMAGE_MOMENT;
 };
 } // namespace RogaliqueGame

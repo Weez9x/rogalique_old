@@ -160,36 +160,59 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Charactet.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyFollowComponent.cpp" />
+    <ClCompile Include="EnemySpawner.cpp" />
+    <ClCompile Include="ExitPortal.cpp" />
+    <ClCompile Include="ExitPortalComponent.cpp" />
     <ClCompile Include="FloorTile.cpp" />
+    <ClCompile Include="GameProgress.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameMain.cpp" />
+    <ClCompile Include="GameStateManager.cpp" />
+    <ClCompile Include="GameStateUIComponent.cpp" />
     <ClCompile Include="HealthBarComponent.cpp" />
     <ClCompile Include="LevelBuilder.cpp" />
+    <ClCompile Include="MazeGenerator.cpp" />
     <ClCompile Include="MeleeAttackComponent.cpp" />
+    <ClCompile Include="Orc.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerAttackComponent.cpp" />
+    <ClCompile Include="PlayerLivesComponent.cpp" />
     <ClCompile Include="PlayerMovementComponent.cpp" />
     <ClCompile Include="PlayerStatsUIComponent.cpp" />
     <ClCompile Include="RespawnComponent.cpp" />
+    <ClCompile Include="Slime.cpp" />
     <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="Character.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyFollowComponent.h" />
+    <ClInclude Include="EnemySpawner.h" />
+    <ClInclude Include="ExitPortal.h" />
+    <ClInclude Include="ExitPortalComponent.h" />
     <ClInclude Include="FloorTile.h" />
+    <ClInclude Include="GameProgress.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameSettings.h" />
+    <ClInclude Include="GameState.h" />
+    <ClInclude Include="GameStateManager.h" />
+    <ClInclude Include="GameStateUIComponent.h" />
     <ClInclude Include="HealthBarComponent.h" />
     <ClInclude Include="LevelBuilder.h" />
+    <ClInclude Include="MazeGenerator.h" />
     <ClInclude Include="MeleeAttackComponent.h" />
+    <ClInclude Include="Orc.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerAttackComponent.h" />
+    <ClInclude Include="PlayerLivesComponent.h" />
     <ClInclude Include="PlayerMovementComponent.h" />
     <ClInclude Include="PlayerStatsUIComponent.h" />
     <ClInclude Include="RespawnComponent.h" />
+    <ClInclude Include="Slime.h" />
     <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>

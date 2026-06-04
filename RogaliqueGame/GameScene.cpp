@@ -1,15 +1,24 @@
 #include "GameScene.h"
-#include "GameSettings.h"
-#include "ResourceSystem.h"
-#include "Logger.h"
-#include <stdexcept>
+
 #include "AudioComponent.h"
+#include "GameProgress.h"
+#include "GameSettings.h"
+#include "GameStateManager.h"
+#include "GameStateUIComponent.h"
 #include "GameWorld.h"
+#include "Logger.h"
+#include "ResourceSystem.h"
+
+#include <stdexcept>
 
 namespace RogaliqueGame
 {
+GameScene* GameScene::currentScene = nullptr;
+
 void GameScene::Start()
 {
+    currentScene = this;
+
     try
     {
         EngineGame::Logger::Instance()->Info("GameScene Start");
@@ -21,23 +30,58 @@ void GameScene::Start()
         resources->LoadTextureMap("walls", TEXTURES_PATH + "Wall.png", {16, 16}, 48, false);
         resources->LoadTextureMap("player", TEXTURES_PATH + "Human_Soldier_Sword_Shield-Sheet.png", {96, 96}, 80,
                                   false);
-        resources->LoadTextureMap("enemy", TEXTURES_PATH + "Monster_Slime-Sheet.png", {96, 96}, 80, false);
+        resources->LoadTextureMap("slime", TEXTURES_PATH + "Monster_Slime-Sheet.png", {96, 96}, 80, false);
+        resources->LoadTextureMap("orc", TEXTURES_PATH + "Orc.png", {100, 100}, 48, false);
         resources->LoadMusic("main_theme", MUSIC_PATH + "Music_test_1.ogg");
 
         EngineGame::Logger::Instance()->Info("Resources loaded");
 
         levelBuilder = std::make_unique<LevelBuilder>();
         levelBuilder->BuildLevel();
+
         EngineGame::Logger::Instance()->Info("Level built");
 
+        EngineGame::Vector2Df exitPosition =
+            levelBuilder->GetRandomFloorPositionFarFrom({PLAYER_START_X, PLAYER_START_Y}, 1000.f);
+
+        exitPortal = std::make_unique<ExitPortal>(exitPosition);
+
+        EngineGame::Logger::Instance()->Info("Exit created");
+
         player = std::make_unique<Player>();
+
         EngineGame::Logger::Instance()->Info("Player created");
 
-        enemy = std::make_unique<Enemy>(player->GetGameObject());
-        EngineGame::Logger::Instance()->Info("Enemy created");
+        enemySpawner = std::make_unique<EnemySpawner>(player->GetGameObject());
+        enemySpawner->SetLevelBuilder(levelBuilder.get());
 
-        player->SetAttackTarget(enemy->GetGameObject());
-        EngineGame::Logger::Instance()->Info("Player attack target set");
+        EngineGame::Logger::Instance()->Info("EnemySpawner created");
+
+        int slimeCount = START_SLIME_COUNT + GameProgress::CurrentLevel;
+        int orcCount = START_ORC_COUNT + GameProgress::CurrentLevel / 2;
+
+        for (int i = 0; i < slimeCount; ++i)
+        {
+            enemySpawner->Spawn(EnemyType::Slime,
+                                levelBuilder->GetRandomFloorPositionFarFrom({PLAYER_START_X, PLAYER_START_Y},
+                                                                            ENEMY_SPAWN_DISTANCE_FROM_PLAYER));
+        }
+
+        for (int i = 0; i < orcCount; ++i)
+        {
+            enemySpawner->Spawn(EnemyType::Orc,
+                                levelBuilder->GetRandomFloorPositionFarFrom({PLAYER_START_X, PLAYER_START_Y},
+                                                                            ENEMY_SPAWN_DISTANCE_FROM_PLAYER));
+        }
+
+        player->SetEnemySpawner(enemySpawner.get());
+
+        EngineGame::Logger::Instance()->Info("Enemies spawned");
+        EngineGame::Logger::Instance()->Info("Player enemy spawner set");
+
+        auto gameStateUIObject = EngineGame::GameWorld::Instance()->CreateGameObject("GameStateUI");
+
+        gameStateUIObject->AddComponent<GameStateUIComponent>();
 
         EngineGame::GameObject* musicObject = EngineGame::GameWorld::Instance()->CreateGameObject("MusicPlayer");
 
@@ -53,7 +97,48 @@ void GameScene::Start()
     }
 }
 
-void GameScene::Restart() {}
+void GameScene::RestartLevel()
+{
+    if (currentScene == nullptr)
+    {
+        return;
+    }
+
+    EngineGame::Logger::Instance()->Info("Restarting level...");
+
+    EngineGame::GameWorld::Instance()->Clear();
+
+    GameProgress::CurrentKills = 0;
+    GameProgress::CurrentLevel = 1;
+    GameProgress::RequiredKills = 3;
+
+    GameStateManager::SetState(GameState::Playing);
+
+    currentScene->Start();
+}
+
+void GameScene::NextLevel()
+{
+    if (currentScene == nullptr)
+    {
+        return;
+    }
+
+    EngineGame::Logger::Instance()->Info("Loading next level...");
+
+    EngineGame::GameWorld::Instance()->Clear();
+
+    GameProgress::NextLevel();
+
+    GameStateManager::SetState(GameState::Playing);
+
+    currentScene->Start();
+}
+
+void GameScene::Restart()
+{
+    RestartLevel();
+}
 
 void GameScene::Stop() {}
 } // namespace RogaliqueGame

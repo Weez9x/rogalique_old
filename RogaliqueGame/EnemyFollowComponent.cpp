@@ -69,7 +69,7 @@ void EnemyFollowComponent::Update(float deltaTime)
     {
         attackTimer += deltaTime;
 
-        if (!damageApplied && attackTimer >= damageMoment)
+       if (!damageApplied && attackTimer >= damageMoment)
         {
             auto targetHealth = targetObject->GetComponent<EngineGame::HealthComponent>();
 

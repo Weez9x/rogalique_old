@@ -3,7 +3,7 @@
 #include "TransformComponent.h"
 #include "SpriteRendererComponent.h"
 #include "RigidbodyComponent.h"
-#include "SpriteColliderComponent.h"
+#include "BoxColliderComponent.h"
 #include "ResourceSystem.h"
 
 namespace RogaliqueGame
@@ -18,11 +18,14 @@ Wall::Wall(const EngineGame::Vector2Df& position, int width, int height, int til
     auto spriteRenderer = gameObject->AddComponent<EngineGame::SpriteRendererComponent>();
     spriteRenderer->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureMapElementShared("walls", tileIndex));
     spriteRenderer->SetPixelSize(width, height);
+    spriteRenderer->FlipY(true);
 
     auto rigidbody = gameObject->AddComponent<EngineGame::RigidbodyComponent>();
     rigidbody->SetKinematic(true);
 
-    gameObject->AddComponent<EngineGame::SpriteColliderComponent>();
+    auto collider = gameObject->AddComponent<EngineGame::BoxColliderComponent>();
+    collider->SetSize(static_cast<float>(width), static_cast<float>(height));
+    collider->SetOffset(0.f, 0.f);
 }
 
 EngineGame::GameObject* Wall::GetGameObject() const

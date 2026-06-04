@@ -15,6 +15,10 @@
 #include "AnimationComponent.h"
 #include "PlayerStatsUIComponent.h"
 #include "RespawnComponent.h"
+#include "CameraComponent.h"
+#include "RenderSystem.h"
+#include "GameSettings.h"
+#include "PlayerLivesComponent.h"
 
 namespace RogaliqueGame
 {
@@ -23,11 +27,12 @@ Player::Player()
     gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Player");
 
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
-    transform->SetWorldPosition(400.f, 300.f);
+    transform->SetWorldPosition(PLAYER_START_X, PLAYER_START_Y);
+
 
     auto spriteRenderer = gameObject->AddComponent<EngineGame::SpriteRendererComponent>();
     spriteRenderer->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureMapElementShared("player", 0));
-    spriteRenderer->SetPixelSize(576.f, 576.f);
+    spriteRenderer->SetPixelSize(CHARACTER_SPRITE_SIZE, CHARACTER_SPRITE_SIZE);
     spriteRenderer->FlipY(true);
 
     auto animation = gameObject->AddComponent<EngineGame::AnimationComponent>();
@@ -45,16 +50,17 @@ Player::Player()
     rigidbody->SetLinearDamping(6.0f);
 
     auto health = gameObject->AddComponent<EngineGame::HealthComponent>();
-    health->SetHealth(100.0f);
-    health->SetArmor(5.0f);
+    gameObject->AddComponent<PlayerLivesComponent>();
+    health->SetHealth(PLAYER_MAX_HEALTH);
+    health->SetArmor(PLAYER_ARMOR);
     gameObject->AddComponent<PlayerStatsUIComponent>();
     EngineGame::Logger::Instance()->Info("Player health initialized");
     auto respawn = gameObject->AddComponent<RespawnComponent>();
-    respawn->SetSpawnPosition({400.f, 300.f});
-    respawn->SetMaxHealth(100.0f);
+    respawn->SetSpawnPosition({PLAYER_START_X, PLAYER_START_Y});
+    respawn->SetMaxHealth(PLAYER_MAX_HEALTH);
 
     auto attack = gameObject->AddComponent<MeleeAttackComponent>();
-    attack->SetDamage(20.0f);
+    attack->SetDamage(PLAYER_DAMAGE);
 
     gameObject->AddComponent<PlayerAttackComponent>();
 
@@ -63,13 +69,14 @@ Player::Player()
     collider->SetOffset(0.f, 0.f);
 
     gameObject->AddComponent<PlayerMovementComponent>();
+
+    auto camera = gameObject->AddComponent<EngineGame::CameraComponent>();
+    camera->SetWindow(&EngineGame::RenderSystem::Instance()->GetMainWindow());
+    camera->SetBaseResolution(SCREEN_WIDTH, SCREEN_HEIGHT);
+    camera->ZoomBy(1.0f);
 }
 
-EngineGame::GameObject* Player::GetGameObject() const
-{
-    return gameObject;
-}
-void Player::SetAttackTarget(EngineGame::GameObject* target)
+void Player::SetEnemySpawner(EnemySpawner* spawner)
 {
     auto attackComponent = gameObject->GetComponent<PlayerAttackComponent>();
 
@@ -79,6 +86,6 @@ void Player::SetAttackTarget(EngineGame::GameObject* target)
         return;
     }
 
-    attackComponent->SetTarget(target);
+    attackComponent->SetEnemySpawner(spawner);
 }
 } // namespace RogaliqueGame

@@ -37,6 +37,10 @@ void BoxColliderComponent::Update(float deltaTime)
 
 void BoxColliderComponent::Render()
 {
+    if (!IsDebugVisible())
+    {
+        return;
+    }
     sf::RectangleShape rectangle(sf::Vector2f(bounds.width, bounds.height));
     rectangle.setPosition(bounds.left, bounds.top);
     rectangle.setFillColor(sf::Color::Transparent);
@@ -54,5 +58,9 @@ void BoxColliderComponent::SetSize(float width, float height)
 void BoxColliderComponent::SetOffset(float x, float y)
 {
     offset = {x, y};
+}
+bool BoxColliderComponent::IsDebugVisible() const
+{
+    return isDebugVisible;
 }
 } // namespace EngineGame

@@ -1,9 +1,13 @@
 #pragma once
+
 #include <memory>
-#include "Scene.h"
-#include "Player.h"
-#include "Enemy.h"
+
+#include "EnemySpawner.h"
+#include "ExitPortal.h"
+#include "GameState.h"
 #include "LevelBuilder.h"
+#include "Player.h"
+#include "Scene.h"
 
 namespace RogaliqueGame
 {
@@ -14,9 +18,15 @@ public:
     void Restart() override;
     void Stop() override;
 
+    static void RestartLevel();
+    static void NextLevel();
+
 private:
     std::unique_ptr<LevelBuilder> levelBuilder;
     std::unique_ptr<Player> player;
-    std::unique_ptr<Enemy> enemy;
+    std::unique_ptr<EnemySpawner> enemySpawner;
+    std::unique_ptr<ExitPortal> exitPortal;
+
+    static GameScene* currentScene;
 };
 } // namespace RogaliqueGame

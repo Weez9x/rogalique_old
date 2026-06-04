@@ -81,4 +81,8 @@ bool SpriteRendererComponent::IsVisible() const
 {
     return isVisible;
 }
+bool SpriteRendererComponent::IsFlippedX() const
+{
+    return isFlippedX;
+}
 } // namespace EngineGame

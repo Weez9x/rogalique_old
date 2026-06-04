@@ -1,10 +1,11 @@
-#include "AnimationComponent.h"
 #include "PlayerAttackComponent.h"
+
+#include "AnimationComponent.h"
 #include "GameObject.h"
 #include "Logger.h"
-#include "HealthComponent.h"
+#include "GameStateManager.h"
+
 #include <SFML/Window/Keyboard.hpp>
-#include <cmath>
 #include <cassert>
 
 namespace RogaliqueGame
@@ -28,54 +29,44 @@ PlayerAttackComponent::PlayerAttackComponent(EngineGame::GameObject* gameObject)
     assert(meleeAttack != nullptr && "PlayerAttackComponent requires MeleeAttackComponent");
 }
 
-void PlayerAttackComponent::SetTarget(EngineGame::GameObject* newTarget)
+void PlayerAttackComponent::SetEnemySpawner(EnemySpawner* spawner)
 {
-    target = newTarget;
+    enemySpawner = spawner;
 
-    if (target == nullptr)
+    if (enemySpawner == nullptr)
     {
-        EngineGame::Logger::Instance()->Warning("PlayerAttackComponent target is null");
+        EngineGame::Logger::Instance()->Warning("PlayerAttackComponent enemySpawner is null");
     }
 }
 
 void PlayerAttackComponent::TryDealDamage()
 {
+    if (enemySpawner == nullptr)
+    {
+        EngineGame::Logger::Instance()->Info("Player attack missed: no enemy spawner");
+        return;
+    }
+
+    EngineGame::GameObject* target = enemySpawner->FindClosestEnemy(transform->GetWorldPosition(), attackRange);
+
     if (target == nullptr)
     {
+        EngineGame::Logger::Instance()->Info("Player attack missed: no enemy in range");
         return;
     }
 
-    auto targetTransform = target->GetComponent<EngineGame::TransformComponent>();
-    if (targetTransform == nullptr)
-    {
-        EngineGame::Logger::Instance()->Warning("PlayerAttackComponent target has no TransformComponent");
-        return;
-    }
-
-    auto targetHealth = target->GetComponent<EngineGame::HealthComponent>();
-    if (targetHealth != nullptr && targetHealth->IsDead())
-    {
-        return;
-    }
-
-    EngineGame::Vector2Df direction = {targetTransform->GetWorldPosition().x - transform->GetWorldPosition().x,
-                                       targetTransform->GetWorldPosition().y - transform->GetWorldPosition().y};
-
-    float distance = std::sqrt(direction.x * direction.x + direction.y * direction.y);
-
-    if (distance > attackRange)
-    {
-        EngineGame::Logger::Instance()->Info("Player attack missed: target out of range");
-        return;
-    }
     meleeAttack->Attack(target);
 
-    EngineGame::Logger::Instance()->Info("Player attack hit target");
+    EngineGame::Logger::Instance()->Info("Player attack hit closest enemy");
 }
 
 void PlayerAttackComponent::Update(float deltaTime)
 {
-    if (transform == nullptr || meleeAttack == nullptr || target == nullptr)
+    if (GameStateManager::GetState() != GameState::Playing)
+    {
+        return;
+    }
+    if (transform == nullptr || meleeAttack == nullptr)
     {
         return;
     }
@@ -119,8 +110,6 @@ void PlayerAttackComponent::Update(float deltaTime)
 
         EngineGame::Logger::Instance()->Info("Player attack started");
     }
-
-    return;
 }
 
 void PlayerAttackComponent::Render() {}

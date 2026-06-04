@@ -1,15 +1,13 @@
 #pragma once
-#include "GameObject.h"
+
+#include "Character.h"
 
 namespace RogaliqueGame
 {
-class Enemy
+class Enemy : public Character
 {
 public:
-    Enemy(EngineGame::GameObject* playerObject);
-    EngineGame::GameObject* GetGameObject() const;
-
-private:
-    EngineGame::GameObject* gameObject = nullptr;
+    Enemy() = default;
+    virtual ~Enemy() = default;
 };
 } // namespace RogaliqueGame

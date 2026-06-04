@@ -18,10 +18,11 @@ public:
 
     void SetSize(float width, float height);
     void SetOffset(float x, float y);
+    bool IsDebugVisible() const;
 
 private:
     TransformComponent* transform = nullptr;
-
+    bool isDebugVisible = false;
     Vector2Df size = {32.f, 48.f};
     Vector2Df offset = {0.f, 0.f};
 };

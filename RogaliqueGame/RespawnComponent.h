@@ -7,6 +7,9 @@
 #include "AnimationComponent.h"
 #include "SpriteRendererComponent.h"
 #include "Vector.h"
+#include "ColliderComponent.h"
+#include "GameSettings.h"
+#include <functional>
 
 namespace RogaliqueGame
 {
@@ -20,11 +23,13 @@ public:
 
     void SetSpawnPosition(const EngineGame::Vector2Df& position);
     void SetMaxHealth(float value);
+    void SetRespawnPositionProvider(std::function<EngineGame::Vector2Df()> provider);
 
 private:
     void StartRespawnWaiting();
     void Respawn();
     void UpdateInvulnerability(float deltaTime);
+   
 
 private:
     EngineGame::TransformComponent* transform = nullptr;
@@ -32,20 +37,27 @@ private:
     EngineGame::HealthComponent* health = nullptr;
     EngineGame::AnimationComponent* animation = nullptr;
     EngineGame::SpriteRendererComponent* spriteRenderer = nullptr;
+    EngineGame::ColliderComponent* collider = nullptr;
 
     EngineGame::Vector2Df spawnPosition = {0.f, 0.f};
 
-    float maxHealth = 100.0f;
+    std::function<EngineGame::Vector2Df()> respawnPositionProvider;
 
-    float respawnDelay = 1.0f;
+    float maxHealth = PLAYER_MAX_HEALTH;
+
+    float respawnDelay = RESPAWN_DELAY;
     float respawnTimer = 0.0f;
     bool isWaitingRespawn = false;
 
-    float invulnerabilityTime = 5.0f;
+    float invulnerabilityTime = INVULNERABILITY_TIME;
     float invulnerabilityTimer = 0.0f;
     bool isInvulnerable = false;
 
-    float blinkInterval = 0.12f;
+    float blinkInterval = BLINK_INTERVAL;
     float blinkTimer = 0.0f;
+
+    bool killCounted = false;
+    bool IsEnemyObject() const;
+
 };
 } // namespace RogaliqueGame

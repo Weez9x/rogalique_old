@@ -2,54 +2,161 @@
 #include "Vector.h"
 #include "GameSettings.h"
 #include "Logger.h"
+#include "MazeGenerator.h"
+#include <cstdlib>
+#include <cmath>
 
 namespace RogaliqueGame
 {
 void LevelBuilder::BuildLevel()
 {
+    floorPositions.clear();
     EngineGame::Logger::Instance()->Info("LevelBuilder: building level");
+    const int tileSize = TILE_SIZE;
+    const int mazeWidth = MAZE_WIDTH;
+    const int mazeHeight = MAZE_HEIGHT;
+    levelWidth = static_cast<float>(mazeWidth * tileSize);
+    levelHeight = static_cast<float>(mazeHeight * tileSize);
 
-    const int tileSize = 64;
-    const int halfTile = tileSize / 2;
+    MazeGenerator generator(mazeWidth, mazeHeight);
+    auto maze = generator.Generate();
 
-    const int left = halfTile;
-    const int top = halfTile;
-    const int right = SCREEN_WIDTH - halfTile;
-    const int bottom = SCREEN_HEIGHT - halfTile;
-
-    const int cols = (right - left) / tileSize + 1;
-    const int rows = (bottom - top) / tileSize + 1;
-
-    for (int row = 0; row < rows; ++row)
+  for (int row = 0; row < mazeHeight; ++row)
     {
-        for (int col = 0; col < cols; ++col)
+        for (int col = 0; col < mazeWidth; ++col)
         {
-            const int x = left + col * tileSize;
-            const int y = top + row * tileSize;
+            float x = col * tileSize + tileSize / 2.0f;
+            float y = row * tileSize + tileSize / 2.0f;
 
-            floorTiles.push_back(
-                std::make_unique<FloorTile>(EngineGame::Vector2Df((float)x, (float)y), tileSize, tileSize, 0));
+            if (maze[row][col] == MazeCell::Floor)
+            {
+                EngineGame::Vector2Df position(x, y);
+                floorTiles.push_back(std::make_unique<FloorTile>(EngineGame::Vector2Df(x, y), tileSize, tileSize, 0));
+                floorPositions.push_back(position);
+            }
+            else
+            {
+                int tileIndex = GetWallTileIndex(maze, col, row);
+
+                floorTiles.push_back(std::make_unique<FloorTile>(EngineGame::Vector2Df(x, y), tileSize, tileSize, 0));
+
+                walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df(x, y), tileSize, tileSize, tileIndex));
+            }
         }
     }
 
-    for (int col = 0; col < cols; ++col)
-    {
-        const int x = left + col * tileSize;
-
-        walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df((float)x, (float)top), tileSize, tileSize));
-
-        walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df((float)x, (float)bottom), tileSize, tileSize));
-    }
-
-    for (int row = 1; row < rows - 1; ++row)
-    {
-        const int y = top + row * tileSize;
-
-        walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df((float)left, (float)y), tileSize, tileSize));
-
-        walls.push_back(std::make_unique<Wall>(EngineGame::Vector2Df((float)right, (float)y), tileSize, tileSize));
-    }
-
     EngineGame::Logger::Instance()->Info("LevelBuilder: level built");
+
+}
+const std::vector<EngineGame::Vector2Df>& LevelBuilder::GetFloorPositions() const
+{
+    return floorPositions;
+}
+
+EngineGame::Vector2Df LevelBuilder::GetRandomFloorPosition() const
+{
+    if (floorPositions.empty())
+    {
+        EngineGame::Logger::Instance()->Warning("LevelBuilder has no floor positions.");
+        return {0.f, 0.f};
+    }
+
+    int index = std::rand() % floorPositions.size();
+    return floorPositions[index];
+}
+EngineGame::Vector2Df LevelBuilder::GetRandomFloorPositionFarFrom(const EngineGame::Vector2Df& avoidPosition, float minDistance) const
+{
+    if (floorPositions.empty())
+    {
+        EngineGame::Logger::Instance()->Warning("LevelBuilder has no floor positions.");
+        return {0.f, 0.f};
+    }
+
+   for (int attempt = 0; attempt < RANDOM_POSITION_ATTEMPTS; ++attempt)
+    {
+        int index = std::rand() % floorPositions.size();
+        EngineGame::Vector2Df position = floorPositions[index];
+
+        const float borderPadding = SPAWN_BORDER_PADDING;
+
+        if (position.x < borderPadding || position.y < borderPadding || position.x > levelWidth - borderPadding ||
+            position.y > levelHeight - borderPadding)
+        {
+            continue;
+        }
+
+        float dx = position.x - avoidPosition.x;
+        float dy = position.y - avoidPosition.y;
+        float distance = std::sqrt(dx * dx + dy * dy);
+
+        if (distance >= minDistance)
+        {
+            return position;
+        }
+    }
+
+    EngineGame::Logger::Instance()->Warning(
+        "Could not find floor position far enough. Returning random floor position.");
+
+
+
+    return GetRandomFloorPosition();
+}
+bool LevelBuilder::IsWall(const std::vector<std::vector<MazeCell>>& maze, int col, int row) const
+{
+    if (row < 0 || row >= static_cast<int>(maze.size()))
+    {
+        return false;
+    }
+
+    if (col < 0 || col >= static_cast<int>(maze[row].size()))
+    {
+        return false;
+    }
+
+    return maze[row][col] == MazeCell::Wall;
+}
+
+int LevelBuilder::GetWallTileIndex(const std::vector<std::vector<MazeCell>>& maze, int col, int row) const
+{
+    bool up = IsWall(maze, col, row - 1);
+    bool down = IsWall(maze, col, row + 1);
+    bool left = IsWall(maze, col - 1, row);
+    bool right = IsWall(maze, col + 1, row);
+
+    // ”глы
+    if (!up && down && !left && right)
+    {
+        return 1; // левый верхний угол
+    }
+
+    if (!up && down && left && !right)
+    {
+        return 3; // правый верхний угол
+    }
+
+    if (up && !down && !left && right)
+    {
+        return 25; // левый нижний угол
+    }
+
+    if (up && !down && left && !right)
+    {
+        return 27; // правый нижний угол
+    }
+
+    // ¬ертикальна€ стена
+    if (up || down)
+    {
+        return 12;
+    }
+
+    // √оризонтальна€ стена
+    if (left || right)
+    {
+        return 38;
+    }
+
+    return 12;
 }
 } // namespace RogaliqueGame

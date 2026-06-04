@@ -31,9 +31,13 @@ public:
 
     friend class PhysicsSystem;
 
+    void SetEnabled(bool value);
+    bool IsEnabled() const;
+
 protected:
     sf::FloatRect bounds;
     bool isTrigger = false;
+    bool isEnabled = true;
 
     void OnCollision(Collision collision);
     void OnTriggerEnter(Trigger trigger);

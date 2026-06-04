@@ -49,6 +49,16 @@ void ColliderComponent::UnsubscribeTriggerExit(std::function<void(Trigger)> onTr
         onTriggerExitActions.end());
 }
 
+void ColliderComponent::SetEnabled(bool value)
+{
+    isEnabled = value;
+}
+
+bool ColliderComponent::IsEnabled() const
+{
+    return isEnabled;
+}
+
 void ColliderComponent::OnCollision(Collision collision)
 {
     for (int i = 0; i < onCollisionActions.size(); i++)

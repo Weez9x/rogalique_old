@@ -18,7 +18,17 @@ void PhysicsSystem::Update()
 {
     for (int i = 0; i < colliders.size(); i++)
     {
+        if (!colliders[i]->IsEnabled())
+        {
+            continue;
+        }
         auto body = colliders[i]->GetGameObject()->GetComponent<RigidbodyComponent>();
+
+        if (body == nullptr)
+        {
+            continue;
+        }
+
         if (body->GetKinematic())
         {
             continue;
@@ -27,6 +37,11 @@ void PhysicsSystem::Update()
         for (int j = 0; j < colliders.size(); j++)
         {
             if (j == i)
+            {
+                continue;
+            }
+
+            if (!colliders[j]->IsEnabled())
             {
                 continue;
             }
@@ -95,7 +110,7 @@ void PhysicsSystem::Update()
          triggeredPair != triggersEnteredPair.cend(); triggeredPair = nextTriggeredPair)
     {
         ++nextTriggeredPair;
-        if (!triggeredPair->first->bounds.intersects(triggeredPair->second->bounds))
+        if (!triggeredPair->first->IsEnabled() || !triggeredPair->second->IsEnabled() || !triggeredPair->first->bounds.intersects(triggeredPair->second->bounds))
         {
             auto trigger = new Trigger(triggeredPair->first, triggeredPair->second);
             triggeredPair->first->OnTriggerExit(*trigger);

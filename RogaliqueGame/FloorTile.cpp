@@ -16,6 +16,7 @@ FloorTile::FloorTile(const EngineGame::Vector2Df& position, int width, int heigh
     auto spriteRenderer = gameObject->AddComponent<EngineGame::SpriteRendererComponent>();
     spriteRenderer->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureMapElementShared("floor", tileIndex));
     spriteRenderer->SetPixelSize(width, height);
+    spriteRenderer->FlipY(true);
 }
 
 EngineGame::GameObject* FloorTile::GetGameObject() const

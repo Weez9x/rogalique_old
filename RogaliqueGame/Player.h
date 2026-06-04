@@ -1,16 +1,18 @@
 #pragma once
 #include "GameObject.h"
+#include "Character.h"
+#include "EnemySpawner.h"
+#include "GameSettings.h"
 
 namespace RogaliqueGame
 {
-class Player
+class Player : public Character
 {
 public:
     Player();
-    EngineGame::GameObject* GetGameObject() const;
-    void SetAttackTarget(EngineGame::GameObject* target);
+    void SetEnemySpawner(EnemySpawner* spawner);
+    EngineGame::Vector2Df GetPosition() const;
 
 private:
-    EngineGame::GameObject* gameObject = nullptr;
 };
 } // namespace RogaliqueGame

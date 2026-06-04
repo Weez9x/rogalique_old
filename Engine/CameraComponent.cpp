@@ -6,7 +6,7 @@ namespace EngineGame
 {
 CameraComponent::CameraComponent(GameObject* gameObject) : Component(gameObject)
 {
-    view = new sf::View(sf::FloatRect(0, 0, 800, -600));
+    view = new sf::View(sf::FloatRect(0, 0, 800, 600));
     transform = gameObject->GetComponent<TransformComponent>();
 }
 CameraComponent::~CameraComponent()
@@ -34,7 +34,7 @@ void CameraComponent::Render()
 
 void CameraComponent::SetBaseResolution(int width, int height)
 {
-    view->reset(sf::FloatRect(0, 0, width, -height));
+    view->reset(sf::FloatRect(0, 0, width, height));
 }
 void CameraComponent::SetWindow(sf::RenderWindow* newWindow)
 {

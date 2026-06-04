@@ -26,6 +26,8 @@ public:
     void SetVisible(bool visible);
     bool IsVisible() const;
 
+    bool IsFlippedX() const;
+
 private:
     Vector2Df scale;
     sf::Sprite* sprite;
@@ -35,5 +37,7 @@ private:
     bool isFlipY = false;
 
     bool isVisible = true;
+
+    bool isFlippedX = false;
 };
 } // namespace EngineGame

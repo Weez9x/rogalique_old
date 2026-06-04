@@ -2,6 +2,7 @@
 
 #include "Component.h"
 #include "HealthComponent.h"
+#include "PlayerLivesComponent.h"
 #include <SFML/Graphics.hpp>
 
 namespace RogaliqueGame
@@ -16,6 +17,7 @@ public:
 
 private:
     EngineGame::HealthComponent* health = nullptr;
+    PlayerLivesComponent* lives = nullptr;
 
     sf::Font font;
     sf::Text text;
