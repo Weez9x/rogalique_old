@@ -18,6 +18,7 @@ public:
     void Restart() override;
     void Stop() override;
 
+    // Called from UI after the frame finishes, because rebuilding clears GameWorld.
     static void RestartLevel();
     static void NextLevel();
 

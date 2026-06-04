@@ -110,6 +110,7 @@ void GameScene::RestartLevel()
 
     EngineGame::GameWorld::Instance()->Clear();
 
+    // Full restart starts a new run from level 1.
     GameProgress::Reset();
 
     GameStateManager::Reset();
@@ -128,6 +129,7 @@ void GameScene::NextLevel()
 
     EngineGame::GameWorld::Instance()->Clear();
 
+    // Level transition keeps the run alive and scales the kill requirement.
     GameProgress::NextLevel();
 
     GameStateManager::Reset();

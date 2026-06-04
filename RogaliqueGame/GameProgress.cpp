@@ -20,6 +20,7 @@ void GameProgress::NextLevel()
 
     CurrentKills = 0;
 
+    // Each new level asks for more kills before the portal can open.
     RequiredKills += 2;
 }
 } // namespace RogaliqueGame

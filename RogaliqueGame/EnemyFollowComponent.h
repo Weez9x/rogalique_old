@@ -34,6 +34,7 @@ private:
     EngineGame::HealthComponent* health = nullptr;
     EngineGame::SpriteRendererComponent* spriteRenderer = nullptr;
 
+    // Enemy attacks mirror the player's delayed-hit model.
     bool isAttackActive = false;
     bool damageApplied = false;
 

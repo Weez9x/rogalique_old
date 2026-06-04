@@ -21,6 +21,7 @@ void GameWorld::FixedUpdate(float deltaTime)
     fixedCounter += deltaTime;
     if (fixedCounter > PhysicsSystem::Instance()->GetFixedDeltaTime())
     {
+        // Physics advances at a fixed step even when render frames vary.
         fixedCounter -= PhysicsSystem::Instance()->GetFixedDeltaTime();
         PhysicsSystem::Instance()->Update();
     }
@@ -34,6 +35,7 @@ void GameWorld::Render()
 }
 void GameWorld::LateUpdate()
 {
+    // Delayed destruction keeps object arrays stable during Update/Render iteration.
     for (int i = markedToDestroyGameObjects.size() - 1; i >= 0; i--)
     {
         DestroyGameObjectImmediate(markedToDestroyGameObjects[i]);
@@ -69,6 +71,7 @@ void GameWorld::DestroyGameObject(GameObject* gameObject)
 }
 void GameWorld::Clear()
 {
+    // Clear root objects only; child objects are deleted through their parent's hierarchy.
     for (int i = gameObjects.size() - 1; i >= 0; i--)
     {
         if (gameObjects[i] == nullptr)

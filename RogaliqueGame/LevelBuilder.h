@@ -10,10 +10,12 @@ namespace RogaliqueGame
 class LevelBuilder
 {
 public:
+    // Creates floor/wall objects and keeps floor coordinates for spawning gameplay entities.
     void BuildLevel();
     const std::vector<EngineGame::Vector2Df>& GetFloorPositions() const;
     EngineGame::Vector2Df GetRandomFloorPosition() const;
-    EngineGame::Vector2Df GetRandomFloorPositionFarFrom(const EngineGame::Vector2Df& avoidPosition, float minDistance) const;
+    EngineGame::Vector2Df GetRandomFloorPositionFarFrom(const EngineGame::Vector2Df& avoidPosition,
+                                                        float minDistance) const;
 
 private:
     std::vector<std::unique_ptr<FloorTile>> floorTiles;

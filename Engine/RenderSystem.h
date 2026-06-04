@@ -12,6 +12,7 @@ public:
     void SetMainWindow(sf::RenderWindow* newWindow);
     sf::RenderWindow& GetMainWindow() const;
 
+    // Central draw entry keeps components from storing their own window references.
     void Render(const sf::Drawable& drawable);
 
 private:

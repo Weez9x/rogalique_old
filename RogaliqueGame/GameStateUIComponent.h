@@ -19,6 +19,7 @@ private:
     sf::Text text;
     sf::RectangleShape overlay;
 
+    // Edge flags prevent one long key press from queueing the same action many times.
     bool rPressedLastFrame = false;
     bool escPressedLastFrame = false;
     bool actionQueued = false;

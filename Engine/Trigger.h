@@ -3,6 +3,7 @@
 namespace EngineGame
 {
 class ColliderComponent;
+// Trigger is a lightweight overlap event for one trigger collider and one solid collider.
 struct Trigger
 {
 public:

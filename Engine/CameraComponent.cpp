@@ -16,6 +16,7 @@ CameraComponent::~CameraComponent()
 
 void CameraComponent::Update(float deltaTime)
 {
+    // Camera position and rotation come from the same Transform system as gameplay objects.
     auto position = transform->GetWorldPosition();
     auto rotation = transform->GetWorldRotation();
 

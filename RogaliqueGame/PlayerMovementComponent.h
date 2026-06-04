@@ -18,6 +18,7 @@ public:
     void Render() override;
 
 private:
+    // Movement owns only player input and animation; combat uses PlayerAttackComponent.
     EngineGame::InputComponent* input = nullptr;
     EngineGame::RigidbodyComponent* rigidbody = nullptr;
     EngineGame::AnimationComponent* animation = nullptr;

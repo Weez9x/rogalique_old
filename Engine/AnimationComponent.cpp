@@ -52,6 +52,7 @@ void AnimationComponent::Update(float deltaTime)
         return;
     }
 
+    // Advance by whole frames; this keeps animation state simple for fixed-size sprite sheets.
     currentTime = 0.0f;
     currentFrameIndex++;
 
@@ -106,6 +107,7 @@ void AnimationComponent::Play(const std::string& name)
 {
     if (currentAnimationName == name && isPlaying)
     {
+        // Avoid restarting a loop every frame when gameplay asks to play the same animation.
         return;
     }
 

@@ -12,6 +12,7 @@ public:
     EngineGame::GameObject* GetGameObject() const;
 
 protected:
+    // Game-specific wrappers keep the EngineGame object pointer they configure.
     EngineGame::GameObject* gameObject = nullptr;
 };
 } // namespace RogaliqueGame

@@ -35,6 +35,7 @@ void TransformComponent::SetWorldPosition(float positionX, float positionY)
     }
     else
     {
+        // Convert requested world position into local space under the current parent.
         Matrix2D newWorldTransform = createTransform(newPosition, GetWorldRotation(), GetWorldScale());
         localTransform = parent->GetWorldTransform().GetInversed() * newWorldTransform;
 
@@ -77,6 +78,7 @@ void TransformComponent::SetWorldRotation(float angle)
     }
     else
     {
+        // Preserve the requested world rotation by recalculating local transform.
         Matrix2D newWorldTransform = createTransform(GetWorldPosition(), angle, GetWorldScale());
         localTransform = parent->GetWorldTransform().GetInversed() * newWorldTransform;
 
@@ -125,6 +127,7 @@ void TransformComponent::SetWorldScale(float scaleX, float scaleY)
     }
     else
     {
+        // Preserve the requested world scale by recalculating local transform.
         Matrix2D newWorldTransform = createTransform(GetWorldPosition(), GetWorldRotation(), newScale);
         localTransform = parent->GetWorldTransform().GetInversed() * newWorldTransform;
 
@@ -200,6 +203,7 @@ const Vector2Df& TransformComponent::GetLocalScale() const
 
 void TransformComponent::SetParent(TransformComponent* newParent)
 {
+    // Reparenting preserves world transform while changing local-space ownership.
     if (parent == nullptr && newParent != nullptr)
     {
         newParent->gameObject->AddChild(gameObject);
@@ -284,6 +288,7 @@ void TransformComponent::updateLocalTransform() const
 {
     if (!isUpdated)
     {
+        // Transform data is mutable so const getters can refresh cached values on demand.
         localTransform = createTransform(localPosition, localRotation, localScale);
         isUpdated = true;
     }

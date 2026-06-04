@@ -17,6 +17,7 @@ public:
     float GetVerticalAxis() const;
 
 private:
+    // Axes are reset and rebuilt from keyboard state every frame.
     float horizontalAxis = 0.f;
     float verticalAxis = 0.f;
 };

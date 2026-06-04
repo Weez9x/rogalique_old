@@ -28,6 +28,7 @@ void Engine::Run()
         sf::Time dt = gameClock.restart();
         float deltaTime = dt.asSeconds();
 
+        // SFML window events are handled before gameplay so close requests stop the frame early.
         while (RenderSystem::Instance()->GetMainWindow().pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
@@ -43,6 +44,7 @@ void Engine::Run()
 
         RenderSystem::Instance()->GetMainWindow().clear();
 
+        // Frame order: gameplay, fixed physics, drawing, then delayed destruction/actions.
         GameWorld::Instance()->Update(deltaTime);
         GameWorld::Instance()->FixedUpdate(deltaTime);
         GameWorld::Instance()->Render();

@@ -53,6 +53,7 @@ void ResourceSystem::LoadTexture(const std::string& name, std::string sourcePath
 {
     if (textures.find(name) != textures.end())
     {
+        // Asset keys are loaded once and then reused by name.
         return;
     }
 
@@ -128,6 +129,7 @@ void ResourceSystem::LoadTextureMap(const std::string& name, std::string sourceP
 
             for (int x = 0; x <= textureSize.x - elementPixelSize.x; x += elementPixelSize.x)
             {
+                // Sprite sheets are read left-to-right, top-to-bottom.
                 if (loadedElements == totalElements)
                 {
                     break;
@@ -241,6 +243,7 @@ void ResourceSystem::DeleteAllMusics()
 {
     std::vector<std::string> keysToDelete;
 
+    // Copy keys first because deletion mutates the map being traversed.
     for (const auto& musicPair : musics)
     {
         keysToDelete.push_back(musicPair.first);

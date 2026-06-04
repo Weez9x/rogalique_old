@@ -10,9 +10,11 @@ RigidbodyComponent::RigidbodyComponent(GameObject* gameObject) : Component(gameO
 
 void RigidbodyComponent::Update(float deltaTime)
 {
+    // Velocity is applied directly to Transform; this engine does not model forces or mass.
     transform->MoveBy(linearVelocity);
     transform->RotateBy(angleVelocity);
 
+    // Damping gradually slows objects so gameplay components can set burst-like movement.
     linearVelocity = (1.f - linearDamping * deltaTime) * linearVelocity;
     angleVelocity = (1.f - angleDamping * deltaTime) * angleVelocity;
 

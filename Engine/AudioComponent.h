@@ -18,6 +18,7 @@ public:
     void StopMusic();
 
 private:
+    // Music is owned by ResourceSystem; this component only controls playback.
     sf::Music* music = nullptr;
 };
 } // namespace EngineGame

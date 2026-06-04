@@ -9,10 +9,7 @@ void InitSprite(sf::Sprite& sprite, float desiredWidth, float desiredHeight, con
 void SetSpriteSize(sf::Sprite& sprite, float desiredWidth, float desiredHeight);
 void SetSpriteRelativeOrigin(sf::Sprite& sprite, float originX, float originY);
 
-/*
- * The sprite is set a random position inside the rect
- * It should not intersect with the collection of sprites
- */
+// Places a sprite inside a rectangle while avoiding a collection of existing sprites.
 void SetSpriteRandomPosition(sf::Sprite& sprite, const sf::FloatRect& rect, const std::list<sf::Sprite>& collection);
 
 sf::Vector2f GetRandomSpritePositionInRectangle(const sf::Sprite& sprite, const sf::FloatRect& rect);

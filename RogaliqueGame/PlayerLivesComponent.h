@@ -23,6 +23,7 @@ private:
     EngineGame::HealthComponent* health = nullptr;
 
     int lives = PLAYER_LIVES;
+    // Prevents one death from removing several lives while health stays at zero.
     bool deathHandled = false;
 };
 } // namespace RogaliqueGame

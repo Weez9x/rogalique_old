@@ -66,6 +66,7 @@ void RespawnComponent::Update(float deltaTime)
     {
         if (!killCounted && IsEnemyObject())
         {
+            // Count the kill before starting respawn; otherwise a dead enemy could be counted every frame.
             GameProgress::CurrentKills++;
 
             EngineGame::Logger::Instance()->Info("Enemy killed. Kills: " + std::to_string(GameProgress::CurrentKills) +
@@ -78,6 +79,7 @@ void RespawnComponent::Update(float deltaTime)
 
         if (lives != nullptr && !lives->HasLives())
         {
+            // The GameOver screen keeps the dead player on screen instead of respawning them.
             EngineGame::Logger::Instance()->Error(gameObject->GetName() + " cannot respawn. Game over.");
             return;
         }
@@ -167,6 +169,7 @@ void RespawnComponent::Respawn()
 
     if (respawnPositionProvider)
     {
+        // Enemies use a fresh random floor tile; the player keeps the fixed spawn point.
         spawnPosition = respawnPositionProvider();
     }
 
@@ -199,6 +202,7 @@ void RespawnComponent::UpdateInvulnerability(float deltaTime)
 
     if (spriteRenderer != nullptr && blinkTimer >= blinkInterval)
     {
+        // Blinking gives visible feedback while the object is invulnerable after respawn.
         blinkTimer = 0.0f;
         spriteRenderer->SetVisible(!spriteRenderer->IsVisible());
     }

@@ -41,6 +41,7 @@ void MeleeAttackComponent::Attack(EngineGame::GameObject* target)
 
     if (health->IsDead())
     {
+        // RespawnComponent owns dead-target recovery, so repeat hits are ignored.
         EngineGame::Logger::Instance()->Info("Attack ignored: target already dead");
         return;
     }

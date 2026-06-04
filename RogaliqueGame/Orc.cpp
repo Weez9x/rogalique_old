@@ -2,7 +2,6 @@
 #include "GameWorld.h"
 #include "TransformComponent.h"
 #include "SpriteRendererComponent.h"
-#include "SpriteColliderComponent.h"
 #include "AnimationComponent.h"
 #include "RigidbodyComponent.h"
 #include "ResourceSystem.h"
@@ -19,6 +18,7 @@ Orc::Orc(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& spaw
 {
     gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Orc");
 
+    // Orc uses the same enemy behavior stack as slime, but with heavier stats.
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
     transform->SetWorldPosition(spawnPosition.x, spawnPosition.y);
 

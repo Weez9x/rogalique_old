@@ -23,13 +23,13 @@ public:
 
     void SetSpawnPosition(const EngineGame::Vector2Df& position);
     void SetMaxHealth(float value);
+    // Optional provider lets enemies respawn on the current generated level.
     void SetRespawnPositionProvider(std::function<EngineGame::Vector2Df()> provider);
 
 private:
     void StartRespawnWaiting();
     void Respawn();
     void UpdateInvulnerability(float deltaTime);
-   
 
 private:
     EngineGame::TransformComponent* transform = nullptr;
@@ -56,8 +56,8 @@ private:
     float blinkInterval = BLINK_INTERVAL;
     float blinkTimer = 0.0f;
 
+    // Enemy kills are counted once per death, before the enemy can respawn.
     bool killCounted = false;
     bool IsEnemyObject() const;
-
 };
 } // namespace RogaliqueGame

@@ -21,7 +21,7 @@ void LevelBuilder::BuildLevel()
     MazeGenerator generator(mazeWidth, mazeHeight);
     auto maze = generator.Generate();
 
-  for (int row = 0; row < mazeHeight; ++row)
+    for (int row = 0; row < mazeHeight; ++row)
     {
         for (int col = 0; col < mazeWidth; ++col)
         {
@@ -46,7 +46,6 @@ void LevelBuilder::BuildLevel()
     }
 
     EngineGame::Logger::Instance()->Info("LevelBuilder: level built");
-
 }
 const std::vector<EngineGame::Vector2Df>& LevelBuilder::GetFloorPositions() const
 {
@@ -64,7 +63,8 @@ EngineGame::Vector2Df LevelBuilder::GetRandomFloorPosition() const
     int index = std::rand() % floorPositions.size();
     return floorPositions[index];
 }
-EngineGame::Vector2Df LevelBuilder::GetRandomFloorPositionFarFrom(const EngineGame::Vector2Df& avoidPosition, float minDistance) const
+EngineGame::Vector2Df LevelBuilder::GetRandomFloorPositionFarFrom(const EngineGame::Vector2Df& avoidPosition,
+                                                                  float minDistance) const
 {
     if (floorPositions.empty())
     {
@@ -72,11 +72,12 @@ EngineGame::Vector2Df LevelBuilder::GetRandomFloorPositionFarFrom(const EngineGa
         return {0.f, 0.f};
     }
 
-   for (int attempt = 0; attempt < RANDOM_POSITION_ATTEMPTS; ++attempt)
+    for (int attempt = 0; attempt < RANDOM_POSITION_ATTEMPTS; ++attempt)
     {
         int index = std::rand() % floorPositions.size();
         EngineGame::Vector2Df position = floorPositions[index];
 
+        // Border padding prevents portals and enemies from appearing half-hidden near walls.
         const float borderPadding = SPAWN_BORDER_PADDING;
 
         if (position.x < borderPadding || position.y < borderPadding || position.x > levelWidth - borderPadding ||
@@ -97,8 +98,6 @@ EngineGame::Vector2Df LevelBuilder::GetRandomFloorPositionFarFrom(const EngineGa
 
     EngineGame::Logger::Instance()->Warning(
         "Could not find floor position far enough. Returning random floor position.");
-
-
 
     return GetRandomFloorPosition();
 }
@@ -124,34 +123,32 @@ int LevelBuilder::GetWallTileIndex(const std::vector<std::vector<MazeCell>>& maz
     bool left = IsWall(maze, col - 1, row);
     bool right = IsWall(maze, col + 1, row);
 
-    // ”глы
+    // Pick tile indices by neighboring walls so corners and straight walls look connected.
     if (!up && down && !left && right)
     {
-        return 1; // левый верхний угол
+        return 1;
     }
 
     if (!up && down && left && !right)
     {
-        return 3; // правый верхний угол
+        return 3;
     }
 
     if (up && !down && !left && right)
     {
-        return 25; // левый нижний угол
+        return 25;
     }
 
     if (up && !down && left && !right)
     {
-        return 27; // правый нижний угол
+        return 27;
     }
 
-    // ¬ертикальна€ стена
     if (up || down)
     {
         return 12;
     }
 
-    // √оризонтальна€ стена
     if (left || right)
     {
         return 38;

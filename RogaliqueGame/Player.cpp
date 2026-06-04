@@ -2,7 +2,6 @@
 #include "GameWorld.h"
 #include "TransformComponent.h"
 #include "SpriteRendererComponent.h"
-#include "SpriteColliderComponent.h"
 #include "InputComponent.h"
 #include "RigidbodyComponent.h"
 #include "ResourceSystem.h"
@@ -26,9 +25,9 @@ Player::Player()
 {
     gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Player");
 
+    // The player is assembled as a prefab from engine components plus game-specific behavior.
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
     transform->SetWorldPosition(PLAYER_START_X, PLAYER_START_Y);
-
 
     auto spriteRenderer = gameObject->AddComponent<EngineGame::SpriteRendererComponent>();
     spriteRenderer->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureMapElementShared("player", 0));
@@ -55,6 +54,8 @@ Player::Player()
     health->SetArmor(PLAYER_ARMOR);
     gameObject->AddComponent<PlayerStatsUIComponent>();
     EngineGame::Logger::Instance()->Info("Player health initialized");
+
+    // Respawn keeps the same player object alive until lives are exhausted.
     auto respawn = gameObject->AddComponent<RespawnComponent>();
     respawn->SetSpawnPosition({PLAYER_START_X, PLAYER_START_Y});
     respawn->SetMaxHealth(PLAYER_MAX_HEALTH);
@@ -62,6 +63,7 @@ Player::Player()
     auto attack = gameObject->AddComponent<MeleeAttackComponent>();
     attack->SetDamage(PLAYER_DAMAGE);
 
+    // PlayerAttackComponent handles input and delegates actual damage to MeleeAttackComponent.
     gameObject->AddComponent<PlayerAttackComponent>();
 
     auto collider = gameObject->AddComponent<EngineGame::BoxColliderComponent>();

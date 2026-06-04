@@ -33,6 +33,7 @@ Matrix2D::Matrix2D(float a00, float a01, float a02, float a10, float a11, float 
 
 Matrix2D::Matrix2D(Vector2Df position, float angle, Vector2Df scale)
 {
+    // The matrix stores translation in the last column and rotation/scale in the top-left 2x2 block.
     m[0][2] = position.x;
     m[1][2] = position.y;
 
@@ -85,7 +86,7 @@ Matrix2D Matrix2D::GetInversed() const
     {
         for (int column = 0; column < 3; column++)
         {
-            // for ever matrix element
+            // Build the cofactor matrix by excluding the current row and column.
             submatrixRow = 0;
             submatrixCol = 0;
 
@@ -93,10 +94,8 @@ Matrix2D Matrix2D::GetInversed() const
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    // search in ever matrix element
-                    if (i != row && j != column) // exclude i row and j column
+                    if (i != row && j != column)
                     {
-                        // get submatrix 2x2 with excluded row and column
                         submatrix[submatrixRow][submatrixCol] = m[i][j];
                         submatrixCol++;
                         if (submatrixCol == 2)
@@ -108,21 +107,20 @@ Matrix2D Matrix2D::GetInversed() const
                 }
             }
 
-            // M[i][j] = |submatrix|
             minor.m[row][column] = submatrix[0][0] * submatrix[1][1] - submatrix[0][1] * submatrix[1][0];
             if ((row + column) % 2 == 1)
             {
-                minor.m[row][column] = -minor.m[row][column]; // M[i][j] = -M[i][j] {i+j % 2 == 1}
+                minor.m[row][column] = -minor.m[row][column];
             }
         }
     }
 
-    // A^(-1) = inversedDeterminant * M^(T)
+    // Inverse is determinant^-1 multiplied by the transposed cofactor matrix.
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
         {
-            result.m[i][j] = inversedDeterminant * minor.m[j][i]; //[i][j] = [j][i]
+            result.m[i][j] = inversedDeterminant * minor.m[j][i];
         }
     }
 

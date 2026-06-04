@@ -6,6 +6,7 @@ namespace RogaliqueGame
 {
 void Application::CreateScene()
 {
+    // The first scene is created once; level changes rebuild its GameWorld objects.
     scene = std::make_unique<GameScene>();
     scene->Start();
 }

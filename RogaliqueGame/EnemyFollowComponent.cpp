@@ -63,6 +63,7 @@ void EnemyFollowComponent::Update(float deltaTime)
     {
         rigidbody->SetLinearVelocity({0.f, 0.f});
 
+        // Dead enemies stop AI and let RespawnComponent finish the death/respawn flow.
         if (animation != nullptr && !animation->IsCurrentAnimation("death"))
         {
             animation->Play("death");
@@ -80,6 +81,7 @@ void EnemyFollowComponent::Update(float deltaTime)
     {
         attackTimer += deltaTime;
 
+        // Damage is delayed to match the visible attack frame.
         if (!damageApplied && attackTimer >= damageMoment)
         {
             auto targetHealth = targetObject->GetComponent<EngineGame::HealthComponent>();
@@ -120,6 +122,7 @@ void EnemyFollowComponent::Update(float deltaTime)
     {
         rigidbody->SetLinearVelocity({0.f, 0.f});
 
+        // A dead player should not be chased while lives or GameOver are being resolved.
         if (animation != nullptr)
         {
             animation->Play("idle");

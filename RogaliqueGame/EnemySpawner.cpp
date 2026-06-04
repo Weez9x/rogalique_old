@@ -51,6 +51,7 @@ void EnemySpawner::Spawn(EnemyType type, const EngineGame::Vector2Df& position)
 
         if (respawn != nullptr)
         {
+            // Respawn positions come from the current level so enemies never return to old-map coordinates.
             respawn->SetRespawnPositionProvider([this]() { return levelBuilder->GetRandomFloorPosition(); });
         }
     }
@@ -98,6 +99,7 @@ EngineGame::GameObject* EnemySpawner::FindClosestEnemy(const EngineGame::Vector2
 
         EngineGame::GameObject* enemyObject = enemy->GetGameObject();
 
+        // Dead enemies stay in the spawner list while their RespawnComponent handles the delay.
         auto health = enemyObject->GetComponent<EngineGame::HealthComponent>();
         if (health != nullptr && health->IsDead())
         {

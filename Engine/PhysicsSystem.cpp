@@ -51,6 +51,7 @@ void PhysicsSystem::Update()
             {
                 if (colliders[i]->isTrigger != colliders[j]->isTrigger)
                 {
+                    // Trigger pairs are remembered so OnTriggerEnter fires once per overlap.
                     if (triggersEnteredPair.find(colliders[i]) == triggersEnteredPair.end() &&
                         triggersEnteredPair.find(colliders[j]) == triggersEnteredPair.end())
                     {
@@ -63,6 +64,7 @@ void PhysicsSystem::Update()
                 }
                 else if (!colliders[i]->isTrigger)
                 {
+                    // Non-trigger collisions resolve by pushing the moving collider out on the shallowest axis.
                     float intersectionWidth = intersection.width;
                     float intersectionHeight = intersection.height;
                     Vector2Df intersectionPosition = {intersection.left - 0.5f * intersectionWidth,
@@ -76,12 +78,10 @@ void PhysicsSystem::Update()
                         if (intersectionPosition.y > aPosition.y)
                         {
                             aTransform->MoveBy({0, -intersectionHeight});
-                            // std::cout << "Top collision" << std::endl;
                         }
                         else
                         {
                             aTransform->MoveBy({0, intersectionHeight});
-                            // std::cout << "Down collision" << std::endl;
                         }
                     }
                     else
@@ -89,12 +89,10 @@ void PhysicsSystem::Update()
                         if (intersectionPosition.x > aPosition.x)
                         {
                             aTransform->MoveBy({-intersectionWidth, 0.f});
-                            // std::cout << "Right collision" << std::endl;
                         }
                         else
                         {
                             aTransform->MoveBy({intersectionWidth, 0.f});
-                            // std::cout << "Left collision" << std::endl;
                         }
                     }
 
@@ -110,6 +108,7 @@ void PhysicsSystem::Update()
          triggeredPair != triggersEnteredPair.cend(); triggeredPair = nextTriggeredPair)
     {
         ++nextTriggeredPair;
+        // Exit fires when either collider is disabled or the pair no longer overlaps.
         if (!triggeredPair->first->IsEnabled() || !triggeredPair->second->IsEnabled() ||
             !triggeredPair->first->bounds.intersects(triggeredPair->second->bounds))
         {
@@ -132,6 +131,7 @@ void PhysicsSystem::Unsubscribe(ColliderComponent* collider)
                                    [collider](ColliderComponent* obj) { return obj == collider; }),
                     colliders.end());
 
+    // Remove stale trigger pairs when an object is destroyed during a scene rebuild.
     for (auto triggeredPair = triggersEnteredPair.cbegin(), nextTriggeredPair = triggeredPair;
          triggeredPair != triggersEnteredPair.cend(); triggeredPair = nextTriggeredPair)
     {

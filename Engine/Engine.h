@@ -13,6 +13,7 @@ public:
 
     static Engine* Instance();
 
+    // Runs the main SFML loop until the window is closed.
     void Run();
 
 private:

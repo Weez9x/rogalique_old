@@ -66,6 +66,7 @@ void PlayerLivesComponent::LoseLife()
 
     if (lives <= 0)
     {
+        // GameOver is a state transition only; the overlay handles player input from here.
         GameStateManager::SetState(GameState::GameOver);
         EngineGame::Logger::Instance()->Error("GAME OVER");
     }

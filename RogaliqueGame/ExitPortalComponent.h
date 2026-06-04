@@ -15,6 +15,7 @@ public:
     void Render() override;
 
 private:
+    // The portal opens only after the current level's kill target is reached.
     void TryOpen();
     void OnTriggerEnter(EngineGame::Trigger trigger);
 

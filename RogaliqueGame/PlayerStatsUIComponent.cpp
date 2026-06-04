@@ -42,6 +42,7 @@ void PlayerStatsUIComponent::Update(float deltaTime)
     std::ostringstream stream;
     std::string hearts;
 
+    // ASCII hearts are used because the bundled pixel fonts may not contain Unicode glyphs.
     if (lives != nullptr && lives->GetLives() > 0)
     {
         for (int i = 0; i < lives->GetLives(); ++i)

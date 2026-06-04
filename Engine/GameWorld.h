@@ -15,12 +15,14 @@ public:
     void Update(float deltaTime);
     void FixedUpdate(float deltaTime);
     void Render();
+    // LateUpdate is reserved for destructive or scene-changing work after iteration is finished.
     void LateUpdate();
 
     GameObject* CreateGameObject();
     GameObject* CreateGameObject(std::string name);
     void DestroyGameObject(GameObject* gameObject);
     void Clear();
+    // Use this for actions that would invalidate the current Update loop.
     void EnqueueLateAction(std::function<void()> action);
 
     void Print() const;
@@ -36,6 +38,7 @@ private:
 
     std::vector<GameObject*> gameObjects = {};
     std::vector<GameObject*> markedToDestroyGameObjects = {};
+    // Actions run once at the end of the frame.
     std::vector<std::function<void()>> lateActions = {};
 
     void DestroyGameObjectImmediate(GameObject* gameObject);

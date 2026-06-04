@@ -80,6 +80,7 @@ void PlayerAttackComponent::Update(float deltaTime)
     {
         attackTimer += deltaTime;
 
+        // Apply damage once at the animation impact frame, not every update during the swing.
         if (!damageApplied && attackTimer >= damageMoment)
         {
             TryDealDamage();
@@ -98,6 +99,7 @@ void PlayerAttackComponent::Update(float deltaTime)
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && currentCooldown <= 0.0f)
     {
+        // The attack stays active for several frames so animation and damage timing can diverge.
         isAttackActive = true;
         damageApplied = false;
         attackTimer = 0.0f;

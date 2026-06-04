@@ -24,6 +24,7 @@ std::vector<std::vector<MazeCell>> MazeGenerator::Generate()
     visited[startY][startX] = true;
     maze[startY][startX] = MazeCell::Floor;
 
+    // Depth-first backtracking keeps the maze fully connected without isolated rooms.
     while (!stack.empty())
     {
         auto [x, y] = stack.top();
@@ -74,6 +75,7 @@ std::vector<std::pair<int, int>> MazeGenerator::GetAvailableDirections(int x, in
 
 void MazeGenerator::RemoveWall(int x1, int y1, int x2, int y2)
 {
+    // The algorithm jumps by two cells, so the middle cell is the wall to carve.
     int wallX = (x1 + x2) / 2;
     int wallY = (y1 + y2) / 2;
 

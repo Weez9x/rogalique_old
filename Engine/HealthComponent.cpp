@@ -57,12 +57,14 @@ void HealthComponent::TakeDamage(float damage)
 
     if (isInvulnerable)
     {
+        // Respawn systems can temporarily ignore all incoming damage.
         Logger::Instance()->Info(gameObject->GetName() + " ignored damage: invulnerable.");
         return;
     }
 
     float finalDamage = damage - armor;
 
+    // Armor can fully absorb weak hits but never turns damage into healing.
     if (finalDamage < 0.0f)
     {
         finalDamage = 0.0f;

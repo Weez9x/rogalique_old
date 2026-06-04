@@ -5,6 +5,7 @@
 namespace EngineGame
 {
 class ColliderComponent;
+// Collision carries the two colliders and their overlap rectangle for non-trigger contacts.
 struct Collision
 {
 public:

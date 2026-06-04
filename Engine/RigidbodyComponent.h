@@ -13,6 +13,7 @@ public:
     void Update(float deltaTime) override;
     void Render() override;
 
+    // This is simple velocity integration; collision resolution is handled by PhysicsSystem.
     void SetLinearVelocity(Vector2Df newLinearVelocity);
     void AddLinearVelocity(Vector2Df linearOffset);
     Vector2Df GetLinearVelocity() const;
@@ -33,6 +34,7 @@ public:
 private:
     TransformComponent* transform;
 
+    // Kinematic bodies are ignored as moving bodies by PhysicsSystem but can still block others.
     Vector2Df linearVelocity = {0.f, 0.f};
     float angleVelocity = 0.f;
 

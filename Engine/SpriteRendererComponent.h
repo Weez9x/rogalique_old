@@ -29,6 +29,7 @@ public:
     bool IsFlippedX() const;
 
 private:
+    // Local scale stores pixel sizing and flips; Transform scale is applied during Render.
     Vector2Df scale;
     sf::Sprite* sprite;
     TransformComponent* transform;

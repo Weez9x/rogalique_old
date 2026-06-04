@@ -22,6 +22,7 @@ public:
 private:
     TransformComponent* transform;
     sf::RenderWindow* window;
+    // The view follows the owning transform and becomes the active world camera.
     sf::View* view;
 };
 } // namespace EngineGame

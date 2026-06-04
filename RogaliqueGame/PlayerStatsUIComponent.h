@@ -16,6 +16,7 @@ public:
     void Render() override;
 
 private:
+    // Cached component links keep the HUD cheap to update every frame.
     EngineGame::HealthComponent* health = nullptr;
     PlayerLivesComponent* lives = nullptr;
 

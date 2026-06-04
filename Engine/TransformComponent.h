@@ -47,12 +47,14 @@ public:
     void SetParent(TransformComponent* newParent);
     TransformComponent* GetParent() const;
 
+    // World transform is calculated lazily from local transform and parent hierarchy.
     const Matrix2D GetWorldTransform() const;
     void Print() const;
 
 private:
     TransformComponent* parent = nullptr;
 
+    // Local matrix is cached and rebuilt only when position/rotation/scale changes.
     mutable Matrix2D localTransform;
     mutable bool isUpdated = false;
 

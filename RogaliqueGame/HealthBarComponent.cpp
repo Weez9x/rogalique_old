@@ -41,6 +41,7 @@ void HealthBarComponent::Update(float deltaTime)
     float healthPercent = health->GetHealth() / maxHealth;
     healthPercent = std::clamp(healthPercent, 0.0f, 1.0f);
 
+    // The bar is rendered in world space so it follows the enemy under the camera.
     EngineGame::Vector2Df position = transform->GetWorldPosition();
 
     background.setSize(sf::Vector2f(size.x, size.y));

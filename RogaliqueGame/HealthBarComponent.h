@@ -25,6 +25,7 @@ private:
     EngineGame::TransformComponent* transform = nullptr;
     EngineGame::HealthComponent* health = nullptr;
 
+    // Max health is set per enemy type so the bar can display normalized health.
     float maxHealth = PLAYER_MAX_HEALTH;
 
     EngineGame::Vector2Df offset = {DEFAULT_HEALTH_BAR_OFFSET_X, DEFAULT_HEALTH_BAR_OFFSET_Y};

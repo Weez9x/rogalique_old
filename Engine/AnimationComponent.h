@@ -11,6 +11,7 @@ namespace EngineGame
 {
 struct AnimationClip
 {
+    // Animation frames reference indices inside a ResourceSystem texture map.
     std::string textureMapName;
     std::vector<int> frames;
     float frameTime = 0.1f;
@@ -39,6 +40,7 @@ private:
 
     std::map<std::string, AnimationClip> animations;
 
+    // Playback state is kept per component so one sprite can switch named clips cheaply.
     std::string currentAnimationName;
     int currentFrameIndex = 0;
     float currentTime = 0.0f;

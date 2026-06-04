@@ -2,7 +2,6 @@
 #include "GameWorld.h"
 #include "TransformComponent.h"
 #include "SpriteRendererComponent.h"
-#include "SpriteColliderComponent.h"
 #include "AnimationComponent.h"
 #include "RigidbodyComponent.h"
 #include "ResourceSystem.h"
@@ -20,6 +19,7 @@ Slime::Slime(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& 
 {
     gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Slime");
 
+    // Slime uses the shared enemy behavior stack with lighter stats.
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
     transform->SetWorldPosition(spawnPosition.x, spawnPosition.y);
 

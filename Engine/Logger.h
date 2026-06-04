@@ -18,6 +18,7 @@ enum class LogLevel
 class LogSink
 {
 public:
+    // Sinks let the same log message go to console, file, or future outputs.
     virtual ~LogSink() = default;
     virtual void Log(LogLevel level, const std::string& message) = 0;
 };
@@ -63,6 +64,7 @@ private:
 
 private:
     std::vector<std::shared_ptr<LogSink>> sinks;
+    // Logging can be called from many systems; mutex keeps sink writes serialized.
     std::mutex mutex;
 };
 } // namespace EngineGame

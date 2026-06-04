@@ -35,6 +35,7 @@ void PlayerMovementComponent::Update(float deltaTime)
 {
     if (!GameStateManager::IsPlaying())
     {
+        // End screens pause player movement but still allow UI components to update.
         if (rigidbody != nullptr)
         {
             rigidbody->SetLinearVelocity({0.f, 0.f});

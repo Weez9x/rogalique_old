@@ -8,6 +8,7 @@ namespace EngineGame
 SpriteRendererComponent::SpriteRendererComponent(GameObject* gameObject) : Component(gameObject)
 {
     sprite = new sf::Sprite();
+    // Default Y flip matches the project's sprite coordinate convention.
     scale = {1, -1};
     sprite->setScale({1, -1});
     transform = gameObject->GetComponent<TransformComponent>();
@@ -47,6 +48,7 @@ void SpriteRendererComponent::SetTexture(const sf::Texture& newTexture)
 {
     sprite->setTexture(newTexture);
     auto textureSize = sprite->getTexture()->getSize();
+    // Center origin makes rotations, scaling, and collider offsets easier to reason about.
     sprite->setOrigin({0.5f * textureSize.x, 0.5f * textureSize.y});
 }
 void SpriteRendererComponent::SetPixelSize(int newWidth, int newHeight)

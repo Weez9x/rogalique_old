@@ -17,6 +17,7 @@ BoxColliderComponent::BoxColliderComponent(GameObject* gameObject) : ColliderCom
         return;
     }
 
+    // PhysicsSystem owns the broad collider list; component lifetime owns subscription.
     PhysicsSystem::Instance()->Subscribe(this);
 }
 
@@ -29,6 +30,7 @@ void BoxColliderComponent::Update(float deltaTime)
 {
     Vector2Df position = transform->GetWorldPosition();
 
+    // Bounds are rebuilt from transform each frame before PhysicsSystem checks overlaps.
     bounds.left = position.x + offset.x - size.x * 0.5f;
     bounds.top = position.y + offset.y - size.y * 0.5f;
     bounds.width = size.x;

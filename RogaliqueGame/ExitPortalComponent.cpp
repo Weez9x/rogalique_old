@@ -92,6 +92,7 @@ void ExitPortalComponent::OnTriggerEnter(EngineGame::Trigger trigger)
         return;
     }
 
+    // Reaching an opened portal pauses gameplay and lets the UI choose the next action.
     GameStateManager::SetState(GameState::Win);
     EngineGame::Logger::Instance()->Info("YOU WIN");
 }

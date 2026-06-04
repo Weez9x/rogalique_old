@@ -18,6 +18,7 @@ public:
     virtual void Update(float deltaTime) = 0;
     virtual void Render() = 0;
 
+    // Triggers notify overlap events but do not resolve physical blocking.
     void SetTrigger(bool newIsTrigger);
 
     void SubscribeCollision(std::function<void(Collision)> onCollisionAction);
@@ -35,6 +36,7 @@ public:
     bool IsEnabled() const;
 
 protected:
+    // PhysicsSystem reads these directly to avoid virtual calls in the collision loop.
     sf::FloatRect bounds;
     bool isTrigger = false;
     bool isEnabled = true;

@@ -15,6 +15,7 @@ public:
     void run();
 
 private:
+    // The game currently owns a single scene and rebuilds its content between levels.
     void CreateScene();
 
     std::unique_ptr<GameScene> scene;

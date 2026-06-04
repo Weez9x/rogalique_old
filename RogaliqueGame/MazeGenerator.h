@@ -17,6 +17,7 @@ class MazeGenerator
 public:
     MazeGenerator(int width, int height);
 
+    // Generates a connected floor/wall grid that LevelBuilder turns into game objects.
     std::vector<std::vector<MazeCell>> Generate();
 
 private:
@@ -30,6 +31,7 @@ private:
     void RemoveWall(int x1, int y1, int x2, int y2);
     bool IsInside(int x, int y) const;
 
+    // Widens carved paths so movement feels less cramped for large sprites.
     void ExpandPassages();
 };
 } // namespace RogaliqueGame

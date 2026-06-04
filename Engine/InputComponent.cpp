@@ -7,6 +7,7 @@ InputComponent::InputComponent(GameObject* gameObject) : Component(gameObject) {
 
 void InputComponent::Update(float deltaTime)
 {
+    // WASD maps to simple -1..1 axes; gameplay components decide how to use them.
     verticalAxis = 0.f;
     horizontalAxis = 0.f;
 

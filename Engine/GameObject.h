@@ -23,6 +23,7 @@ public:
 
     template <typename T> T* AddComponent()
     {
+        // Only engine components can participate in the GameObject update/render loop.
         if constexpr (!std::is_base_of<Component, T>::value)
         {
             std::cout << "T must be derived from Component." << std::endl;
@@ -31,6 +32,7 @@ public:
 
         if constexpr (std::is_same<T, TransformComponent>::value)
         {
+            // Every object is created with exactly one Transform; a second one would break hierarchy math.
             if (GetComponent<TransformComponent>() != nullptr)
             {
                 std::cout << "Can't add Transform, because it will break the engine loop." << std::endl;
@@ -67,6 +69,7 @@ public:
 
     template <typename T> T* GetComponentInChildren() const
     {
+        // Search the current object first, then walk the transform-owned child tree.
         T* component = GetComponent<T>();
         if (component != nullptr || children.size() == 0)
         {

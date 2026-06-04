@@ -11,6 +11,7 @@ protected:
     float destroyTime_ = 0;
     float currentTime_ = 0;
 
+    // Helper for components that need a small timer with per-tick and final callbacks.
     virtual void UpdateTimer(float deltaTime)
     {
         if (!isTimerStarted_)

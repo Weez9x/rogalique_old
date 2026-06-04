@@ -18,6 +18,7 @@ public:
     void Render() override;
 
     void SetDamage(float newDamage);
+    // Generic damage primitive used by both the player and enemies.
     void Attack(EngineGame::GameObject* target);
 
 private:

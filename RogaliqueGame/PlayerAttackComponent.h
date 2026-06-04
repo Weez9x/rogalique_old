@@ -31,6 +31,7 @@ private:
     bool isAttackActive = false;
     bool damageApplied = false;
 
+    // Damage is applied mid-animation so the hit lines up with the sword swing.
     float attackDuration = PLAYER_ATTACK_DURATION;
     float attackTimer = 0.0f;
 

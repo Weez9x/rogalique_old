@@ -18,6 +18,7 @@ public:
     float GetHealth() const;
     float GetArmor() const;
 
+    // Armor reduces incoming damage before health is clamped to zero.
     void TakeDamage(float damage);
 
     bool IsDead() const;
@@ -29,6 +30,7 @@ private:
     float health = 100.0f;
     float armor = 0.0f;
     bool isInvulnerable = false;
+    // Prevents repeated death log spam while health remains zero.
     bool isDeadLogged = false;
 };
 } // namespace EngineGame
