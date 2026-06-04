@@ -62,7 +62,7 @@ void PlayerAttackComponent::TryDealDamage()
 
 void PlayerAttackComponent::Update(float deltaTime)
 {
-    if (GameStateManager::GetState() != GameState::Playing)
+    if (!GameStateManager::IsPlaying())
     {
         return;
     }

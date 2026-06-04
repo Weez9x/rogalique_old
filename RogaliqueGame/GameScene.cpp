@@ -18,6 +18,7 @@ GameScene* GameScene::currentScene = nullptr;
 void GameScene::Start()
 {
     currentScene = this;
+    GameStateManager::Reset();
 
     try
     {
@@ -81,6 +82,7 @@ void GameScene::Start()
 
         auto gameStateUIObject = EngineGame::GameWorld::Instance()->CreateGameObject("GameStateUI");
 
+        // This UI owns Win/GameOver overlays and their keyboard actions.
         gameStateUIObject->AddComponent<GameStateUIComponent>();
 
         EngineGame::GameObject* musicObject = EngineGame::GameWorld::Instance()->CreateGameObject("MusicPlayer");
@@ -108,11 +110,9 @@ void GameScene::RestartLevel()
 
     EngineGame::GameWorld::Instance()->Clear();
 
-    GameProgress::CurrentKills = 0;
-    GameProgress::CurrentLevel = 1;
-    GameProgress::RequiredKills = 3;
+    GameProgress::Reset();
 
-    GameStateManager::SetState(GameState::Playing);
+    GameStateManager::Reset();
 
     currentScene->Start();
 }
@@ -130,7 +130,7 @@ void GameScene::NextLevel()
 
     GameProgress::NextLevel();
 
-    GameStateManager::SetState(GameState::Playing);
+    GameStateManager::Reset();
 
     currentScene->Start();
 }

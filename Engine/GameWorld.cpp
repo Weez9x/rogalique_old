@@ -38,6 +38,17 @@ void GameWorld::LateUpdate()
     {
         DestroyGameObjectImmediate(markedToDestroyGameObjects[i]);
     }
+
+    auto actions = lateActions;
+    lateActions.clear();
+
+    for (auto& action : actions)
+    {
+        if (action)
+        {
+            action();
+        }
+    }
 }
 
 GameObject* GameWorld::CreateGameObject()
@@ -72,6 +83,11 @@ void GameWorld::Clear()
     }
 
     fixedCounter = 0.f;
+}
+
+void GameWorld::EnqueueLateAction(std::function<void()> action)
+{
+    lateActions.push_back(action);
 }
 
 void GameWorld::Print() const

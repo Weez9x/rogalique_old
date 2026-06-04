@@ -1,4 +1,5 @@
 #include "EnemyFollowComponent.h"
+#include "GameStateManager.h"
 #include "GameObject.h"
 #include "Vector.h"
 #include "Logger.h"
@@ -43,6 +44,16 @@ void EnemyFollowComponent::SetTarget(EngineGame::GameObject* newTarget)
 
 void EnemyFollowComponent::Update(float deltaTime)
 {
+    if (!GameStateManager::IsPlaying())
+    {
+        if (rigidbody != nullptr)
+        {
+            rigidbody->SetLinearVelocity({0.f, 0.f});
+        }
+
+        return;
+    }
+
     if (rigidbody == nullptr || transform == nullptr || targetObject == nullptr)
     {
         return;
@@ -69,7 +80,7 @@ void EnemyFollowComponent::Update(float deltaTime)
     {
         attackTimer += deltaTime;
 
-       if (!damageApplied && attackTimer >= damageMoment)
+        if (!damageApplied && attackTimer >= damageMoment)
         {
             auto targetHealth = targetObject->GetComponent<EngineGame::HealthComponent>();
 

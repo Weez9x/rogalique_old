@@ -28836,3 +28836,2185 @@
 [INFO] Enemies spawned
 [INFO] Player enemy spawner set
 [INFO] Music started
+[INFO] Application started
+[INFO] Window created
+[INFO] GameScene Start
+[INFO] Texture loaded: test
+[INFO] Texture map loaded: floor
+[INFO] Texture map loaded: walls
+[INFO] Texture map loaded: player
+[INFO] Texture map loaded: slime
+[INFO] Texture map loaded: orc
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Engine run started
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 84.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 68.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 52.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 36.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 4.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 0.000000
+[INFO] Orc died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/3
+[INFO] Orc collider disabled.
+[INFO] Orc will respawn soon.
+[INFO] Slime is vulnerable again.
+[INFO] Orc collider enabled.
+[INFO] Orc became invulnerable.
+[INFO] Orc respawned.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Orc is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Portal opened!
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Slime is vulnerable again.
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 65.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] YOU WIN
+[INFO] Loading next level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Application started
+[INFO] Window created
+[INFO] GameScene Start
+[INFO] Texture loaded: test
+[INFO] Texture map loaded: floor
+[INFO] Texture map loaded: walls
+[INFO] Texture map loaded: player
+[INFO] Texture map loaded: slime
+[INFO] Texture map loaded: orc
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Engine run started
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Portal is closed. Kill more enemies.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Portal opened!
+[INFO] Slime is vulnerable again.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] YOU WIN
+[INFO] Loading next level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Application started
+[INFO] Window created
+[INFO] GameScene Start
+[INFO] Texture loaded: test
+[INFO] Texture map loaded: floor
+[INFO] Texture map loaded: walls
+[INFO] Texture map loaded: player
+[INFO] Texture map loaded: slime
+[INFO] Texture map loaded: orc
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Engine run started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 65.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 60.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 55.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 40.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 35.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 30.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 15.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 10.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 5.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 0.000000
+[INFO] Player died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player lost life. Lives left: 2
+[INFO] Player collider disabled.
+[INFO] Player will respawn soon.
+[INFO] Player collider enabled.
+[INFO] Player became invulnerable.
+[INFO] Player respawned.
+[INFO] Enemy attack started
+[INFO] Player is vulnerable again.
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 75.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 70.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 65.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 60.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 55.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 50.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 45.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 40.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 35.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 30.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 25.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 20.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 15.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 10.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 5.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 0.000000
+[INFO] Player died.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player lost life. Lives left: 1
+[INFO] Player collider disabled.
+[INFO] Player will respawn soon.
+[INFO] Player collider enabled.
+[INFO] Player became invulnerable.
+[INFO] Player respawned.
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player is vulnerable again.
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 70.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 65.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 60.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 55.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 40.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 35.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 30.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 25.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 10.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 5.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 0.000000
+[INFO] Player died.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player lost life. Lives left: 0
+[ERROR] GAME OVER
+[INFO] Restarting level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 75.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 70.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 65.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Application started
+[INFO] Window created
+[INFO] GameScene Start
+[INFO] Texture loaded: test
+[INFO] Texture map loaded: floor
+[INFO] Texture map loaded: walls
+[INFO] Texture map loaded: player
+[INFO] Texture map loaded: slime
+[INFO] Texture map loaded: orc
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Engine run started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack missed: no enemy in range
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Portal opened!
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] YOU WIN
+[INFO] Loading next level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/5
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/5
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/5
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 84.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 68.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 52.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 36.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 4.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 0.000000
+[INFO] Orc died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 4/5
+[INFO] Orc collider disabled.
+[INFO] Orc will respawn soon.
+[INFO] Orc collider enabled.
+[INFO] Orc became invulnerable.
+[INFO] Orc respawned.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 5/5
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Portal opened!
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 75.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Orc is vulnerable again.
+[INFO] YOU WIN
+[INFO] Loading next level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/7
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/7
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 75.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/7
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Slime is vulnerable again.
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 84.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 68.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 52.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 36.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 60.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 45.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 4.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 0.000000
+[INFO] Orc died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 4/7
+[INFO] Orc collider disabled.
+[INFO] Orc will respawn soon.
+[INFO] Orc collider enabled.
+[INFO] Orc became invulnerable.
+[INFO] Orc respawned.
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 84.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 68.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 30.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Orc is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 52.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 36.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 15.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 4.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 0.000000
+[INFO] Player died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player lost life. Lives left: 2
+[INFO] Player collider disabled.
+[INFO] Player will respawn soon.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 0.000000
+[INFO] Orc died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 5/7
+[INFO] Orc collider disabled.
+[INFO] Orc will respawn soon.
+[INFO] Player collider enabled.
+[INFO] Player became invulnerable.
+[INFO] Player respawned.
+[INFO] Orc collider enabled.
+[INFO] Orc became invulnerable.
+[INFO] Orc respawned.
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Player ignored damage: invulnerable.
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 6/7
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 84.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 68.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player is vulnerable again.
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 85.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Orc is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 52.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 36.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 70.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 4.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 0.000000
+[INFO] Orc died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 7/7
+[INFO] Orc collider disabled.
+[INFO] Orc will respawn soon.
+[INFO] Portal opened!
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Orc collider enabled.
+[INFO] Orc became invulnerable.
+[INFO] Orc respawned.
+[INFO] YOU WIN
+[INFO] Loading next level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 84.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 68.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 52.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 36.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 4.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 0.000000
+[INFO] Orc died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/9
+[INFO] Orc collider disabled.
+[INFO] Orc will respawn soon.
+[INFO] Orc collider enabled.
+[INFO] Orc became invulnerable.
+[INFO] Orc respawned.
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 85.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Orc ignored damage: invulnerable.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 70.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Orc ignored damage: invulnerable.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Orc ignored damage: invulnerable.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 55.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Application started
+[INFO] Window created
+[INFO] GameScene Start
+[INFO] Texture loaded: test
+[INFO] Texture map loaded: floor
+[INFO] Texture map loaded: walls
+[INFO] Texture map loaded: player
+[INFO] Texture map loaded: slime
+[INFO] Texture map loaded: orc
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Engine run started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Portal opened!
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] YOU WIN
+[INFO] Application started
+[INFO] Window created
+[INFO] GameScene Start
+[INFO] Texture loaded: test
+[INFO] Texture map loaded: floor
+[INFO] Texture map loaded: walls
+[INFO] Texture map loaded: player
+[INFO] Texture map loaded: slime
+[INFO] Texture map loaded: orc
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Engine run started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack started
+[INFO] Player attack missed: no enemy in range
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Portal opened!
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 75.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 70.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 65.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 4/3
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 60.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Slime is vulnerable again.
+[INFO] Slime is vulnerable again.
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 55.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] YOU WIN
+[INFO] Loading next level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 70.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 84.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 55.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 50.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 35.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 30.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 1/5
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Player attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 68.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 15.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 52.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 0.000000
+[INFO] Player died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player lost life. Lives left: 2
+[INFO] Player collider disabled.
+[INFO] Player will respawn soon.
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 36.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player collider enabled.
+[INFO] Player became invulnerable.
+[INFO] Player respawned.
+[INFO] Slime is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 4.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player is vulnerable again.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 4.000000, final: 16.000000, health: 0.000000
+[INFO] Orc died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 2/5
+[INFO] Orc collider disabled.
+[INFO] Orc will respawn soon.
+[INFO] Orc collider enabled.
+[INFO] Orc became invulnerable.
+[INFO] Orc respawned.
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 32.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 14.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Player attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 2.000000, final: 18.000000, health: 0.000000
+[INFO] Slime died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy killed. Kills: 3/5
+[INFO] Slime collider disabled.
+[INFO] Slime will respawn soon.
+[INFO] Slime collider enabled.
+[INFO] Slime became invulnerable.
+[INFO] Slime respawned.
+[INFO] Player attack started
+[INFO] Orc ignored damage: invulnerable.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Player attack hit closest enemy
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 80.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Orc is vulnerable again.
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 65.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 50.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 35.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Slime is vulnerable again.
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 20.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 15.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 0.000000
+[INFO] Player died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player lost life. Lives left: 1
+[INFO] Player collider disabled.
+[INFO] Player will respawn soon.
+[INFO] Player collider enabled.
+[INFO] Player became invulnerable.
+[INFO] Player respawned.
+[INFO] Player is vulnerable again.
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 85.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 80.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 65.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 60.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 45.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 30.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 25.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 10.000000
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 20.000000, armor: 5.000000, final: 15.000000, health: 0.000000
+[INFO] Player died.
+[INFO] Attack dealt damage: 20.000000
+[INFO] Enemy attack hit target
+[INFO] Player lost life. Lives left: 0
+[ERROR] GAME OVER
+[INFO] Restarting level...
+[INFO] GameScene Start
+[INFO] Resources loaded
+[INFO] LevelBuilder: building level
+[INFO] LevelBuilder: level built
+[INFO] Level built
+[INFO] Exit created
+[INFO] Animation added: walk
+[INFO] Animation added: idle
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Player health initialized
+[INFO] Player created
+[INFO] EnemySpawner created
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Slime
+[INFO] Animation added: idle
+[INFO] Animation added: walk
+[INFO] Animation added: attack
+[INFO] Animation added: death
+[INFO] Enemy health initialized
+[INFO] Spawned Orc
+[INFO] Enemies spawned
+[INFO] Player enemy spawner set
+[INFO] Music started
+[INFO] Enemy attack started
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 95.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 90.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target
+[INFO] Enemy attack started
+[INFO] Damage taken. Damage: 10.000000, armor: 5.000000, final: 5.000000, health: 85.000000
+[INFO] Attack dealt damage: 10.000000
+[INFO] Enemy attack hit target

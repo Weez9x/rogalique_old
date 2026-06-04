@@ -110,7 +110,8 @@ void PhysicsSystem::Update()
          triggeredPair != triggersEnteredPair.cend(); triggeredPair = nextTriggeredPair)
     {
         ++nextTriggeredPair;
-        if (!triggeredPair->first->IsEnabled() || !triggeredPair->second->IsEnabled() || !triggeredPair->first->bounds.intersects(triggeredPair->second->bounds))
+        if (!triggeredPair->first->IsEnabled() || !triggeredPair->second->IsEnabled() ||
+            !triggeredPair->first->bounds.intersects(triggeredPair->second->bounds))
         {
             auto trigger = new Trigger(triggeredPair->first, triggeredPair->second);
             triggeredPair->first->OnTriggerExit(*trigger);
@@ -130,5 +131,16 @@ void PhysicsSystem::Unsubscribe(ColliderComponent* collider)
     colliders.erase(std::remove_if(colliders.begin(), colliders.end(),
                                    [collider](ColliderComponent* obj) { return obj == collider; }),
                     colliders.end());
+
+    for (auto triggeredPair = triggersEnteredPair.cbegin(), nextTriggeredPair = triggeredPair;
+         triggeredPair != triggersEnteredPair.cend(); triggeredPair = nextTriggeredPair)
+    {
+        ++nextTriggeredPair;
+
+        if (triggeredPair->first == collider || triggeredPair->second == collider)
+        {
+            triggersEnteredPair.erase(triggeredPair);
+        }
+    }
 }
 } // namespace EngineGame

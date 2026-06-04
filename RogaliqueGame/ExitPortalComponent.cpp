@@ -33,6 +33,11 @@ ExitPortalComponent::ExitPortalComponent(EngineGame::GameObject* gameObject) : C
 
 void ExitPortalComponent::Update(float deltaTime)
 {
+    if (!GameStateManager::IsPlaying())
+    {
+        return;
+    }
+
     TryOpen();
 }
 
@@ -70,6 +75,11 @@ void ExitPortalComponent::OnTriggerEnter(EngineGame::Trigger trigger)
     }
 
     if (first->GetGameObject()->GetName() != "Player" && second->GetGameObject()->GetName() != "Player")
+    {
+        return;
+    }
+
+    if (!GameStateManager::IsPlaying())
     {
         return;
     }

@@ -1,5 +1,6 @@
 #include "PlayerMovementComponent.h"
 #include "GameObject.h"
+#include "GameStateManager.h"
 #include "Vector.h"
 #include "Logger.h"
 
@@ -32,6 +33,16 @@ PlayerMovementComponent::PlayerMovementComponent(EngineGame::GameObject* gameObj
 
 void PlayerMovementComponent::Update(float deltaTime)
 {
+    if (!GameStateManager::IsPlaying())
+    {
+        if (rigidbody != nullptr)
+        {
+            rigidbody->SetLinearVelocity({0.f, 0.f});
+        }
+
+        return;
+    }
+
     if (health != nullptr && health->IsDead())
     {
         rigidbody->SetLinearVelocity({0.f, 0.f});

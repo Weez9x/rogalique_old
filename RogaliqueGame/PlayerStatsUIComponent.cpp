@@ -7,6 +7,7 @@
 #include "GameProgress.h"
 
 #include <sstream>
+#include <string>
 
 namespace RogaliqueGame
 {
@@ -39,21 +40,24 @@ void PlayerStatsUIComponent::Update(float deltaTime)
     }
 
     std::ostringstream stream;
+    std::string hearts;
 
-    stream << "Lives: ";
-
-    if (lives != nullptr)
+    if (lives != nullptr && lives->GetLives() > 0)
     {
-        stream << lives->GetLives();
+        for (int i = 0; i < lives->GetLives(); ++i)
+        {
+            hearts += "<3 ";
+        }
     }
     else
     {
-        stream << "N/A";
+        hearts = "none";
     }
 
-    stream << "\nHP: " << health->GetHealth() << "\nArmor: " << health->GetArmor();
-    stream << "\nLevel: " << GameProgress::CurrentLevel;
+    stream << "Level: " << GameProgress::CurrentLevel;
     stream << "\nKills: " << GameProgress::CurrentKills << "/" << GameProgress::RequiredKills;
+    stream << "\nLives: " << hearts;
+    stream << "\nHP: " << health->GetHealth() << "  Armor: " << health->GetArmor();
 
     text.setString(stream.str());
 }

@@ -4,6 +4,7 @@
 #include "Logger.h"
 #include "PlayerLivesComponent.h"
 #include "GameProgress.h"
+#include "GameStateManager.h"
 
 #include <cassert>
 #include <string>
@@ -46,6 +47,11 @@ RespawnComponent::RespawnComponent(EngineGame::GameObject* gameObject) : Compone
 
 void RespawnComponent::Update(float deltaTime)
 {
+    if (!GameStateManager::IsPlaying())
+    {
+        return;
+    }
+
     if (transform == nullptr || health == nullptr)
     {
         return;
@@ -62,7 +68,8 @@ void RespawnComponent::Update(float deltaTime)
         {
             GameProgress::CurrentKills++;
 
-            EngineGame::Logger::Instance()->Info("Enemy killed. Kills: " + std::to_string(GameProgress::CurrentKills) + "/" + std::to_string(GameProgress::RequiredKills));
+            EngineGame::Logger::Instance()->Info("Enemy killed. Kills: " + std::to_string(GameProgress::CurrentKills) +
+                                                 "/" + std::to_string(GameProgress::RequiredKills));
 
             killCounted = true;
         }

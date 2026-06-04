@@ -3,6 +3,8 @@
 #include "GameObject.h"
 #include "PhysicsSystem.h"
 
+#include <functional>
+
 namespace EngineGame
 {
 class GameWorld
@@ -19,6 +21,7 @@ public:
     GameObject* CreateGameObject(std::string name);
     void DestroyGameObject(GameObject* gameObject);
     void Clear();
+    void EnqueueLateAction(std::function<void()> action);
 
     void Print() const;
 
@@ -33,6 +36,7 @@ private:
 
     std::vector<GameObject*> gameObjects = {};
     std::vector<GameObject*> markedToDestroyGameObjects = {};
+    std::vector<std::function<void()>> lateActions = {};
 
     void DestroyGameObjectImmediate(GameObject* gameObject);
 };

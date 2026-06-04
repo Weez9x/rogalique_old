@@ -21,5 +21,6 @@ private:
 
     bool rPressedLastFrame = false;
     bool escPressedLastFrame = false;
+    bool actionQueued = false;
 };
 } // namespace RogaliqueGame

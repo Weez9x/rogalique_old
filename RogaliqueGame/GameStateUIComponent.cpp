@@ -4,6 +4,7 @@
 #include "GameSettings.h"
 #include "GameState.h"
 #include "GameStateManager.h"
+#include "GameWorld.h"
 #include "RenderSystem.h"
 
 #include <SFML/Window/Keyboard.hpp>
@@ -24,6 +25,11 @@ GameStateUIComponent::GameStateUIComponent(EngineGame::GameObject* gameObject) :
 
 void GameStateUIComponent::Update(float deltaTime)
 {
+    if (actionQueued)
+    {
+        return;
+    }
+
     bool rPressed = sf::Keyboard::isKeyPressed(sf::Keyboard::R);
     bool escPressed = sf::Keyboard::isKeyPressed(sf::Keyboard::Escape);
 
@@ -56,8 +62,10 @@ void GameStateUIComponent::Update(float deltaTime)
     {
         rPressedLastFrame = rPressed;
         escPressedLastFrame = escPressed;
+        actionQueued = true;
 
-        GameScene::NextLevel();
+        // Scene rebuilds are queued until LateUpdate so the current update loop stays valid.
+        EngineGame::GameWorld::Instance()->EnqueueLateAction([]() { GameScene::NextLevel(); });
         return;
     }
 
@@ -65,8 +73,10 @@ void GameStateUIComponent::Update(float deltaTime)
     {
         rPressedLastFrame = rPressed;
         escPressedLastFrame = escPressed;
+        actionQueued = true;
 
-        GameScene::RestartLevel();
+        // Scene rebuilds are queued until LateUpdate so the current update loop stays valid.
+        EngineGame::GameWorld::Instance()->EnqueueLateAction([]() { GameScene::RestartLevel(); });
         return;
     }
 
@@ -82,7 +92,7 @@ void GameStateUIComponent::Update(float deltaTime)
 
 void GameStateUIComponent::Render()
 {
-    if (GameStateManager::GetState() == GameState::Playing)
+    if (GameStateManager::IsPlaying())
     {
         return;
     }
