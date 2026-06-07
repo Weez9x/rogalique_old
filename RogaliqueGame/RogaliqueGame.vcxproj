@@ -164,6 +164,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyFollowComponent.cpp" />
     <ClCompile Include="EnemySpawner.cpp" />
+    <ClCompile Include="EnemyTagComponent.cpp" />
     <ClCompile Include="ExitPortal.cpp" />
     <ClCompile Include="ExitPortalComponent.cpp" />
     <ClCompile Include="FloorTile.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyFollowComponent.h" />
     <ClInclude Include="EnemySpawner.h" />
+    <ClInclude Include="EnemyTagComponent.h" />
     <ClInclude Include="ExitPortal.h" />
     <ClInclude Include="ExitPortalComponent.h" />
     <ClInclude Include="FloorTile.h" />

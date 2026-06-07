@@ -5,6 +5,7 @@
 #include "PlayerLivesComponent.h"
 #include "GameProgress.h"
 #include "GameStateManager.h"
+#include "EnemyTagComponent.h"
 
 #include <cassert>
 #include <string>
@@ -15,7 +16,7 @@ bool RespawnComponent::IsEnemyObject() const
 {
     const std::string name = gameObject->GetName();
 
-    return name == "Slime" || name == "Orc";
+    return gameObject->GetComponent<EnemyTagComponent>() != nullptr;
 }
 RespawnComponent::RespawnComponent(EngineGame::GameObject* gameObject) : Component(gameObject)
 {

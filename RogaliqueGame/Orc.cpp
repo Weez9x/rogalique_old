@@ -12,11 +12,14 @@
 #include "BoxColliderComponent.h"
 #include "RespawnComponent.h"
 #include "HealthBarComponent.h"
+#include "EnemyTagComponent.h"
+
 namespace RogaliqueGame
 {
 Orc::Orc(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& spawnPosition)
 {
     gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Orc");
+    gameObject->AddComponent<EnemyTagComponent>();
 
     // Orc uses the same enemy behavior stack as slime, but with heavier stats.
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();

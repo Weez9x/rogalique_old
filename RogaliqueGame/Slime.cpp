@@ -12,12 +12,14 @@
 #include "BoxColliderComponent.h"
 #include "RespawnComponent.h"
 #include "HealthBarComponent.h"
+#include "EnemyTagComponent.h"
 
 namespace RogaliqueGame
 {
 Slime::Slime(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& spawnPosition)
 {
     gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Slime");
+    gameObject->AddComponent<EnemyTagComponent>();
 
     // Slime uses the shared enemy behavior stack with lighter stats.
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
