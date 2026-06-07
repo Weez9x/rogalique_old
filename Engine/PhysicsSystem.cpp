@@ -96,9 +96,9 @@ void PhysicsSystem::Update()
                         }
                     }
 
-                    auto collision = new Collision(colliders[i], colliders[j], intersection);
-                    colliders[i]->OnCollision(*collision);
-                    colliders[j]->OnCollision(*collision);
+                    Collision collision(colliders[i], colliders[j], intersection);
+                    colliders[i]->OnCollision(collision);
+                    colliders[j]->OnCollision(collision);
                 }
             }
         }
@@ -112,9 +112,9 @@ void PhysicsSystem::Update()
         if (!triggeredPair->first->IsEnabled() || !triggeredPair->second->IsEnabled() ||
             !triggeredPair->first->bounds.intersects(triggeredPair->second->bounds))
         {
-            auto trigger = new Trigger(triggeredPair->first, triggeredPair->second);
-            triggeredPair->first->OnTriggerExit(*trigger);
-            triggeredPair->second->OnTriggerExit(*trigger);
+            Trigger trigger(triggeredPair->first, triggeredPair->second);
+            triggeredPair->first->OnTriggerExit(trigger);
+            triggeredPair->second->OnTriggerExit(trigger);
 
             triggersEnteredPair.erase(triggeredPair);
         }

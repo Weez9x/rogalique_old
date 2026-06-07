@@ -41,9 +41,9 @@ protected:
     bool isTrigger = false;
     bool isEnabled = true;
 
-    void OnCollision(Collision collision);
-    void OnTriggerEnter(Trigger trigger);
-    void OnTriggerExit(Trigger trigger);
+    void OnCollision(const Collision& collision);
+    void OnTriggerEnter(const Trigger& trigger);
+    void OnTriggerExit(const Trigger& trigger);
 
     std::vector<std::function<void(Collision)>> onCollisionActions;
     std::vector<std::function<void(Trigger)>> onTriggerEnterActions;

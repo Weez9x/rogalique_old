@@ -59,21 +59,21 @@ bool ColliderComponent::IsEnabled() const
     return isEnabled;
 }
 
-void ColliderComponent::OnCollision(Collision collision)
+void ColliderComponent::OnCollision(const Collision& collision)
 {
     for (int i = 0; i < onCollisionActions.size(); i++)
     {
         onCollisionActions[i](collision);
     }
 }
-void ColliderComponent::OnTriggerEnter(Trigger trigger)
+void ColliderComponent::OnTriggerEnter(const Trigger& trigger)
 {
     for (int i = 0; i < onTriggerEnterActions.size(); i++)
     {
         onTriggerEnterActions[i](trigger);
     }
 }
-void ColliderComponent::OnTriggerExit(Trigger trigger)
+void ColliderComponent::OnTriggerExit(const Trigger& trigger)
 {
     for (int i = 0; i < onTriggerExitActions.size(); i++)
     {
