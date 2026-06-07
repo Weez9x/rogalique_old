@@ -9,6 +9,7 @@
 #include "ResourceSystem.h"
 #include "Trigger.h"
 #include "GameStateManager.h"
+#include "PlayerTagComponent.h"
 
 namespace RogaliqueGame
 {
@@ -73,8 +74,9 @@ void ExitPortalComponent::OnTriggerEnter(EngineGame::Trigger trigger)
     {
         return;
     }
-
-    if (first->GetGameObject()->GetName() != "Player" && second->GetGameObject()->GetName() != "Player")
+    bool isFirstPlayerTrigger = (first->GetGameObject()->GetComponent<PlayerTagComponent>() != nullptr);
+    bool isSecondPlayerTrigger = (second->GetGameObject()->GetComponent<PlayerTagComponent>() != nullptr);
+    if (!isFirstPlayerTrigger && !isSecondPlayerTrigger)
     {
         return;
     }

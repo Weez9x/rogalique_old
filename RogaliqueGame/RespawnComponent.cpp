@@ -14,8 +14,6 @@ namespace RogaliqueGame
 {
 bool RespawnComponent::IsEnemyObject() const
 {
-    const std::string name = gameObject->GetName();
-
     return gameObject->GetComponent<EnemyTagComponent>() != nullptr;
 }
 RespawnComponent::RespawnComponent(EngineGame::GameObject* gameObject) : Component(gameObject)

@@ -18,12 +18,14 @@
 #include "RenderSystem.h"
 #include "GameSettings.h"
 #include "PlayerLivesComponent.h"
+#include "PlayerTagComponent.h"
 
 namespace RogaliqueGame
 {
 Player::Player()
 {
     gameObject = EngineGame::GameWorld::Instance()->CreateGameObject("Player");
+    gameObject->AddComponent<PlayerTagComponent>();
 
     // The player is assembled as a prefab from engine components plus game-specific behavior.
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
