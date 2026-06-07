@@ -9,7 +9,6 @@ class CameraComponent : public Component
 {
 public:
     CameraComponent(GameObject* gameObject);
-    ~CameraComponent();
 
     void Update(float deltaTime) override;
     void Render() override;
@@ -23,6 +22,6 @@ private:
     TransformComponent* transform;
     sf::RenderWindow* window;
     // The view follows the owning transform and becomes the active world camera.
-    sf::View* view;
+    sf::View view;
 };
 } // namespace EngineGame
