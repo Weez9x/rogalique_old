@@ -25,6 +25,25 @@ void AudioComponent::PlayMusic(bool loop)
     music->play();
 }
 
+void AudioComponent::SetVolume(float volume)
+{
+    
+    if (volume < 0.f)
+    {
+        volume = 0.f;
+    }
+
+    if (volume > 100.f)
+    {
+        volume = 100.f;
+    }
+
+    if (music != nullptr)
+    {
+        music->setVolume(volume);
+    }
+}
+
 void AudioComponent::StopMusic()
 {
     if (music == nullptr)

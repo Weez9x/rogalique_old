@@ -29,8 +29,7 @@ void GameScene::Start()
         resources->LoadTexture("test", TEXTURES_PATH + "test.png");
         resources->LoadTextureMap("floor", TEXTURES_PATH + "Floor.png", {16, 16}, 49, false);
         resources->LoadTextureMap("walls", TEXTURES_PATH + "Wall.png", {16, 16}, 48, false);
-        resources->LoadTextureMap("player", TEXTURES_PATH + "Human_Soldier_Sword_Shield-Sheet.png", {96, 96}, 80,
-                                  false);
+        resources->LoadTextureMap("player", TEXTURES_PATH + "Human_Soldier_Sword_Shield-Sheet.png", {96, 96}, 80,false);
         resources->LoadTextureMap("slime", TEXTURES_PATH + "Monster_Slime-Sheet.png", {96, 96}, 80, false);
         resources->LoadTextureMap("orc", TEXTURES_PATH + "Orc.png", {100, 100}, 48, false);
         resources->LoadMusic("main_theme", MUSIC_PATH + "Music_test_1.ogg");
@@ -89,6 +88,7 @@ void GameScene::Start()
 
         auto audio = musicObject->AddComponent<EngineGame::AudioComponent>();
         audio->SetMusic(resources->GetMusicShared("main_theme"));
+        audio->SetVolume(10.f);
         audio->PlayMusic(true);
 
         EngineGame::Logger::Instance()->Info("Music started");

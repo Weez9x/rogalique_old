@@ -13,6 +13,7 @@
 #include "RespawnComponent.h"
 #include "HealthBarComponent.h"
 #include "EnemyTagComponent.h"
+#include "ParticleEmitterComponent.h"
 
 namespace RogaliqueGame
 {
@@ -61,6 +62,9 @@ Slime::Slime(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& 
 
     auto followComponent = gameObject->AddComponent<EnemyFollowComponent>();
     followComponent->SetTarget(playerObject);
+    
+    auto particles = gameObject->AddComponent<EngineGame::ParticleEmitterComponent>();
+    particles->SetDamageColor(sf::Color::Green);
 }
 
 } // namespace RogaliqueGame

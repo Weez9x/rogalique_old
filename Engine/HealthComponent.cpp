@@ -3,6 +3,8 @@
 #include "Logger.h"
 #include "GameObject.h"
 #include "CameraShakeComponent.h"
+#include "ParticleEmitterComponent.h"
+#include "TransformComponent.h"
 
 #include <algorithm>
 #include <cassert>
@@ -76,6 +78,21 @@ void HealthComponent::TakeDamage(float damage)
     if (health < 0.0f)
     {
         health = 0.0f;
+    }
+
+    if (finalDamage > 0.f)
+    {
+        auto particles = gameObject->GetComponent<ParticleEmitterComponent>();
+
+        if (particles != nullptr)
+        {
+            auto transform = gameObject->GetComponent<TransformComponent>();
+
+            if (transform != nullptr)
+            {
+                particles->Emit(transform->GetWorldPosition(), 20, particles->GetDamageColor());
+            }
+        }
     }
 
     auto cameraShake = gameObject->GetComponent<CameraShakeComponent>();

@@ -20,6 +20,7 @@
 #include "PlayerLivesComponent.h"
 #include "PlayerTagComponent.h"
 #include "CameraShakeComponent.h"
+#include "ParticleEmitterComponent.h"
 
 namespace RogaliqueGame
 {
@@ -81,6 +82,9 @@ Player::Player()
     camera->ZoomBy(1.0f);
     
     gameObject->AddComponent<EngineGame::CameraShakeComponent>();
+
+    auto particles = gameObject->AddComponent<EngineGame::ParticleEmitterComponent>();
+    particles->SetDamageColor(sf::Color::Red);
 }
 
 void Player::SetEnemySpawner(EnemySpawner* spawner)

@@ -15,6 +15,7 @@ public:
 
     void SetMusic(sf::Music* newMusic);
     void PlayMusic(bool loop = false);
+    void SetVolume(float volume);
     void StopMusic();
 
 private:
