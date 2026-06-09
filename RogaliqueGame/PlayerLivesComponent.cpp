@@ -5,6 +5,7 @@
 #include "GameScene.h"
 #include "GameState.h"
 #include "GameStateManager.h"
+#include "CameraShakeComponent.h"
 
 #include <cassert>
 
@@ -68,6 +69,11 @@ void PlayerLivesComponent::LoseLife()
     {
         // GameOver is a state transition only; the overlay handles player input from here.
         GameStateManager::SetState(GameState::GameOver);
+        auto cameraShake = gameObject->GetComponent<EngineGame::CameraShakeComponent>();
+        if (cameraShake != nullptr)
+        {
+            cameraShake->Shake(5.f, 40.f);
+        }
         EngineGame::Logger::Instance()->Error("GAME OVER");
     }
 }

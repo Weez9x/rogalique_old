@@ -6,6 +6,7 @@
 #include "GameProgress.h"
 #include "GameStateManager.h"
 #include "EnemyTagComponent.h"
+#include "CameraShakeComponent.h"
 
 #include <cassert>
 #include <string>
@@ -189,6 +190,11 @@ void RespawnComponent::Respawn()
     if (animation != nullptr)
     {
         animation->Play("idle");
+    }
+    auto cameraShake = gameObject->GetComponent<EngineGame::CameraShakeComponent>();
+    if (cameraShake != nullptr)
+    {
+        cameraShake->Shake(4.f, 2.f);
     }
 
     EngineGame::Logger::Instance()->Info(gameObject->GetName() + " respawned.");

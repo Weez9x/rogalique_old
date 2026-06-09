@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "CameraComponent.h"
 #include "TransformComponent.h"
+#include "CameraShakeComponent.h"
 
 namespace EngineGame
 {
@@ -15,6 +16,15 @@ void CameraComponent::Update(float deltaTime)
     // Camera position and rotation come from the same Transform system as gameplay objects.
     auto position = transform->GetWorldPosition();
     auto rotation = transform->GetWorldRotation();
+
+    auto shake = gameObject->GetComponent<CameraShakeComponent>();
+    if (shake != nullptr)
+    {
+        auto offset = shake->GetOffset();
+
+        position.x += offset.x;
+        position.y += offset.y;
+    }
 
     view.setCenter(Convert<sf::Vector2f, Vector2Df>(position));
     view.setRotation(rotation);

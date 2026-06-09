@@ -19,6 +19,7 @@
 #include "GameSettings.h"
 #include "PlayerLivesComponent.h"
 #include "PlayerTagComponent.h"
+#include "CameraShakeComponent.h"
 
 namespace RogaliqueGame
 {
@@ -78,6 +79,8 @@ Player::Player()
     camera->SetWindow(&EngineGame::RenderSystem::Instance()->GetMainWindow());
     camera->SetBaseResolution(SCREEN_WIDTH, SCREEN_HEIGHT);
     camera->ZoomBy(1.0f);
+    
+    gameObject->AddComponent<EngineGame::CameraShakeComponent>();
 }
 
 void Player::SetEnemySpawner(EnemySpawner* spawner)

@@ -4,6 +4,7 @@
 #include "GameObject.h"
 #include "Logger.h"
 #include "GameStateManager.h"
+#include "CameraShakeComponent.h"
 
 #include <SFML/Window/Keyboard.hpp>
 #include <cassert>
@@ -54,8 +55,12 @@ void PlayerAttackComponent::TryDealDamage()
         EngineGame::Logger::Instance()->Info("Player attack missed: no enemy in range");
         return;
     }
-
     meleeAttack->Attack(target);
+    auto cameraShake = gameObject->GetComponent<EngineGame::CameraShakeComponent>();
+    if (cameraShake != nullptr)
+    {
+        cameraShake->Shake(0.5f, 3.f);
+    }
 
     EngineGame::Logger::Instance()->Info("Player attack hit closest enemy");
 }
@@ -96,7 +101,6 @@ void PlayerAttackComponent::Update(float deltaTime)
     }
 
     auto animation = gameObject->GetComponent<EngineGame::AnimationComponent>();
-
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && currentCooldown <= 0.0f)
     {
         // The attack stays active for several frames so animation and damage timing can diverge.

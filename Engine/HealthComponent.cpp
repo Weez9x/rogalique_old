@@ -2,6 +2,7 @@
 #include "HealthComponent.h"
 #include "Logger.h"
 #include "GameObject.h"
+#include "CameraShakeComponent.h"
 
 #include <algorithm>
 #include <cassert>
@@ -75,6 +76,12 @@ void HealthComponent::TakeDamage(float damage)
     if (health < 0.0f)
     {
         health = 0.0f;
+    }
+
+    auto cameraShake = gameObject->GetComponent<CameraShakeComponent>();
+    if (cameraShake != nullptr)
+    {
+        cameraShake->Shake(0.18f, 16.f);
     }
 
     Logger::Instance()->Info("Damage taken. Damage: " + std::to_string(damage) + ", armor: " + std::to_string(armor) +
