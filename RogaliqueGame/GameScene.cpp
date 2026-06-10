@@ -8,6 +8,7 @@
 #include "GameWorld.h"
 #include "Logger.h"
 #include "ResourceSystem.h"
+#include "GameResourceLoader.h"
 
 #include <stdexcept>
 
@@ -25,16 +26,7 @@ void GameScene::Start()
         EngineGame::Logger::Instance()->Info("GameScene Start");
 
         auto resources = EngineGame::ResourceSystem::Instance();
-
-        resources->LoadTexture("test", TEXTURES_PATH + "test.png");
-        resources->LoadTextureMap("floor", TEXTURES_PATH + "Floor.png", {16, 16}, 49, false);
-        resources->LoadTextureMap("walls", TEXTURES_PATH + "Wall.png", {16, 16}, 48, false);
-        resources->LoadTextureMap("player", TEXTURES_PATH + "Human_Soldier_Sword_Shield-Sheet.png", {96, 96}, 80,false);
-        resources->LoadTextureMap("slime", TEXTURES_PATH + "Monster_Slime-Sheet.png", {96, 96}, 80, false);
-        resources->LoadTextureMap("orc", TEXTURES_PATH + "Orc.png", {100, 100}, 48, false);
-        resources->LoadMusic("main_theme", MUSIC_PATH + "Music_test_1.ogg");
-
-        EngineGame::Logger::Instance()->Info("Resources loaded");
+        GameResourceLoader::LoadAll();
 
         levelBuilder = std::make_unique<LevelBuilder>();
         levelBuilder->BuildLevel();
@@ -88,7 +80,7 @@ void GameScene::Start()
 
         auto audio = musicObject->AddComponent<EngineGame::AudioComponent>();
         audio->SetMusic(resources->GetMusicShared("main_theme"));
-        audio->SetVolume(10.f);
+        audio->SetVolume(50.f);
         audio->PlayMusic(true);
 
         EngineGame::Logger::Instance()->Info("Music started");

@@ -5,6 +5,7 @@
 #include "Logger.h"
 #include "GameStateManager.h"
 #include "CameraShakeComponent.h"
+#include "SoundComponent.h"
 
 #include <SFML/Window/Keyboard.hpp>
 #include <cassert>
@@ -60,6 +61,14 @@ void PlayerAttackComponent::TryDealDamage()
     if (cameraShake != nullptr)
     {
         cameraShake->Shake(0.5f, 3.f);
+    }
+    
+
+    auto sound = gameObject->GetComponent<EngineGame::SoundComponent>();
+
+    if (sound != nullptr)
+    {
+        sound->PlayNext();
     }
 
     EngineGame::Logger::Instance()->Info("Player attack hit closest enemy");

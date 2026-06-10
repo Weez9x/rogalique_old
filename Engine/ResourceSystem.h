@@ -30,6 +30,10 @@ public:
     int GetTextureMapElementsCount(const std::string& name) const;
     void DeleteSharedTextureMap(const std::string& name);
 
+    void LoadSound(const std::string& name, std::string sourcePath);
+    sf::SoundBuffer* GetSoundShared(const std::string& name) const;
+    void DeleteSharedSound(const std::string& name);
+
     void Clear();
 
 private:
@@ -37,6 +41,8 @@ private:
 
     std::map<std::string, sf::Texture*> textures;
     std::map<std::string, std::vector<sf::Texture*>> textureMaps;
+
+    std::map<std::string, sf::SoundBuffer*> soundBuffers;
 
     // Missing textures become magenta blocks so asset errors are visible in-game.
     sf::Texture* CreateFallbackTexture(sf::Vector2u size, bool isSmooth);

@@ -3,6 +3,7 @@
 #include "GameStateManager.h"
 #include "Vector.h"
 #include "Logger.h"
+#include "FootstepSoundComponent.h"
 
 #include <cmath>
 #include <cassert>
@@ -64,6 +65,27 @@ void PlayerMovementComponent::Update(float deltaTime)
     EngineGame::Vector2Df direction = {input->GetHorizontalAxis(), input->GetVerticalAxis()};
 
     bool isMoving = direction.x != 0.0f || direction.y != 0.0f;
+
+    if (isMoving)
+    {
+        footstepTimer -= deltaTime;
+
+        if (footstepTimer <= 0.f)
+        {
+            auto footstepSound = gameObject->GetComponent<FootstepSoundComponent>();
+
+            if (footstepSound != nullptr)
+            {
+                footstepSound->PlayNext();
+            }
+
+            footstepTimer = footstepInterval;
+        }
+    }
+    else
+    {
+        footstepTimer = 0.f;
+    }
 
     bool canChangeAnimation = true;
 

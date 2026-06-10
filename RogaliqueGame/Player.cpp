@@ -21,6 +21,7 @@
 #include "PlayerTagComponent.h"
 #include "CameraShakeComponent.h"
 #include "ParticleEmitterComponent.h"
+#include "SoundComponent.h"
 
 namespace RogaliqueGame
 {
@@ -85,6 +86,17 @@ Player::Player()
 
     auto particles = gameObject->AddComponent<EngineGame::ParticleEmitterComponent>();
     particles->SetDamageColor(sf::Color::Red);
+
+   auto attackSound = gameObject->AddComponent<EngineGame::SoundComponent>();
+    attackSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("player_attack_1"));
+    attackSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("player_attack_2"));
+    attackSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("player_attack_3"));
+    attackSound->SetVolume(50.f);
+
+    auto footstepSound = gameObject->AddComponent<EngineGame::SoundComponent>();
+    footstepSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("player_step_1"));
+    footstepSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("player_step_2"));
+    footstepSound->SetVolume(60.f);
 }
 
 void Player::SetEnemySpawner(EnemySpawner* spawner)

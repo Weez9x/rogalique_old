@@ -283,4 +283,43 @@ void ResourceSystem::DeleteAllTextureMaps()
         DeleteSharedTextureMap(key);
     }
 }
+
+void ResourceSystem::LoadSound(const std::string& name, std::string sourcePath)
+{
+    if (soundBuffers.find(name) != soundBuffers.end())
+    {
+        return;
+    }
+
+    auto* buffer = new sf::SoundBuffer();
+
+    if (buffer->loadFromFile(sourcePath))
+    {
+        soundBuffers.emplace(name, buffer);
+    }
+    else
+    {
+        delete buffer;
+        Logger::Instance()->Error("Failed to load sound: " + sourcePath);
+    }
+}
+
+sf::SoundBuffer* ResourceSystem::GetSoundShared(const std::string& name) const
+{
+    auto it = soundBuffers.find(name);
+
+    if (it == soundBuffers.end())
+    {
+        throw std::runtime_error("Sound not found: " + name);
+    }
+
+    return it->second;
+}
+void ResourceSystem::DeleteSharedSound(const std::string& name)
+{
+    auto soundPair = soundBuffers.find(name);
+    sf::SoundBuffer* deletingSound = soundPair->second;
+    soundBuffers.erase(soundPair);
+    delete deletingSound;
+}
 } // namespace EngineGame

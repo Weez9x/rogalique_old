@@ -26,5 +26,7 @@ private:
     EngineGame::HealthComponent* health = nullptr;
 
     float moveSpeed = 4.0f;
+    float footstepTimer = 0.f;
+    float footstepInterval = 0.30f;
 };
 } // namespace RogaliqueGame

@@ -169,6 +169,7 @@
     <ClCompile Include="ExitPortalComponent.cpp" />
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="GameProgress.cpp" />
+    <ClCompile Include="GameResourceLoader.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="GameStateManager.cpp" />
@@ -198,7 +199,9 @@
     <ClInclude Include="ExitPortal.h" />
     <ClInclude Include="ExitPortalComponent.h" />
     <ClInclude Include="FloorTile.h" />
+    <ClInclude Include="FootstepSoundComponent.h" />
     <ClInclude Include="GameProgress.h" />
+    <ClInclude Include="GameResourceLoader.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameSettings.h" />
     <ClInclude Include="GameState.h" />
