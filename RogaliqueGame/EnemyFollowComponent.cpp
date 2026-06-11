@@ -153,7 +153,7 @@ void EnemyFollowComponent::Update(float deltaTime)
     if (distance > detectionRadius)
     {
         rigidbody->SetLinearVelocity({0.f, 0.f});
-
+        footstepTimer = 0.f;
         if (animation != nullptr)
         {
             animation->Play("idle");
@@ -165,7 +165,7 @@ void EnemyFollowComponent::Update(float deltaTime)
     if (distance < attackRange)
     {
         rigidbody->SetLinearVelocity({0.f, 0.f});
-
+        footstepTimer = 0.f;
         if (currentCooldown <= 0.0f)
         {
             isAttackActive = true;
