@@ -8,6 +8,7 @@
 #include <cmath>
 #include <cassert>
 #include "FootstepSoundComponent.h"
+#include "AttackSoundComponent.h"
 
 namespace RogaliqueGame
 {
@@ -176,7 +177,12 @@ void EnemyFollowComponent::Update(float deltaTime)
             {
                 animation->Play("attack");
             }
+            auto attackSound = gameObject->GetComponent<AttackSoundComponent>();
 
+            if (attackSound != nullptr)
+            {
+                attackSound->PlayNext();
+            }
             EngineGame::Logger::Instance()->Info("Enemy attack started");
         }
 
@@ -188,11 +194,18 @@ void EnemyFollowComponent::Update(float deltaTime)
         direction.x /= distance;
         direction.y /= distance;
     }
-    auto sound = gameObject->GetComponent<FootstepSoundComponent>();
+    footstepTimer -= deltaTime;
 
-    if (sound != nullptr)
+    if (footstepTimer <= 0.f)
     {
-        sound->PlayNext();
+        auto sound = gameObject->GetComponent<FootstepSoundComponent>();
+
+        if (sound != nullptr)
+        {
+            sound->PlayNext();
+        }
+
+        footstepTimer = footstepInterval;
     }
     
     if (animation != nullptr)

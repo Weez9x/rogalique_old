@@ -48,7 +48,7 @@ void MeleeAttackComponent::Attack(EngineGame::GameObject* target)
     }
 
     health->TakeDamage(damage);
-    auto sound = gameObject->GetComponent<DamageSoundComponent>();
+    auto sound = target->GetComponent<DamageSoundComponent>();
 
     if (sound != nullptr)
     {

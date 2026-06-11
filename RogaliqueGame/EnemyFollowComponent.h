@@ -41,5 +41,8 @@ private:
     float attackDuration = ENEMY_ATTACK_DURATION;
     float attackTimer = 0.0f;
     float damageMoment = ENEMY_DAMAGE_MOMENT;
+
+    float footstepTimer = 0.f;
+    float footstepInterval = 0.33f;
 };
 } // namespace RogaliqueGame

@@ -71,16 +71,16 @@ Slime::Slime(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& 
 
     auto attackSound = gameObject->AddComponent<AttackSoundComponent>();
     attackSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_attack"));
-    attackSound->SetVolume(60.f);
+    attackSound->SetVolume(50.f);
 
     auto footstepSound = gameObject->AddComponent<FootstepSoundComponent>();
     footstepSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_step_1"));
     footstepSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_step_2"));
-    footstepSound->SetVolume(75.f);
+    footstepSound->SetVolume(40.f);
 
     auto damageSound = gameObject->AddComponent<DamageSoundComponent>();
     damageSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_damage"));
-    damageSound->SetVolume(70.f);
+    damageSound->SetVolume(45.f);
 }
 
 } // namespace RogaliqueGame
