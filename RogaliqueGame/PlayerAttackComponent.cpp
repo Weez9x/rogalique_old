@@ -6,6 +6,7 @@
 #include "GameStateManager.h"
 #include "CameraShakeComponent.h"
 #include "SoundComponent.h"
+#include "AttackSoundComponent.h"
 
 #include <SFML/Window/Keyboard.hpp>
 #include <cassert>
@@ -64,7 +65,7 @@ void PlayerAttackComponent::TryDealDamage()
     }
     
 
-    auto sound = gameObject->GetComponent<EngineGame::SoundComponent>();
+    auto sound = gameObject->GetComponent<AttackSoundComponent>();
 
     if (sound != nullptr)
     {

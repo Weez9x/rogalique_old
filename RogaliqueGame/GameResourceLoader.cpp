@@ -16,11 +16,24 @@ void GameResourceLoader::LoadAll()
     resources->LoadTextureMap("slime", TEXTURES_PATH + "Monster_Slime-Sheet.png", {96, 96}, 80, false);
     resources->LoadTextureMap("orc", TEXTURES_PATH + "Orc.png", {100, 100}, 48, false);
     resources->LoadMusic("main_theme", MUSIC_PATH + "Danger.ogg");
+
     resources->LoadSound("player_attack_1", SOUNDS_PATH + "sword-unsheathe.wav");
     resources->LoadSound("player_attack_2", SOUNDS_PATH + "sword-unsheathe2.wav");
     resources->LoadSound("player_attack_3", SOUNDS_PATH + "sword-unsheathe3.wav");
     resources->LoadSound("player_step_1", SOUNDS_PATH + "footstep05.ogg");
     resources->LoadSound("player_step_2", SOUNDS_PATH + "footstep06.ogg");
+    resources->LoadSound("player_damage", SOUNDS_PATH + "player5.wav");
+
+    resources->LoadSound("orc_step_1", SOUNDS_PATH + "footstep_grass_000.ogg");
+    resources->LoadSound("orc_step_2", SOUNDS_PATH + "footstep_grass_001.ogg");
+    resources->LoadSound("orc_attack", SOUNDS_PATH + "ogre1.wav");
+    resources->LoadSound("orc_damage", SOUNDS_PATH + "ogre2.wav");
+    
+    resources->LoadSound("slime_step_1", SOUNDS_PATH + "slime_walk_1.wav");
+    resources->LoadSound("slime_step_2", SOUNDS_PATH + "slime_walk_2.wav");
+    resources->LoadSound("slime_attack", SOUNDS_PATH + "swing.wav");
+    resources->LoadSound("slime_damage", SOUNDS_PATH + "slime_hit.wav");
+    
 
     EngineGame::Logger::Instance()->Info("Resources loaded");
 }

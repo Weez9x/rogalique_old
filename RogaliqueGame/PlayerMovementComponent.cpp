@@ -72,11 +72,11 @@ void PlayerMovementComponent::Update(float deltaTime)
 
         if (footstepTimer <= 0.f)
         {
-            auto footstepSound = gameObject->GetComponent<FootstepSoundComponent>();
+            auto sound = gameObject->GetComponent<FootstepSoundComponent>();
 
-            if (footstepSound != nullptr)
+            if (sound != nullptr)
             {
-                footstepSound->PlayNext();
+                sound->PlayNext();
             }
 
             footstepTimer = footstepInterval;

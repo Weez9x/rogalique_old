@@ -2,6 +2,7 @@
 
 #include "GameObject.h"
 #include "HealthComponent.h"
+#include "DamageSoundComponent.h"
 #include "Logger.h"
 
 namespace RogaliqueGame
@@ -47,6 +48,12 @@ void MeleeAttackComponent::Attack(EngineGame::GameObject* target)
     }
 
     health->TakeDamage(damage);
+    auto sound = gameObject->GetComponent<DamageSoundComponent>();
+
+    if (sound != nullptr)
+    {
+        sound->PlayNext();
+    }
 
     EngineGame::Logger::Instance()->Info("Attack dealt damage: " + std::to_string(damage));
 }

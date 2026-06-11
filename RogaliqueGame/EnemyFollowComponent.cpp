@@ -7,6 +7,7 @@
 #include "MeleeAttackComponent.h"
 #include <cmath>
 #include <cassert>
+#include "FootstepSoundComponent.h"
 
 namespace RogaliqueGame
 {
@@ -187,12 +188,18 @@ void EnemyFollowComponent::Update(float deltaTime)
         direction.x /= distance;
         direction.y /= distance;
     }
+    auto sound = gameObject->GetComponent<FootstepSoundComponent>();
 
+    if (sound != nullptr)
+    {
+        sound->PlayNext();
+    }
+    
     if (animation != nullptr)
     {
         animation->Play("walk");
+        
     }
-
     rigidbody->SetLinearVelocity(direction * moveSpeed);
 }
 

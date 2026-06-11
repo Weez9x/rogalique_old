@@ -14,6 +14,9 @@
 #include "HealthBarComponent.h"
 #include "EnemyTagComponent.h"
 #include "ParticleEmitterComponent.h"
+#include "FootstepSoundComponent.h"
+#include "AttackSoundComponent.h"
+#include "DamageSoundComponent.h"
 
 namespace RogaliqueGame
 {
@@ -65,6 +68,19 @@ Slime::Slime(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& 
     
     auto particles = gameObject->AddComponent<EngineGame::ParticleEmitterComponent>();
     particles->SetDamageColor(sf::Color::Green);
+
+    auto attackSound = gameObject->AddComponent<AttackSoundComponent>();
+    attackSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_attack"));
+    attackSound->SetVolume(60.f);
+
+    auto footstepSound = gameObject->AddComponent<FootstepSoundComponent>();
+    footstepSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_step_1"));
+    footstepSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_step_2"));
+    footstepSound->SetVolume(75.f);
+
+    auto damageSound = gameObject->AddComponent<DamageSoundComponent>();
+    damageSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("slime_damage"));
+    damageSound->SetVolume(70.f);
 }
 
 } // namespace RogaliqueGame

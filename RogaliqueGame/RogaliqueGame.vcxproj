@@ -191,7 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
+    <ClInclude Include="AttackSoundComponent.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="DamageSoundComponent.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyFollowComponent.h" />
     <ClInclude Include="EnemySpawner.h" />
