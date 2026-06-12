@@ -25,6 +25,8 @@
 #include "FootstepSoundComponent.h"
 #include "AttackSoundComponent.h"
 #include "DamageSoundComponent.h"
+#include "PlayerRegenerationComponent.h"
+#include "LightAuraComponent.h"
 
 namespace RogaliqueGame
 {
@@ -36,6 +38,12 @@ Player::Player()
     // The player is assembled as a prefab from engine components plus game-specific behavior.
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
     transform->SetWorldPosition(PLAYER_START_X, PLAYER_START_Y);
+
+    auto healingAura = gameObject->AddComponent<EngineGame::LightAuraComponent>();
+    healingAura->SetColor(sf::Color(80, 255, 120, 90));
+    healingAura->SetRadius(65.f);
+    healingAura->SetPulse(2.f, 8.f);
+    healingAura->SetActive(false);
 
     auto spriteRenderer = gameObject->AddComponent<EngineGame::SpriteRendererComponent>();
     spriteRenderer->SetTexture(*EngineGame::ResourceSystem::Instance()->GetTextureMapElementShared("player", 0));
@@ -67,6 +75,8 @@ Player::Player()
     auto respawn = gameObject->AddComponent<RespawnComponent>();
     respawn->SetSpawnPosition({PLAYER_START_X, PLAYER_START_Y});
     respawn->SetMaxHealth(PLAYER_MAX_HEALTH);
+
+    
 
     auto attack = gameObject->AddComponent<MeleeAttackComponent>();
     attack->SetDamage(PLAYER_DAMAGE);
@@ -103,6 +113,8 @@ Player::Player()
 
     auto damageSound = gameObject->AddComponent<DamageSoundComponent>();
     damageSound->AddSound(EngineGame::ResourceSystem::Instance()->GetSoundShared("player_damage"));
+
+    gameObject->AddComponent<PlayerRegenerationComponent>();
 }
 
 void Player::SetEnemySpawner(EnemySpawner* spawner)

@@ -183,6 +183,7 @@
     <ClCompile Include="PlayerAttackComponent.cpp" />
     <ClCompile Include="PlayerLivesComponent.cpp" />
     <ClCompile Include="PlayerMovementComponent.cpp" />
+    <ClCompile Include="PlayerRegenerationComponent.cpp" />
     <ClCompile Include="PlayerStatsUIComponent.cpp" />
     <ClCompile Include="PlayerTagComponent.cpp" />
     <ClCompile Include="RespawnComponent.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="PlayerAttackComponent.h" />
     <ClInclude Include="PlayerLivesComponent.h" />
     <ClInclude Include="PlayerMovementComponent.h" />
+    <ClInclude Include="PlayerRegenerationComponent.h" />
     <ClInclude Include="PlayerStatsUIComponent.h" />
     <ClInclude Include="PlayerTagComponent.h" />
     <ClInclude Include="RespawnComponent.h" />

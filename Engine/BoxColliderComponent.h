@@ -22,7 +22,7 @@ public:
 
 private:
     TransformComponent* transform = nullptr;
-    bool isDebugVisible = false;
+    bool isDebugVisible = true;
     // Size and offset are local to the owning transform.
     Vector2Df size = {32.f, 48.f};
     Vector2Df offset = {0.f, 0.f};

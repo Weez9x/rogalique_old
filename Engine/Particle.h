@@ -9,6 +9,7 @@ struct Particle
 {
     Vector2Df position = {0.f, 0.f};
     Vector2Df velocity = {0.f, 0.f};
+    Vector2Df acceleration = {0.f, 0.f};
 
     float lifetime = 0.f;
     float maxLifetime = 0.f;

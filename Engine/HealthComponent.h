@@ -26,7 +26,13 @@ public:
     void SetInvulnerable(bool value);
     bool IsInvulnerable() const;
 
+    void Heal(float amount);
+    void SettingMaxHealth(float value);
+    float GetMaxHealth() const;
+
+
 private:
+    float maxHealth = 100.f;
     float health = 100.0f;
     float armor = 0.0f;
     bool isInvulnerable = false;

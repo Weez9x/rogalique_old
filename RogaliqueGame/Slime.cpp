@@ -65,6 +65,8 @@ Slime::Slime(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& 
 
     auto followComponent = gameObject->AddComponent<EnemyFollowComponent>();
     followComponent->SetTarget(playerObject);
+    followComponent->SetDustOffsetY(55.f);
+    followComponent->SetFootstepInterval(0.60f);
     
     auto particles = gameObject->AddComponent<EngineGame::ParticleEmitterComponent>();
     particles->SetDamageColor(sf::Color::Green);

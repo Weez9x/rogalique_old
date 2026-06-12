@@ -90,7 +90,7 @@ void HealthComponent::TakeDamage(float damage)
 
             if (transform != nullptr)
             {
-                particles->Emit(transform->GetWorldPosition(), 20, particles->GetDamageColor());
+                particles->EmitDamage(transform->GetWorldPosition());
             }
         }
     }
@@ -131,5 +131,39 @@ void HealthComponent::SetInvulnerable(bool value)
 bool HealthComponent::IsInvulnerable() const
 {
     return isInvulnerable;
+}
+void HealthComponent::Heal(float amount)
+{
+    if (amount <= 0.0f)
+    {
+        return;
+    }
+
+    health += amount;
+
+    if (health > maxHealth)
+    {
+        health = maxHealth;
+    }
+}
+void HealthComponent::SettingMaxHealth(float value)
+{
+    if (value <= 0.f)
+    {
+        Logger::Instance()->Warning("HealthComponent: maxHealth must be positive.");
+        return;
+    }
+
+    maxHealth = value;
+
+    if (health > maxHealth)
+    {
+        health = maxHealth;
+    }
+}
+
+float HealthComponent::GetMaxHealth() const
+{
+    return maxHealth;
 }
 } // namespace EngineGame

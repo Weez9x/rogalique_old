@@ -17,6 +17,9 @@ public:
 
     void Emit(const Vector2Df& position, int count, sf::Color color);
     void SetDamageColor(sf::Color color);
+    void EmitDamage(const Vector2Df& position);
+    void EmitDust(const Vector2Df& position);
+    void EmitHeal(const Vector2Df& position);
     sf::Color GetDamageColor() const;
 
 private:

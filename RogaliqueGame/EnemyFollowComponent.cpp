@@ -9,6 +9,7 @@
 #include <cassert>
 #include "FootstepSoundComponent.h"
 #include "AttackSoundComponent.h"
+#include "ParticleEmitterComponent.h"
 
 namespace RogaliqueGame
 {
@@ -42,6 +43,16 @@ void EnemyFollowComponent::SetTarget(EngineGame::GameObject* newTarget)
     {
         EngineGame::Logger::Instance()->Warning("EnemyFollowComponent target is null");
     }
+}
+
+void EnemyFollowComponent::SetDustOffsetY(float value)
+{
+    dustOffsetY = value;
+}
+
+void EnemyFollowComponent::SetFootstepInterval(float value)
+{
+    footstepInterval = value;
 }
 
 void EnemyFollowComponent::Update(float deltaTime)
@@ -194,6 +205,17 @@ void EnemyFollowComponent::Update(float deltaTime)
         direction.x /= distance;
         direction.y /= distance;
     }
+
+    auto particles = gameObject->GetComponent<EngineGame::ParticleEmitterComponent>();
+
+    if (particles != nullptr && transform != nullptr)
+    {
+        auto dustPosition = transform->GetWorldPosition();
+        dustPosition.y += dustOffsetY;
+
+        particles->EmitDust(dustPosition);
+    }
+
     footstepTimer -= deltaTime;
 
     if (footstepTimer <= 0.f)

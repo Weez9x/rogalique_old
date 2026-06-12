@@ -65,6 +65,8 @@ Orc::Orc(EngineGame::GameObject* playerObject, const EngineGame::Vector2Df& spaw
 
     auto followComponent = gameObject->AddComponent<EnemyFollowComponent>();
     followComponent->SetTarget(playerObject);
+    followComponent->SetDustOffsetY(35.f);
+    followComponent->SetFootstepInterval(0.45f);
 
     auto particles = gameObject->AddComponent<EngineGame::ParticleEmitterComponent>();
     particles->SetDamageColor(sf::Color(90, 0, 0));

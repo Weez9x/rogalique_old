@@ -16,6 +16,8 @@ public:
 
     void Update(float deltaTime) override;
     void Render() override;
+    void SetDustOffsetY(float value);
+    void SetFootstepInterval(float value);
 
     void SetTarget(EngineGame::GameObject* newTarget);
 
@@ -44,5 +46,7 @@ private:
 
     float footstepTimer = 0.f;
     float footstepInterval = 0.33f;
+    float dustOffsetY = 35.f;
+
 };
 } // namespace RogaliqueGame

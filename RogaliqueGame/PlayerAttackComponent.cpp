@@ -7,6 +7,7 @@
 #include "CameraShakeComponent.h"
 #include "SoundComponent.h"
 #include "AttackSoundComponent.h"
+#include "PlayerRegenerationComponent.h"
 
 #include <SFML/Window/Keyboard.hpp>
 #include <cassert>
@@ -113,6 +114,12 @@ void PlayerAttackComponent::Update(float deltaTime)
     auto animation = gameObject->GetComponent<EngineGame::AnimationComponent>();
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && currentCooldown <= 0.0f)
     {
+        auto regen = gameObject->GetComponent<PlayerRegenerationComponent>();
+
+        if (regen != nullptr)
+        {
+            regen->NotifyCombatAction();
+        }
         // The attack stays active for several frames so animation and damage timing can diverge.
         isAttackActive = true;
         damageApplied = false;

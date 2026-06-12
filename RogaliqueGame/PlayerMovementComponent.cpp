@@ -4,6 +4,8 @@
 #include "Vector.h"
 #include "Logger.h"
 #include "FootstepSoundComponent.h"
+#include "ParticleEmitterComponent.h"
+
 
 #include <cmath>
 #include <cassert>
@@ -80,6 +82,15 @@ void PlayerMovementComponent::Update(float deltaTime)
             }
 
             footstepTimer = footstepInterval;
+        }
+        auto particles = gameObject->GetComponent<EngineGame::ParticleEmitterComponent>();
+        auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
+        auto dustPosition = transform->GetWorldPosition();
+        dustPosition.y += 50.f;
+
+        if (particles != nullptr && transform != nullptr)
+        {
+            particles->EmitDust(dustPosition);
         }
     }
     else
