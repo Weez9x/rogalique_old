@@ -168,6 +168,7 @@
     <ClCompile Include="ExitPortal.cpp" />
     <ClCompile Include="ExitPortalComponent.cpp" />
     <ClCompile Include="FloorTile.cpp" />
+    <ClCompile Include="FollowTransformComponent.cpp" />
     <ClCompile Include="GameProgress.cpp" />
     <ClCompile Include="GameResourceLoader.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="ExitPortal.h" />
     <ClInclude Include="ExitPortalComponent.h" />
     <ClInclude Include="FloorTile.h" />
+    <ClInclude Include="FollowTransformComponent.h" />
     <ClInclude Include="FootstepSoundComponent.h" />
     <ClInclude Include="GameProgress.h" />
     <ClInclude Include="GameResourceLoader.h" />
@@ -210,6 +212,7 @@
     <ClInclude Include="GameState.h" />
     <ClInclude Include="GameStateManager.h" />
     <ClInclude Include="GameStateUIComponent.h" />
+    <ClInclude Include="HealingAuraComponent.h" />
     <ClInclude Include="HealthBarComponent.h" />
     <ClInclude Include="LevelBuilder.h" />
     <ClInclude Include="MazeGenerator.h" />

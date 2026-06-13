@@ -1,5 +1,6 @@
 #include "PlayerRegenerationComponent.h"
 #include "LightAuraComponent.h"
+#include "HealingAuraComponent.h"
 
 #include "GameObject.h"
 #include "Logger.h"
@@ -25,7 +26,7 @@ PlayerRegenerationComponent::PlayerRegenerationComponent(EngineGame::GameObject*
 
 void PlayerRegenerationComponent::Update(float deltaTime)
 {
-    auto aura = gameObject->GetComponent<EngineGame::LightAuraComponent>();   
+    auto aura = gameObject->GetComponent<HealingAuraComponent>();   
     if (health->GetHealth() >= health->GetMaxHealth())
     {
         if (aura != nullptr)
@@ -96,7 +97,7 @@ void PlayerRegenerationComponent::Render() {}
 
 void PlayerRegenerationComponent::NotifyCombatAction()
 {
-    auto aura = gameObject->GetComponent<EngineGame::LightAuraComponent>();
+    auto aura = gameObject->GetComponent<HealingAuraComponent>();
     if (aura != nullptr)
     {
         aura->SetActive(false);

@@ -75,4 +75,25 @@ void PlayerStatsUIComponent::Render()
 
     window.setView(currentView);
 }
+void PlayerStatsUIComponent::SetTarget(EngineGame::GameObject* target)
+{
+    if (target == nullptr)
+    {
+        EngineGame::Logger::Instance()->Warning("PlayerStatsUIComponent target is null");
+        return;
+    }
+
+    health = target->GetComponent<EngineGame::HealthComponent>();
+    lives = target->GetComponent<PlayerLivesComponent>();
+
+    if (health == nullptr)
+    {
+        EngineGame::Logger::Instance()->Warning("PlayerStatsUIComponent target has no HealthComponent");
+    }
+
+    if (lives == nullptr)
+    {
+        EngineGame::Logger::Instance()->Warning("PlayerStatsUIComponent target has no PlayerLivesComponent");
+    }
+}
 } // namespace RogaliqueGame

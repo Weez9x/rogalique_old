@@ -12,7 +12,6 @@
 #include "PlayerAttackComponent.h"
 #include "BoxColliderComponent.h"
 #include "AnimationComponent.h"
-#include "PlayerStatsUIComponent.h"
 #include "RespawnComponent.h"
 #include "CameraComponent.h"
 #include "RenderSystem.h"
@@ -27,6 +26,7 @@
 #include "DamageSoundComponent.h"
 #include "PlayerRegenerationComponent.h"
 #include "LightAuraComponent.h"
+#include "HealingAuraComponent.h"
 
 namespace RogaliqueGame
 {
@@ -39,10 +39,10 @@ Player::Player()
     auto transform = gameObject->GetComponent<EngineGame::TransformComponent>();
     transform->SetWorldPosition(PLAYER_START_X, PLAYER_START_Y);
 
-    auto healingAura = gameObject->AddComponent<EngineGame::LightAuraComponent>();
+   auto healingAura = gameObject->AddComponent<HealingAuraComponent>();
     healingAura->SetColor(sf::Color(80, 255, 120, 90));
-    healingAura->SetRadius(65.f);
-    healingAura->SetPulse(2.f, 8.f);
+    healingAura->SetRadius(45.f);
+    healingAura->SetPulse(5.f, 8.f);
     healingAura->SetActive(false);
 
     auto spriteRenderer = gameObject->AddComponent<EngineGame::SpriteRendererComponent>();
@@ -68,7 +68,6 @@ Player::Player()
     gameObject->AddComponent<PlayerLivesComponent>();
     health->SetHealth(PLAYER_MAX_HEALTH);
     health->SetArmor(PLAYER_ARMOR);
-    gameObject->AddComponent<PlayerStatsUIComponent>();
     EngineGame::Logger::Instance()->Info("Player health initialized");
 
     // Respawn keeps the same player object alive until lives are exhausted.

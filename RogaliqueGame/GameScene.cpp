@@ -9,7 +9,10 @@
 #include "Logger.h"
 #include "ResourceSystem.h"
 #include "GameResourceLoader.h"
-
+#include "DebugFPSComponent.h"
+#include "DungeonDarknessComponent.h"
+#include "FollowTransformComponent.h"
+#include "PlayerStatsUIComponent.h"
 #include <stdexcept>
 
 namespace RogaliqueGame
@@ -71,10 +74,27 @@ void GameScene::Start()
         EngineGame::Logger::Instance()->Info("Enemies spawned");
         EngineGame::Logger::Instance()->Info("Player enemy spawner set");
 
-        auto gameStateUIObject = EngineGame::GameWorld::Instance()->CreateGameObject("GameStateUI");
+        auto darknessObject = EngineGame::GameWorld::Instance()->CreateGameObject("DungeonDarkness");
 
-        // This UI owns Win/GameOver overlays and their keyboard actions.
+        auto darkness = darknessObject->AddComponent<EngineGame::DungeonDarknessComponent>();
+
+        auto playerTransform = player->GetGameObject()->GetComponent<EngineGame::TransformComponent>();
+
+        darkness->SetTarget(playerTransform);
+        darkness->SetLightRadius(320.f);
+        darkness->SetDarknessColor(sf::Color(0, 0, 0, 170));
+
+        auto gameStateUIObject = EngineGame::GameWorld::Instance()->CreateGameObject("GameStateUI");
         gameStateUIObject->AddComponent<GameStateUIComponent>();
+
+        auto debugObject = EngineGame::GameWorld::Instance()->CreateGameObject("DebugFPS");
+        debugObject->AddComponent<DebugFPSComponent>();
+
+        auto playerStatsUIObject = EngineGame::GameWorld::Instance()->CreateGameObject("PlayerStatsUI");
+
+        auto playerStatsUI = playerStatsUIObject->AddComponent<PlayerStatsUIComponent>();
+
+        playerStatsUI->SetTarget(player->GetGameObject());
 
         EngineGame::GameObject* musicObject = EngineGame::GameWorld::Instance()->CreateGameObject("MusicPlayer");
 
@@ -84,6 +104,8 @@ void GameScene::Start()
         audio->PlayMusic(true);
 
         EngineGame::Logger::Instance()->Info("Music started");
+
+        
     }
     catch (const std::exception& e)
     {

@@ -74,6 +74,9 @@ void EnemyFollowComponent::Update(float deltaTime)
 
     if (health != nullptr && health->IsDead())
     {
+        isAttackActive = false;
+        damageApplied = true;
+        attackTimer = 0.f;
         rigidbody->SetLinearVelocity({0.f, 0.f});
 
         // Dead enemies stop AI and let RespawnComponent finish the death/respawn flow.

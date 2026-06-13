@@ -80,16 +80,16 @@ void ParticleEmitterComponent::EmitDamage(const Vector2Df& position)
 
 void ParticleEmitterComponent::EmitDust(const Vector2Df& position)
 {
-    for (int i = 0; i < 5; ++i)
+    for (int i = 0; i < 2; ++i)
     {
         Particle particle;
         particle.position = position;
         particle.velocity = {RandomRange(-30.f, 30.f), RandomRange(-80.f, -30.f)};
         particle.acceleration = {0.f, 180.f};
-        particle.lifetime = 0.4f;
+        particle.lifetime = 0.2f;
         particle.maxLifetime = 0.4f;
-        particle.size = RandomRange(2.f, 5.f);
-        particle.color = sf::Color(161, 150, 100);
+        particle.size = RandomRange(2.f, 4.f);
+        particle.color = sf::Color(211, 200, 150);
         particle.position.x += RandomRange(-15.f, 15.f);
 
         particles.push_back(particle);

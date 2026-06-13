@@ -3,6 +3,7 @@
 #include "GameSettings.h"
 #include "Logger.h"
 #include "MazeGenerator.h"
+#include "GameProgress.h"
 #include <cstdlib>
 #include <cmath>
 
@@ -11,12 +12,24 @@ namespace RogaliqueGame
 void LevelBuilder::BuildLevel()
 {
     floorPositions.clear();
+
     EngineGame::Logger::Instance()->Info("LevelBuilder: building level");
+
     const int tileSize = TILE_SIZE;
-    const int mazeWidth = MAZE_WIDTH;
-    const int mazeHeight = MAZE_HEIGHT;
+
+    int levelIndex = GameProgress::CurrentLevel - 1;
+
+    if (levelIndex < 0)
+    {
+        levelIndex = 0;
+    }
+
+    const int mazeWidth = MAZE_WIDTH + levelIndex * 2;
+    const int mazeHeight = MAZE_HEIGHT + levelIndex * 2;
+
     levelWidth = static_cast<float>(mazeWidth * tileSize);
     levelHeight = static_cast<float>(mazeHeight * tileSize);
+    EngineGame::Logger::Instance()->Info("Level size: " + std::to_string(mazeWidth) + "x" + std::to_string(mazeHeight));
 
     MazeGenerator generator(mazeWidth, mazeHeight);
     auto maze = generator.Generate();
