@@ -30,7 +30,6 @@ public:
     void SettingMaxHealth(float value);
     float GetMaxHealth() const;
 
-
 private:
     float maxHealth = 100.f;
     float health = 100.0f;

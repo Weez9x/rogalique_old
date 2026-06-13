@@ -27,7 +27,7 @@ void AudioComponent::PlayMusic(bool loop)
 
 void AudioComponent::SetVolume(float volume)
 {
-    
+
     if (volume < 0.f)
     {
         volume = 0.f;

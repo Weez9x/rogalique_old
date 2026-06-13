@@ -4,7 +4,7 @@
 
 namespace EngineGame
 {
-SoundComponent::SoundComponent(GameObject* gameObject) : Component(gameObject){}
+SoundComponent::SoundComponent(GameObject* gameObject) : Component(gameObject) {}
 
 void SoundComponent::AddSound(sf::SoundBuffer* buffer)
 {
@@ -47,4 +47,4 @@ const std::string& SoundComponent::GetGroupName() const
 }
 void SoundComponent::Update(float deltaTime) {}
 void SoundComponent::Render() {}
-}
+} // namespace EngineGame

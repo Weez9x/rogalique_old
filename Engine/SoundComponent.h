@@ -11,7 +11,7 @@ public:
     SoundComponent(GameObject* gameObject);
 
     void AddSound(sf::SoundBuffer* buffer);
-   // void AddSound(sf::SoundBuffer* buffer);
+    // void AddSound(sf::SoundBuffer* buffer);
     void PlayNext();
     void Play();
     void SetVolume(float volume);
@@ -20,7 +20,6 @@ public:
 
     void Update(float deltaTime) override;
     void Render() override;
-    
 
 private:
     sf::Sound sound;
@@ -28,4 +27,4 @@ private:
     std::string groupName;
     int currentSoundIndex = 0;
 };
-}
+} // namespace EngineGame

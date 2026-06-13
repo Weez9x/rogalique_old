@@ -17,7 +17,7 @@ public:
 private:
     sf::Font font;
     sf::Text fpsText;
-    
+
     bool isVisible = false;
     float fpsTimer = 0.f;
     int frameCounter = 0;

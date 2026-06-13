@@ -38,7 +38,7 @@ void DungeonDarknessComponent::Render()
 
         float radius = lightRadius * (1.f - t * 0.85f);
 
-        sf::Uint8 alpha = static_cast<sf::Uint8>(darknessColor.a * (1-t));
+        sf::Uint8 alpha = static_cast<sf::Uint8>(darknessColor.a * (1 - t));
 
         sf::CircleShape lightCircle(radius);
         lightCircle.setOrigin(radius, radius);
