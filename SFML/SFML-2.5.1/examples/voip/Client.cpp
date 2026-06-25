@@ -6,10 +6,8 @@
 #include <SFML/Network.hpp>
 #include <iostream>
 
-
-const sf::Uint8 audioData   = 1;
+const sf::Uint8 audioData = 1;
 const sf::Uint8 endOfStream = 2;
-
 
 ////////////////////////////////////////////////////////////
 /// Specialization of audio recorder for sending recorded audio
@@ -18,7 +16,6 @@ const sf::Uint8 endOfStream = 2;
 class NetworkRecorder : public sf::SoundRecorder
 {
 public:
-
     ////////////////////////////////////////////////////////////
     /// Constructor
     ///
@@ -26,11 +23,7 @@ public:
     /// \param port Port of the remote host
     ///
     ////////////////////////////////////////////////////////////
-    NetworkRecorder(const sf::IpAddress& host, unsigned short port) :
-    m_host(host),
-    m_port(port)
-    {
-    }
+    NetworkRecorder(const sf::IpAddress& host, unsigned short port) : m_host(host), m_port(port) {}
 
     ////////////////////////////////////////////////////////////
     /// Destructor
@@ -45,7 +38,6 @@ public:
     }
 
 private:
-
     ////////////////////////////////////////////////////////////
     /// \see SoundRecorder::onStart
     ///
@@ -96,11 +88,10 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    sf::IpAddress  m_host;   ///< Address of the remote host
-    unsigned short m_port;   ///< Remote port
-    sf::TcpSocket  m_socket; ///< Socket used to communicate with the server
+    sf::IpAddress m_host;   ///< Address of the remote host
+    unsigned short m_port;  ///< Remote port
+    sf::TcpSocket m_socket; ///< Socket used to communicate with the server
 };
-
 
 ////////////////////////////////////////////////////////////
 /// Create a client, connect it to a running server and
@@ -121,9 +112,8 @@ void doClient(unsigned short port)
     do
     {
         std::cout << "Type address or name of the server to connect to: ";
-        std::cin  >> server;
-    }
-    while (server == sf::IpAddress::None);
+        std::cin >> server;
+    } while (server == sf::IpAddress::None);
 
     // Create an instance of our custom recorder
     NetworkRecorder recorder(server, port);

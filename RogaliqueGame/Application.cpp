@@ -1,51 +1,32 @@
 #include "Application.h"
 #include "GameSettings.h"
+#include "Logger.h"
 
 namespace RogaliqueGame
 {
-	Application::Application()
-		: window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "RogaliqueGame")
-	{
-		window.setFramerateLimit(60);
-		game.init();
-	}
-	Application::~Application()
-	{
-	
-	}
-
-	void Application::run()
-	{
-		sf::Clock clock;
-		while (window.isOpen() && running)
-		{
-			sf::Event event;
-			while (window.pollEvent(event))
-			{
-				if (event.type == sf::Event::Closed)
-				{
-					window.close();
-					running = false;
-				}
-
-				// Event to Game
-				game.handleEvent(event);
-			}
-			//EndGame
-			if (game.isQuitRequested())
-			{
-				window.close();
-				break;
-			}
-
-			float dt = clock.restart().asSeconds();
-
-			game.update(dt);
-
-			window.clear(sf::Color::Black);
-			game.draw(window);
-			window.display();
-		}
-	}
+void Application::CreateScene()
+{
+    // The first scene is created once; level changes rebuild its GameWorld objects.
+    scene = std::make_unique<GameScene>();
+    scene->Start();
 }
 
+void Application::run()
+{
+    EngineGame::Logger::Instance()->AddSink(std::make_shared<EngineGame::ConsoleSink>());
+    EngineGame::Logger::Instance()->AddSink(std::make_shared<EngineGame::FileSink>("game.log"));
+    EngineGame::Logger::Instance()->Info("Application started");
+
+    sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "RogaliqueGame");
+    window.setFramerateLimit(60);
+
+    EngineGame::Logger::Instance()->Info("Window created");
+
+    EngineGame::RenderSystem::Instance()->SetMainWindow(&window);
+
+    CreateScene();
+
+    EngineGame::Logger::Instance()->Info("Engine run started");
+    EngineGame::Engine::Instance()->Run();
+}
+} // namespace RogaliqueGame

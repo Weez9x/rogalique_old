@@ -1,0 +1,27 @@
+#pragma once
+
+#include <SFML/Graphics/RenderWindow.hpp>
+#include "TransformComponent.h"
+
+namespace EngineGame
+{
+class CameraComponent : public Component
+{
+public:
+    CameraComponent(GameObject* gameObject);
+
+    void Update(float deltaTime) override;
+    void Render() override;
+
+    void SetWindow(sf::RenderWindow* newWindow);
+    void ZoomBy(float newZoom);
+
+    void SetBaseResolution(int width, int height);
+
+private:
+    TransformComponent* transform;
+    sf::RenderWindow* window;
+    // The view follows the owning transform and becomes the active world camera.
+    sf::View view;
+};
+} // namespace EngineGame
